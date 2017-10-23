@@ -1,0 +1,51 @@
+Descargar los tar.gz de Omnet 4.6, Imnet, simcan.tar del repositorio en Drive
+Esta última (simcan) incluye las bibliotecas que se necesitan para la compilación.
+
+Copiamos los archivos tar de omnet e imnet en /pi y se descomprimen
+Desde el directorio /pi ejecutamos los siguientes comandos
+
+INSTALACION OMNET
+
+sudo apt-get update
+sudo apt-get install build-essential gcc g++ bison flex perl  tcl-dev tk-dev libxml2-dev zlib1g-dev default-jre doxygen graphviz libwebkitgtk-1.0-0 openmpi-bin libopenmpi-dev libpcap-dev
+sudo apt-get install gnome-color-chooser
+
+Ingresamos en el directorio /omnetpp-4.6
+Ejecutamos las siguientes ordenes:
+
+cd omnetpp-4.6
+. setenv
+./configure
+make
+
+INSTALACION DE IMNET
+
+Creamos un directorio nuevo en /omnet-4.6 llamado proyect
+Copiamos en el el directorio inet descomprimido y ejecutamos 
+
+sudo apt-get install libavcodec-dev libavformat-dev
+make makefiles
+make
+
+INSALACION DE SIMCAN
+
+Copiamos el directorio de simcan a projects y ejecutamos los siguientes comandos
+
+export omnetpp_root=$HOME/pi/omnnetpp-4.6
+export INET_HOME=$omnetpp_root/projects/inet
+export SIMCAN_HOME=$omnetpp_root/projects/simcan
+export LD_LIBRARY_PATH=$omnetpp_root/lib:$LD_LIBRARY_PATH 
+export PATH=omnetpp_root/bin:$PATH
+
+make makefiles
+make
+
+(Por si las moscas)
+
+Puede que no esté el fichero TCPCommand_m.h con lo que habría ejecutar:
+
+cp omnet-4.6/projects/inet/src/transport/contract/TCPCommand_m.h /omnet-4.6/projects/simcan/src/Messages/TCPCommand_m.h
+
+Si se produce un error de no se puede ejectuar run_simcan hay que conceder permiso de ejecucion a projects/simcan/src run_sincam
+
+A disfrutar!
