@@ -1,0 +1,3 @@
+package SIMCAN;
+
+@license(LGPL);

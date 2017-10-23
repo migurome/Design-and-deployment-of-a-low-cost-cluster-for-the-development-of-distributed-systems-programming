@@ -1,0 +1,2 @@
+1
+nSto0_serverBasicStorage:9000:1000

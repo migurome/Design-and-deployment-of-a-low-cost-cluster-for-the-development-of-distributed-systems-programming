@@ -1,0 +1,46 @@
+INSTALLATION INSTRUCTIONS
+=========================
+
+This version of SIMCAN works with OMNeT++ 4.6 and INET 2.6-b673687
+
+1) Install OMNeT++ 4.6 (you can download it from http://www.omnetpp.org/omnetpp)
+	E.g. $HOME/YOUR_PATH/omnetpp-4.6
+
+2) Install INET 2.6 (you can download it from http://inet.omnetpp.org/index.php?n=Main.Download)
+	E.g. $HOME/YOUR_PATH/omnetpp-4.6/projects/inet
+
+3) Extract the downloaded tarball into a directory of your choice
+	E.g. $HOME/YOUR_PATH/omnetpp-4.6/projects/simcan
+
+4) Add the following environment variables to ".bashrc" or ".profile" if you want to compile 
+   SIMCAN from a command-line console
+
+	export omnetpp_root=$HOME/YOUR_PATH/omnetpp-4.6
+	export INET_HOME=$omnetpp_root/projects/inet
+	export SIMCAN_HOME=$omnetpp_root/projects/simcan
+	export LD_LIBRARY_PATH=$omnetpp_root/lib:$LD_LIBRARY_PATH
+	export PATH=omnetpp_root/bin:$PATH
+
+5) Import the SIMCAN project in OMNeT++ 
+
+	5.1) Open the OMNeT++ IDE
+  	5.2) File -> Import -> Existing projects into Workspace
+	5.3) Locate the SIMCAN folder and click “Finish” (Do NOT check the "Copy projects into 
+	     workspace" checkBox)
+
+6) Add the reference to INET
+
+	6.1) Right click on SIMCAN (Project explorer)
+	6.2) Click on Properties -> Project References -> inet checkBox
+
+7) Compile SIMCAN
+	
+	7.1a) Compile SIMCAN using the IDE (Right click on SIMCAN and click on Build Project) or
+	7.1b) Compile SIMCAN from a command-line console.
+		$HOME/YOUR_PATH/omnetpp-4.6/projects/simcan> make makefiles && make
+
+8) Enjoy! ;)
+
+
+
+

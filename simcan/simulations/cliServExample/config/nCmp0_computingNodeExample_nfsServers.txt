@@ -1,0 +1,2 @@
+1
+nSto0_storageNodeExample:9000:1000

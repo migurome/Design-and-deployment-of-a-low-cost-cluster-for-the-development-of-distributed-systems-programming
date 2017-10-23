@@ -1,0 +1,7 @@
+./Messages/SIMCAN_App_MEM_Message.msg
+./Messages/SIMCAN_App_CPU_Message.msg
+./Messages/SIMCAN_MPI_Message.msg
+./Messages/SIMCAN_Message.msg
+./Messages/SIMCAN_BlockList_Message.msg
+./Messages/SIMCAN_App_IO_Message.msg
+./Messages/SIMCAN_App_NET_Message.msg

@@ -1,0 +1,17 @@
+version 2
+run discoB-0-20170304-01:30:48-10864
+attr configname discoB
+attr datetime 20170304-01:30:48
+attr experiment discoB
+attr inifile omnetpp_100M.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network scenario_100M
+attr processid 10864
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+

@@ -1,0 +1,25 @@
+cplusplus {{
+
+	#include "SIMCAN_Message.h"
+			
+}};
+
+class SIMCAN_Message;
+
+///
+/// SIMCAN Message for CPU requests
+///
+message SIMCAN_App_CPU_Message extends SIMCAN_Message{
+	 
+	properties:
+		customize=true; 
+	 
+	fields:		
+		double cpuTime = 0.0;				// CPU execution time
+		unsigned int totalMIs = 0;			// Number of instructions to be executed.
+		unsigned int remainingMIs = 0;		// Remaining instructions to be executed.
+		int quantum = 0;					// Quantum used in Round-Robin algorithm (measured in ticks)
+		int priority = 0;					// Priority 
+};
+
+
