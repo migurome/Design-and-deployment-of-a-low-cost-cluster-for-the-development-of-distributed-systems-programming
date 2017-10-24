@@ -1,0 +1,22 @@
+Seamos claros
+
+Primer paso, establecer la contraseña de ROOT
+
+sudo su
+passwd root
+Por defecto la constraseña de root será: ricksanchez
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+sudo useradd -d /home/morty -m -s /bin/bash morty
+passwd morty 
+Por defecto la constraseña de morty será: l
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Habilitar EL ARRANQUE AUTOMÁTICO DE morty como usuario por defecto:
+
+sudo leafpad /etc/lightdm/lightdm.conf
+autologin-user=morty
