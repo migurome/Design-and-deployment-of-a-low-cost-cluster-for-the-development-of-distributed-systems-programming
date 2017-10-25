@@ -31,7 +31,7 @@ INSALACION DE SIMCAN
 
 Copiamos el directorio de simcan a projects y ejecutamos los siguientes comandos
 
-export omnetpp_root=$HOME/pi/omnnetpp-4.6
+export omnetpp_root=$HOME/morty/omnnetpp-4.6
 export INET_HOME=$omnetpp_root/projects/inet
 export SIMCAN_HOME=$omnetpp_root/projects/simcan
 export LD_LIBRARY_PATH=$omnetpp_root/lib:$LD_LIBRARY_PATH 
@@ -39,6 +39,11 @@ export PATH=omnetpp_root/bin:$PATH
 
 make makefiles
 make
+
+
+Prueba:
+
+./run -u Cmdenv -f omnetpp_100.ini -c discoA > salidaDiscoA.txt
 
 (Por si las moscas)
 
