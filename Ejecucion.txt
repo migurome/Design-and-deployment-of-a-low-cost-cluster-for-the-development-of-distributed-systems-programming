@@ -1,19 +1,27 @@
 DOCUMENTO IMPORTANTISIMO
 
 SERVIDOR: Instalar paquetes
+
 	sudo apt-get update
 	sudo apt-get install nfs-kernel-server
+
 SERVIDOR: Editar fichero de configuración "/etc/exports"
+
 	Incluir al final del fichero el directorio a compartir:
 	Ruta de carpeta
 	Dirección IP de máquina destino / permisos
 	/home/pi 192.168.21.0/24(rw, no_subtree_check)
+
 CLIENTE: Instalación de paquetes en el cliente 
+
 	Instalados por defecto en raspBian
 	sudo apt-get update
 	sudo apt-get install build-essential gcc g++ bison flex perl  tcl-dev tk-dev libxml2-dev zlib1g-dev default-jre doxygen graphviz libwebkitgtk-1.0-0 openmpi-bin libopenmpi-dev libpcap-dev
+
 SERVIDOR: ejecutar cambios realizados
+
 	sudo exportfs -a
+
 CLIENTE: Crear montaje de carpeta origen y destino
 	
 	export omnetpp_root=$HOME/pi/omnnetpp-4.6
@@ -26,6 +34,8 @@ CLIENTE: Crear montaje de carpeta origen y destino
 	Dirección ip de servidor
 
 SERVIDOR: reiniciar servicios 
+
 	sudo /etc/init.d/rpcbind restart
 	sudo /etc/init.d/nfs-kernel-server restart
+
 CLIENTE montar de forma permanente la carpeta en cliente

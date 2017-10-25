@@ -1,22 +1,28 @@
-Seamos claros
+Password:
 
-Primer paso, establecer la contraseña de ROOT
+root - ricksanchez
+morty - l
+rick - ricksanchez
+pi - raspberry
+
+Ejemplo de cambio de password:
 
 sudo su
 passwd root
 Por defecto la constraseña de root será: ricksanchez
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
+Gestion de usuarios ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 sudo useradd -d /home/morty -m -s /bin/bash morty
-passwd morty 
-Por defecto la constraseña de morty será: l
+
+Este comando crea una carpeta en /home para el nuevo usuario
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-Habilitar EL ARRANQUE AUTOMÁTICO DE morty como usuario por defecto:
+Habilitar EL ARRANQUE AUTOMÁTICO de un usuario por defecto:
 
 sudo leafpad /etc/lightdm/lightdm.conf
-autologin-user=morty
+autologin-user = morty
+
+En rick por defecto no hay arranque automático, en los morty por defecto será el propio morty
