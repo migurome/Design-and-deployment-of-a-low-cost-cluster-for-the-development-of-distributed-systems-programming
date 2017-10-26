@@ -11,13 +11,13 @@ sudo su
 passwd root
 Por defecto la constraseña de root será: ricksanchez
 
-Gestion de usuarios ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Gestion de usuarios ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 sudo useradd -d /home/morty -m -s /bin/bash morty
 
 Este comando crea una carpeta en /home para el nuevo usuario
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Arranque automático ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 Habilitar EL ARRANQUE AUTOMÁTICO de un usuario por defecto:

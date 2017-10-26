@@ -32,7 +32,7 @@ CLIENTE: Crear montaje de carpeta origen y destino
 	export PATH=omnetpp_root/bin:$PATH
 */
 
-	sudo mount 192.168.21.131:/home/morty home/morty
+	sudo mount 192.168.21.131:/home/morty /home/morty
 	Dirección ip de servidor
 
 SERVIDOR: reiniciar servicios 
