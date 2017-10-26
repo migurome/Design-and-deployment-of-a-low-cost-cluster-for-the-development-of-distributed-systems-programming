@@ -46,3 +46,8 @@ Permisos desde la maquina cliente:
 
 	El usuario de la maquina cliente ha de ser sudoer
 	La carpeta compartida ha de tener todos los permisos chmod -R 0777 scenario
+
+
+FUENTE:
+
+http://experimentandoconraspberrypi.blogspot.com.es/2013/06/compartir-directorio-con-nfs.html
