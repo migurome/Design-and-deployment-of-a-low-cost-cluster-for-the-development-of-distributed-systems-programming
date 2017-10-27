@@ -3,7 +3,7 @@ Password:
 root - ricksanchez
 morty - l
 rick - ricksanchez
-pi - raspberry
+pi - thisisnotapassword
 
 Ejemplo de cambio de password:
 

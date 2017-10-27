@@ -21,18 +21,8 @@ CLIENTE: Instalación de paquetes en el cliente
 SERVIDOR: ejecutar cambios realizados
 
 	sudo exportfs -a
-
-CLIENTE: Crear montaje de carpeta origen y destino
-
-/*	
-	export omnetpp_root=$HOME/morty/omnnetpp-4.6
-	export INET_HOME=$omnetpp_root/projects/inet
-	export SIMCAN_HOME=$omnetpp_root/projects/simcan
-	export LD_LIBRARY_PATH=$omnetpp_root/lib:$LD_LIBRARY_PATH 
-	export PATH=omnetpp_root/bin:$PATH
-*/
-
 	sudo mount 192.168.21.131:/home/morty /home/morty
+	
 	Dirección ip de servidor
 
 SERVIDOR: reiniciar servicios 

@@ -4,3 +4,5 @@ desde el principio hay que ejecutar el comando " systemctl enable ssh " en las M
 Se puede hacer manualmente con la opcion raspi-config
 
 INfo extraida de: https://foro.hackxcrack.net/gnu-linux/ayuda!-como-iniciar-automaticamente-ssh-en-el-arranque-en-debian/
+
+Hay que cambiar la pass de pi para que no de por saco
