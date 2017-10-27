@@ -53,6 +53,7 @@ $sudo service dhcp restart
 $sudo service dhcp status
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+CONFIGURACION EN CLIENTE
 
 $sudo apt-get install isc-dhcp-client
 $sudo apt-get update
