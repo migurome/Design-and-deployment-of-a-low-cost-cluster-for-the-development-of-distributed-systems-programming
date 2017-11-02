@@ -41,3 +41,13 @@ Permisos desde la maquina cliente:
 FUENTE:
 
 http://experimentandoconraspberrypi.blogspot.com.es/2013/06/compartir-directorio-con-nfs.html
+
+ANOTACION: 
+
+Para arrancar el servicio en SERVIDOR
+
+por estricto orden:
+
+sudo exportfs -a
+sudo /etc/rpcbind restart
+sudo /etc/nfs-kernel-server restart

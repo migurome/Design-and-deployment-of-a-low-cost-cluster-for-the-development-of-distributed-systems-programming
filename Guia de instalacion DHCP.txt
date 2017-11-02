@@ -1,7 +1,7 @@
 CONFIGURACION EN SERVIDOR
 
-$sudo apt-get install isc-dhcp-server
 $sudo apt-get update
+$sudo apt-get install isc-dhcp-server
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -13,17 +13,18 @@ Configuración del archivo /etc/network/interfaces en servidor
 # For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'
 
 # Include files from /etc/network/interfaces.d:
+
 source-directory /etc/network/interfaces.d
 
 auto lo
 iface lo inet loopback
 
-auto eth0
+auto eth0	
 iface eth0 inet static
-address 100.200.1.1
+address 192.168.100.1
 netmask 255.255.255.0
-network 100.200.1.0
-broadcast 100.200.1.255
+network 192.168.100.0
+broadcast 192.168.100.255
 gateway default
 
 
@@ -39,12 +40,12 @@ iface wlan1 inet manual
 
 Configuración del fichero /etc/dhcp/dhcpd.conf en el servidor
 
-subnet 100.200.1.0 netmask 255.255.255.0{
+subnet 192.168.100.0 netmask 255.255.255.0{
 	interface eth0;
-	range 100.200.1.10	100.200.1.255;
-	default-lease-time	86400;
-	max-lease-time		86400;
-	option routers		100.200.1.1;
+	range 192.168.100.10	192.168.100.255;
+	default-lease-time	7776000;
+	max-lease-time		10368000;
+	option routers		192.168.100.1;
 }
 
 
@@ -54,9 +55,6 @@ $sudo service dhcp status
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 CONFIGURACION EN CLIENTE
-
-$sudo apt-get install isc-dhcp-client
-$sudo apt-get update
 
 Configuración del fichero /etc/network/interfaces en cliente
 
@@ -84,5 +82,5 @@ iface wlan1 inet manual
 
 
 $sudo ifconfig eth0 up
-$sudo service dhcp restart
+$sudo service dhcp restart // Este comando no funciona
 $sudo service dhcp status
