@@ -81,14 +81,97 @@ module pi3()
   }
 }
 
-translate([0,0,100]) 
-pi3();
-translate([0,0,80]) 
-pi3();
-translate([0,0,60]) 
-pi3();
-translate([0,0,40]) 
-pi3();
-translate([0,0,20]) 
-pi3();
-pi3();
+module pared()
+{
+ 
+    cube([150,3,150]);
+    cylinder(  150,   3, 3,false); 
+    cylinder(  150,   3, 3,false);
+    
+}
+
+module liston()
+{
+    cube([70,3,10]);   
+}
+
+module box()
+{
+    pared();
+    translate([0,-70,140])
+    rotate([0,0,90])
+    liston();
+    translate([0,-70,0])
+    rotate([0,0,90])
+    liston();
+    rotate([0,0,270])
+    translate([0,150,0])
+    pared();
+    rotate([0,180,90])
+    translate([70,0,-150])
+    pared();
+    
+    //BASE
+    translate([0,-240,0])
+    minkowski()
+    {
+      cube([150,240,1.5]);
+      //cylinder(r=2,h=1);
+      cylinder(2,10,3);
+    }
+    
+    module espiral()
+    {
+        linear_extrude(height = 150, center = false, convexity = 10, twist = 3600, $fn = 50)
+        translate([2, 0, 0])
+        circle(r = 5);
+    }
+    espiral();
+    translate([0, -70, 0])
+    espiral();
+    
+}
+
+module prism(l, w, h){
+   polyhedron(
+           points=[[0,0,0], [l,0,0], [l,w,0], [0,w,0], [0,w,h], [l,w,h]],
+           faces=[[0,1,2,3],[5,4,3,2],[0,4,5,1],[0,3,4],[5,2,1]]
+           );
+}
+module cluster_6()
+{
+translate([0,0,115]) 
+    pi3();
+translate([0,0,95]) 
+    pi3();
+translate([0,0,75]) 
+    pi3();
+translate([0,0,55]) 
+    pi3();
+translate([0,0,35]) 
+    pi3();
+translate([0,0,15]) 
+    pi3();
+}
+
+module tejado_gay()
+{
+prism(150, 250, 10);
+rotate([0,90,0])
+translate([-5,250,0])
+cylinder(150,5,5);
+}
+
+//translate([50,-35,0])
+//cluster_6();
+//color("PaleGreen") 
+box();
+
+/*
+rotate([0,0,180])
+translate([-150,-250,0])
+tejado_gay();
+tejado_gay();
+*/
+
+       
