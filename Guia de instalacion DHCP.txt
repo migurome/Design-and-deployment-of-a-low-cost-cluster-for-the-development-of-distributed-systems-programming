@@ -1,4 +1,4 @@
-Antes de nada debemos configurar las redes de nuestras maquinas virtuales como tarjeta de red interna, en vez de NAT que viene por defecto
+sudo Antes de nada debemos configurar las redes de nuestras maquinas virtuales como tarjeta de red interna, en vez de NAT que viene por defecto
 
 
 CONFIGURACION EN SERVIDOR
