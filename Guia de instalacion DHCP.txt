@@ -1,9 +1,17 @@
+Antes de nada debemos configurar las redes de nuestras maquinas virtuales como tarjeta de red interna, en vez de NAT que viene por defecto
+
+
 CONFIGURACION EN SERVIDOR
 
 $sudo apt-get update
 $sudo apt-get install isc-dhcp-server
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+$sudo nano /etc/default/isc-dchp-server
+
+Bajamos a INTERFACES y en ÒÓ escribimos Òeth0Ó
+
 
 Configuración del archivo /etc/network/interfaces en servidor
 
@@ -16,16 +24,14 @@ Configuración del archivo /etc/network/interfaces en servidor
 
 source-directory /etc/network/interfaces.d
 
-auto lo
-iface lo inet loopback
 
 auto eth0	
 iface eth0 inet static
-address 192.168.100.1
+
+address 172.16.111.106
 netmask 255.255.255.0
 network 192.168.100.0
-broadcast 192.168.100.255
-gateway default
+gateway 172.16.111.105
 
 
 allow-hotplug wlan0
@@ -40,47 +46,41 @@ iface wlan1 inet manual
 
 Configuración del fichero /etc/dhcp/dhcpd.conf en el servidor
 
-subnet 192.168.100.0 netmask 255.255.255.0{
-	interface eth0;
-	range 192.168.100.10	192.168.100.255;
+Comentaremos todo salvo authoritative que lo debemos dejar descomentado, 
+Al final del archivo a–adiremos estas lineas
+
+subnet 172.16.111.0 netmask 255.255.255.0{
+	range 172.16.111.106	172.16.111.255;
+	option domain-name-servers 8.8.8.8, 4.4.4.4;
 	default-lease-time	7776000;
-	max-lease-time		10368000;
-	option routers		192.168.100.1;
+	option routers		172.16.111.105;
+}
+host maquina1{
+	hardware ethernet<Aqui introduciremos nuestra direcci—n MAC>
+	fixed-address 172.16.111.110;
 }
 
-
 $sudo ifconfig eth0 up
-$sudo service dhcp restart
-$sudo service dhcp status
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-CONFIGURACION EN CLIENTE
+Reiniciamos nuestro servidor Rasp
+$sudo reboot now 
 
-Configuración del fichero /etc/network/interfaces en cliente
+Arrancamos el servicio dhcp
+$sudo /usr/sbin/dhcpd
 
-# interfaces(5) file used by ifup(8) and ifdown(8)
+Comprobaremos que el servicio esta funcionando
 
-# Please note that this file is written to be used with dhcpcd
-# For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'
+$ps -ef | grep dhcpd
 
-# Include files from /etc/network/interfaces.d:
-source-directory /etc/network/interfaces.d
+Aparecer‡ en rojo, ahora comprobaremos con otra m‡quina virtual si est‡ funcionando
 
-auto lo
-iface lo inet loopback
+Si en el cliente hacemos ifconfig veremos que nos ha repartido la direcci—n correctamente
 
-auto eth0
-iface eth0 inet dhcp
+Para ver las maquinas conectadas al servicio haremos
 
-allow-hotplug wlan0
-iface wlan0 inet manual
-    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+$cat /var/lib/dhcp/dhcp.leases 
 
-allow-hotplug wlan1
-iface wlan1 inet manual
-    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+Referencias: 
 
-
-$sudo ifconfig eth0 up
-$sudo service dhcp restart // Este comando no funciona
-$sudo service dhcp status
+https://www.youtube.com/watch?v=uwyoxoa0-Io
+https://www.youtube.com/watch?v=P8a6ZYihGHI
