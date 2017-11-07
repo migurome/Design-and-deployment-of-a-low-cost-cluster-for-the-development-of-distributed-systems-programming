@@ -92,12 +92,17 @@ module pared()
 
 module liston()
 {
-    cube([70,3,10]);   
+    cube([40,3,10]);   
 }
 
 module box()
 {
-    pared();
+    
+    //TARJETAS
+    translate([0,-55,0])
+        acceso_tarjetas();
+    
+    /*pared();
     translate([0,-70,140])
     rotate([0,0,90])
     liston();
@@ -120,15 +125,8 @@ module box()
       cylinder(2,10,3);
     }
     
-    module espiral()
-    {
-        linear_extrude(height = 150, center = false, convexity = 10, twist = 3600, $fn = 50)
-        translate([2, 0, 0])
-        circle(r = 5);
-    }
-    espiral();
-    translate([0, -70, 0])
-    espiral();
+    */
+    
     
 }
 
@@ -138,6 +136,7 @@ module prism(l, w, h){
            faces=[[0,1,2,3],[5,4,3,2],[0,4,5,1],[0,3,4],[5,2,1]]
            );
 }
+
 module cluster_6()
 {
 translate([0,0,115]) 
@@ -154,6 +153,22 @@ translate([0,0,15])
     pi3();
 }
 
+module acceso_tarjetas(){
+ 
+    cylinder(  150,   3, 3,false); 
+    
+    translate([0,40,0])
+        cylinder(  150,   3, 3,false); 
+
+    translate([0,0,140])
+    rotate([0,0,90])
+        liston();
+
+    translate([0,0,0])
+    rotate([0,0,90])
+        liston();
+}
+
 module tejado_gay()
 {
 prism(150, 250, 10);
@@ -162,16 +177,20 @@ translate([-5,250,0])
 cylinder(150,5,5);
 }
 
-//translate([50,-35,0])
+translate([50,-35,0])
+cluster_6();
+
 //cluster_6();
 //color("PaleGreen") 
 box();
+
+
 
 /*
 rotate([0,0,180])
 translate([-150,-250,0])
 tejado_gay();
 tejado_gay();
-*/
+
 
        
