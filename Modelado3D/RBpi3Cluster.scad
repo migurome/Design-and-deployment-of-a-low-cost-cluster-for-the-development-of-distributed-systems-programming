@@ -1,108 +1,107 @@
-/* (c) 2016++ by Saarbastler 
-**  https://github.com/saarbastler/library.scad
-**
-** Raspberry PI model library for generating cases etc.
-*/
-$fn=100;
-// Show Header
-header = true; // true:Show Header;false:Don't show Header
-
-// Header Up/Down for Pi Zero
-headerDown = false; //true: Header down (Only Zero): false Header up
-
-module header(pins, rows)
+module panelLateral()
 {
-  color("darkgrey") cube([2.54*pins,2.54*rows,1.27]);
-  
-  for(x=[0:pins-1],y=[0:rows-1])
-    translate([x*2.54+(1.27+.6)/2,y*2.54+(1.27+.6)/2,-3.5]) cube([0.6,0.6,11.5]);
+    color("DarkKhaki") 
+    translate([0,60,64])
+    rotate([0,90,-2])
+    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\estructuras\\120matrix.stl",convexity = 3);
 }
 
-module pi3()
+module carcasaVentilador()
 {
-  // PCB
-  color("limegreen") difference()
-  {
-    hull()
-    {
-      translate([-(85-6)/2,-(56-6)/2,0]) cylinder(r=3, h=1.4 );
-      translate([-(85-6)/2, (56-6)/2,0]) cylinder(r=3, h=1.4 );
-      translate([ (85-6)/2,-(56-6)/2,0]) cylinder(r=3, h=1.4 );
-      translate([ (85-6)/2, (56-6)/2,0]) cylinder(r=3, h=1.4 );
-    }
-    
-    translate([-85/2+3.5,-49/2,-1]) cylinder(d=2.75, h=3);
-    translate([-85/2+3.5, 49/2,-1]) cylinder(d=2.75, h=3);
-    translate([58-85/2+3.5,-49/2,-1]) cylinder(d=2.75, h=3);
-    translate([58-85/2+3.5, 49/2,-1]) cylinder(d=2.75, h=3);
-  }
-  
-  // Header
-  translate([3.5-85/2+29-10*2.54,49/2-2.54,1.4])
-    header(20,2);
-  
-  translate([-85/2,-56/2,1.4])  
-  {
-    color("silver") 
-    {
-      // Ethernet
-      translate([85-19,11.5-16/2,0]) cube([21,16,13.8]);
-    
-      // USB
-      translate([85-15, 29-13/2,0]) cube([17,13,15.5]);
-      translate([85-15, 47-13/2,0]) cube([17,13,15.5]);
-      
-      // micro USB
-      translate([10.6-8/2,-1.5,0]) cube([8,6,2.6]);
-      
-      // HDMI
-      translate([32-15/2,-1.5,0]) cube([15,11.5,6.6]);
-    }
-    
-    color("darkgrey") 
-    {
-      // Audio
-      translate([53.5-7/2,-2,0]) 
-      {
-        translate([0,2,0]) cube([7,13,5.6]);
-        translate([7/2,0,5.6/2])rotate([-90,0,0]) cylinder(d=5.6,h=2);
-      }
-    
-      // Display
-      translate([1.1,(49-22)/2,0]) cube([4,22,5.5]);
-      
-      // Camera
-      translate([45-4/2,1.1,0]) cube([4,22,5.5]);
-    }
-    
-    // Micro SD Card
-    color("silver") translate([0,22,-2.9]) cube([13,14,1.5]);    
-    color("darkgrey") translate([-2.4,23.5,-2.65]) cube([2.4,11,1]);
-  }
+    color("RoyalBlue") 
+    translate([75,-240,65])
+    rotate([90,90,0])
+    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\estructuras\\carcasaventilador.stl",convexity = 3);
 }
+
+module rasp()
+{
+    color("Grey") 
+    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\rasp.stl",convexity = 3);
+}
+module cluster_rasp()
+{
+    
+color("YellowGreen") 
+translate([0,0,115]) 
+    rasp();
+color("ForestGreen") 
+translate([0,0,95]) 
+    rasp();
+color("YellowGreen") 
+translate([0,0,75]) 
+    rasp();
+color("ForestGreen") 
+translate([0,0,55]) 
+    rasp();
+color("YellowGreen") 
+translate([0,0,35]) 
+    rasp();
+color("ForestGreen") 
+translate([0,0,15]) 
+    rasp();
+}
+
+module switch()
+{
+    color("DarkCyan")
+    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\switch.stl",convexity = 3);
+}
+module ventilador()
+{
+    color("Grey") 
+    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\fan.stl",convexity = 3);
+}
+module usb3()
+{
+    color("Grey") 
+    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\usb3.stl",convexity = 3);
+    color("DarkSlateGray")
+    translate([0,6,0])
+    cube([41,15,128]);
+}
+
 
 module pared()
 {
- 
     cube([150,3,150]);
     cylinder(  150,   3, 3,false); 
-    cylinder(  150,   3, 3,false);
-    
+    cylinder(  150,   3, 3,false);   
 }
 
 module liston()
 {
-    cube([40,3,10]);   
+    cube([25,3,10]);   
+}
+
+module acceso_tarjetas(){
+ 
+    cylinder(  150,   3, 3,false); 
+    
+    translate([0,25,0])
+        cylinder(  150,   3, 3,false); 
+
+    translate([0,0,140])
+    rotate([0,0,90])
+        liston();
+
+    translate([0,0,0])
+    rotate([0,0,90])
+        liston();
 }
 
 module box()
 {
     
     //TARJETAS
-    translate([0,-55,0])
+    color("RoyalBlue")    translate([0,-55,0])
         acceso_tarjetas();
-    
-    /*pared();
+    translate([155,-240,5])
+    panelLateral();
+    translate([155,-115,5])
+    panelLateral();
+
+    /*
     translate([0,-70,140])
     rotate([0,0,90])
     liston();
@@ -115,7 +114,7 @@ module box()
     rotate([0,180,90])
     translate([70,0,-150])
     pared();
-    
+    */
     //BASE
     translate([0,-240,0])
     minkowski()
@@ -125,72 +124,23 @@ module box()
       cylinder(2,10,3);
     }
     
-    */
-    
-    
+    carcasaVentilador();
 }
-
-module prism(l, w, h){
-   polyhedron(
-           points=[[0,0,0], [l,0,0], [l,w,0], [0,w,0], [0,w,h], [l,w,h]],
-           faces=[[0,1,2,3],[5,4,3,2],[0,4,5,1],[0,3,4],[5,2,1]]
-           );
-}
-
-module cluster_6()
+module box_things()
 {
-translate([0,0,115]) 
-    pi3();
-translate([0,0,95]) 
-    pi3();
-translate([0,0,75]) 
-    pi3();
-translate([0,0,55]) 
-    pi3();
-translate([0,0,35]) 
-    pi3();
-translate([0,0,15]) 
-    pi3();
+    translate([50,-100,10])
+    //rotate([90,180,90])
+    usb3();
+
+    translate([16,-240,5])
+    ventilador();
+
+    translate([50,-40,0])
+    rotate([0,0,180])
+    cluster_rasp();
 }
 
-module acceso_tarjetas(){
- 
-    cylinder(  150,   3, 3,false); 
-    
-    translate([0,40,0])
-        cylinder(  150,   3, 3,false); 
-
-    translate([0,0,140])
-    rotate([0,0,90])
-        liston();
-
-    translate([0,0,0])
-    rotate([0,0,90])
-        liston();
-}
-
-module tejado_gay()
-{
-prism(150, 250, 10);
-rotate([0,90,0])
-translate([-5,250,0])
-cylinder(150,5,5);
-}
-
-translate([50,-35,0])
-cluster_6();
-
-//cluster_6();
-//color("PaleGreen") 
+//box_things();
 box();
 
 
-
-/*
-rotate([0,0,180])
-translate([-150,-250,0])
-tejado_gay();
-tejado_gay();
-
-
-       
