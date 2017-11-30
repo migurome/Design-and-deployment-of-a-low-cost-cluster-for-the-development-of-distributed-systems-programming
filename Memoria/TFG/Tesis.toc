@@ -1,0 +1,13 @@
+\select@language {spanish}
+\contentsline {chapter}{Agradecimientos}{\es@scroman {ix}}{chapter*.1}
+\contentsline {chapter}{Resumen}{\es@scroman {xi}}{chapter*.2}
+\contentsline {part}{I\hspace {1em}Conceptos b\'asicos}{1}{part.1}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introducci\'on}{3}{section.1.1}
+\contentsline {section}{Notas bibliogr\'aficas}{3}{section.1.1}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{3}{section.1.1}
+\contentsline {part}{II\hspace {1em}Ap\'endices}{5}{part.2}
+\contentsline {chapter}{\numberline {A}As\IeC {\'\i } se hizo...}{7}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Introducci\'on}{7}{section.Alph1.1}
+\contentsline {part}{Bibliograf\IeC {\'\i }a}{9}{appendix*.6}
+\contentsline {chapter}{Lista de acr\'onimos}{10}{section*.7}

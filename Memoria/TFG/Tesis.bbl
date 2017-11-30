@@ -1,0 +1,11 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Bautista et\ al.(1998)Bautista, Oetiker, Partl, Hyna y
+  Schlegl}]{ldesc2e}
+{\sc Bautista, T.}, {\sc Oetiker, T.}, {\sc Partl, H.}, {\sc Hyna, I.} y {\sc
+  Schlegl, E.}
+\newblock {\em Una Descripción de \LaTeXe\/}.
+\newblock Versión electrónica, 1998.
+
+\end{thebibliography}

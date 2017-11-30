@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2016/W32TeX)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Tesis.aux
+A level-1 auxiliary file: Cascaras/cover.aux
+A level-1 auxiliary file: Cascaras/dedicatoria.aux
+A level-1 auxiliary file: Cascaras/agradecimientos.aux
+A level-1 auxiliary file: Cascaras/resumen.aux
+A level-1 auxiliary file: TeXiS/TeXiS_toc.aux
+A level-1 auxiliary file: Capitulos/Parte1.aux
+A level-1 auxiliary file: Capitulos/01Capitulo1.aux
+A level-1 auxiliary file: Apendices/ParteApendices.aux
+A level-1 auxiliary file: Apendices/01ApendiceA.aux
+A level-1 auxiliary file: Cascaras/bibliografia.aux
+The style file: TeXiS/TeXiS.bst
+A level-1 auxiliary file: TeXiS/TeXiS_acron.aux
+A level-1 auxiliary file: Cascaras/fin.aux
+Database file #1: nuestros.bib
+Database file #2: latex.bib
+Database file #3: otros.bib
+You've used 1 entry,
+            2962 wiz_defined-function locations,
+            1092 strings with 12673 characters,
+and the built_in function-call counts, 694 in all, are:
+= -- 42
+> -- 42
+< -- 0
++ -- 16
+- -- 15
+* -- 61
+:= -- 111
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 9
+chr.to.int$ -- 1
+cite$ -- 1
+duplicate$ -- 50
+empty$ -- 50
+format.name$ -- 18
+if$ -- 129
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 12
+newline$ -- 9
+num.names$ -- 4
+pop$ -- 29
+preamble$ -- 1
+purify$ -- 9
+quote$ -- 0
+skip$ -- 17
+stack$ -- 0
+substring$ -- 11
+swap$ -- 26
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 7
+warning$ -- 0
+while$ -- 3
+width$ -- 0
+write$ -- 15

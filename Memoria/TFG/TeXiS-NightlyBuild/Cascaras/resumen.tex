@@ -1,0 +1,38 @@
+%---------------------------------------------------------------------
+%
+%                      resumen.tex
+%
+%---------------------------------------------------------------------
+%
+% Contiene el capítulo del resumen.
+%
+% Se crea como un capítulo sin numeración.
+%
+%---------------------------------------------------------------------
+
+\chapter{Resumen}
+\cabeceraEspecial{Resumen}
+
+\begin{FraseCelebre}
+\begin{Frase}
+Cualquier tecnolog\'ia suficientemente avanzada es indistinguible de la magia.
+\end{Frase}
+\begin{Fuente}
+Arthur C. Clarke (1917-2008) Escritor ingl\'es de ciencia ficci\'on.
+\end{Fuente}
+\end{FraseCelebre}
+
+La computación evolutiva es una rama de la IA que engloba un conjunto de técnicas que, a través de la simulación de procesos naturales bioinspirados, son utilizados para la resolución de problemas complejos de búsqueda y aprendizaje.\par
+Este trabajo presenta una serie de técnicas evolutivos aplicadas a la generación automática de contenidos en videojuegos. El objetivo de este Trabajo de Fin de Grado es automatizar procesos tediosos y repetitivos propios de un videojuego mediante el uso de estas técnicas  y utilizarlas para crear un videojuego simple. Para ello hemos dividido el trabajo en dos bloques principales: un generador de mapas sobre los que se desarrollará el juego -formados por diferentes salas- y un generador de estrategias o Inteligencias Artificiales (IAs) para los enemigos contra los que se enfrenta el jugador en el videojuego.\par
+Los mapas sobre los que se desarrolla el juego se generan utilizando un algoritmo evolutivo. La estructura de datos que se ha considerado utilizar para representar los mapas del videojuego es un grafo que representa el genotipo del individuo que haremos evolucionar. Las salas del mapa estarían representadas mediante los nodos del mismo, mientras que los pasillos que las unen serían las aristas.\par
+Por otra parte, la IA de los enemigos se obtendrá utilizando Programación Genética, técnica evolutiva que permite evolucionar programas o estrategias codificadas como expresiones.\par
+También se presenta un Framework de Programación Genética que permite experimentar con las técnicas de generación de IAs, permitiendo modificar y ajustar cualquiera de los parámetros involucrados en el proceso. \par
+
+\endinput
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:
