@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.28)  30 NOV 2017 18:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.28)  30 NOV 2017 18:32
 entering extended mode
 **./Tesis.tex
 (Tesis.tex
@@ -629,7 +629,66 @@ LaTeX Info: Redefining \ref on input line 118.
 LaTeX Info: Redefining \pageref on input line 118.
 LaTeX Info: Redefining \nameref on input line 118.
 
-(Tesis.out) (Tesis.out)
+(Tesis.out) (Tesis.out
+! I can't write on file `Tesis.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: 
+! I can't write on file `.pdf'.
+Please type another file name for output: tesis1
+)
 \@outlinefile=\write6
 \openout6 = `Tesis.out'.
 
@@ -639,8 +698,7 @@ Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count149
-
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count150
 \scratchdimen=\dimen159
@@ -688,7 +746,7 @@ Package babel Info: Redefining spanish shorthand "?
 \evensidemarginOriginal=\skip75
 \oddsidemarginOriginal=\skip76
 \longTitulo=\skip77
-<Imagenes/Bitmap/ucm-ws.png, id=323, 518.1759pt x 593.5776pt>
+<Imagenes/Bitmap/ucm-ws.png, id=335, 518.1759pt x 593.5776pt>
 File: Imagenes/Bitmap/ucm-ws.png Graphic file (type png)
 <use Imagenes/Bitmap/ucm-ws.png>
 Package pdftex.def Info: Imagenes/Bitmap/ucm-ws.png  used on input line 168. on
@@ -705,6 +763,12 @@ Type  H <return>  for immediate help.
                                                   
 l.168 \makeCover
                 
+? tesis
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
 ? 
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language append on input line 168.
@@ -1380,54 +1444,54 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 46.
  [17]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 76.
+(babel)             in language append on input line 75.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 76.
+(babel)             in language append on input line 75.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 76.
+(babel)             in language append on input line 75.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 76.
+(babel)             in language append on input line 75.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 76.
+(babel)             in language append on input line 75.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 76.
+(babel)             in language append on input line 75.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 76.
+(babel)             in language append on input line 75.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 76.
+(babel)             in language append on input line 75.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 76.
+(babel)             in language append on input line 75.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 76.
+(babel)             in language append on input line 75.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 76.
+(babel)             in language append on input line 75.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 76.
+(babel)             in language append on input line 75.
  [18]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 95.
+(babel)             in language append on input line 94.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 95.
+(babel)             in language append on input line 94.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 95.
+(babel)             in language append on input line 94.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 95.
+(babel)             in language append on input line 94.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 95.
+(babel)             in language append on input line 94.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 95.
+(babel)             in language append on input line 94.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 95.
+(babel)             in language append on input line 94.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 95.
+(babel)             in language append on input line 94.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 95.
+(babel)             in language append on input line 94.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 95.
+(babel)             in language append on input line 94.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 95.
+(babel)             in language append on input line 94.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 95.
+(babel)             in language append on input line 94.
  [19])
 \tf@toc=\write7
 \openout7 = `Tesis.toc'.
@@ -2072,7 +2136,7 @@ Package babel Info: Redefining spanish shorthand "?
 
 
 ]
-<Imagenes/Bitmap/1.jpg, id=703, 361.35pt x 257.96375pt>
+<Imagenes/Bitmap/1.jpg, id=718, 361.35pt x 257.96375pt>
 File: Imagenes/Bitmap/1.jpg Graphic file (type jpg)
 <use Imagenes/Bitmap/1.jpg>
 Package pdftex.def Info: Imagenes/Bitmap/1.jpg  used on input line 36. on input
@@ -2145,7 +2209,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 52.
  [12]
-<Imagenes/Bitmap/2.jpg, id=742, 332.74312pt x 321.45094pt>
+<Imagenes/Bitmap/2.jpg, id=757, 332.74312pt x 321.45094pt>
 File: Imagenes/Bitmap/2.jpg Graphic file (type jpg)
 <use Imagenes/Bitmap/2.jpg>
 Package pdftex.def Info: Imagenes/Bitmap/2.jpg  used on input line 55. on input
@@ -2309,7 +2373,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 117.
  [16]
-<Imagenes/Bitmap/3.png, id=775, 569.12625pt x 216.81pt>
+<Imagenes/Bitmap/3.png, id=790, 569.12625pt x 216.81pt>
 File: Imagenes/Bitmap/3.png Graphic file (type png)
 <use Imagenes/Bitmap/3.png>
 Package pdftex.def Info: Imagenes/Bitmap/3.png  used on input line 122. on inpu
@@ -2488,7 +2552,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 40.
  [19]
-<Imagenes/Bitmap/5.png, id=791, 569.12625pt x 299.1175pt>
+<Imagenes/Bitmap/5.png, id=806, 569.12625pt x 299.1175pt>
 File: Imagenes/Bitmap/5.png Graphic file (type png)
 <use Imagenes/Bitmap/5.png>
 Package pdftex.def Info: Imagenes/Bitmap/5.png  used on input line 43. on input
@@ -2561,14 +2625,14 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 67.
  [21]
-<Imagenes/Bitmap/6.jpg, id=803, 722.7pt x 276.03125pt>
+<Imagenes/Bitmap/6.jpg, id=817, 722.7pt x 276.03125pt>
 File: Imagenes/Bitmap/6.jpg Graphic file (type jpg)
 <use Imagenes/Bitmap/6.jpg>
 Package pdftex.def Info: Imagenes/Bitmap/6.jpg  used on input line 73. on input
  line 73.
 Package pdftex.def Info: Requested size: 360.0pt x 137.50142pt on input line 73
 .
-<Imagenes/Bitmap/7.jpg, id=804, 722.7pt x 292.09125pt>
+<Imagenes/Bitmap/7.jpg, id=818, 722.7pt x 292.09125pt>
 File: Imagenes/Bitmap/7.jpg Graphic file (type jpg)
 <use Imagenes/Bitmap/7.jpg>
 Package pdftex.def Info: Imagenes/Bitmap/7.jpg  used on input line 76. on input
@@ -2607,7 +2671,7 @@ l.83 ...caso se decide con una probabilidad \texit
                                                   {Pi} (normalmente del 50%)...
 
 ? 
-<Imagenes/Bitmap/8.png, id=811, 569.12625pt x 541.02126pt>
+<Imagenes/Bitmap/8.png, id=825, 569.12625pt x 541.02126pt>
 File: Imagenes/Bitmap/8.png Graphic file (type png)
 <use Imagenes/Bitmap/8.png>
 Package pdftex.def Info: Imagenes/Bitmap/8.png  used on input line 93. on input
@@ -2641,7 +2705,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 94.
 [23]
-<Imagenes/Bitmap/9.png, id=817, 569.12625pt x 320.19624pt>
+<Imagenes/Bitmap/9.png, id=831, 569.12625pt x 320.19624pt>
 File: Imagenes/Bitmap/9.png Graphic file (type png)
 <use Imagenes/Bitmap/9.png>
 Package pdftex.def Info: Imagenes/Bitmap/9.png  used on input line 99. on input
@@ -2829,7 +2893,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 144.
 
 [27]
-<Imagenes/Bitmap/35.png, id=847, 488.82625pt x 449.68pt>
+<Imagenes/Bitmap/35.png, id=859, 488.82625pt x 449.68pt>
 File: Imagenes/Bitmap/35.png Graphic file (type png)
 <use Imagenes/Bitmap/35.png>
 Package pdftex.def Info: Imagenes/Bitmap/35.png  used on input line 151. on inp
@@ -2863,21 +2927,21 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 156.
  [28 <./Imagenes/Bitmap/35.png>]
-<Imagenes/Bitmap/37.png, id=862, 578.16pt x 257.96375pt>
+<Imagenes/Bitmap/37.png, id=874, 578.16pt x 257.96375pt>
 File: Imagenes/Bitmap/37.png Graphic file (type png)
 <use Imagenes/Bitmap/37.png>
 Package pdftex.def Info: Imagenes/Bitmap/37.png  used on input line 160. on inp
 ut line 160.
 Package pdftex.def Info: Requested size: 288.0011pt x 128.49739pt on input line
  160.
-<Imagenes/Bitmap/39.png, id=863, 545.03625pt x 509.905pt>
+<Imagenes/Bitmap/39.png, id=875, 545.03625pt x 509.905pt>
 File: Imagenes/Bitmap/39.png Graphic file (type png)
 <use Imagenes/Bitmap/39.png>
 Package pdftex.def Info: Imagenes/Bitmap/39.png  used on input line 162. on inp
 ut line 162.
 Package pdftex.def Info: Requested size: 251.9989pt x 235.75734pt on input line
  162.
-<Imagenes/Bitmap/41.png, id=864, 569.12625pt x 510.90875pt>
+<Imagenes/Bitmap/41.png, id=876, 569.12625pt x 510.90875pt>
 File: Imagenes/Bitmap/41.png Graphic file (type png)
 <use Imagenes/Bitmap/41.png>
 Package pdftex.def Info: Imagenes/Bitmap/41.png  used on input line 164. on inp
@@ -2911,7 +2975,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 164.
  [29 <./Imagenes/Bitmap/37.png>]
-<Imagenes/Bitmap/43.png, id=873, 280.04625pt x 496.85625pt>
+<Imagenes/Bitmap/43.png, id=885, 280.04625pt x 496.85625pt>
 File: Imagenes/Bitmap/43.png Graphic file (type png)
 <use Imagenes/Bitmap/43.png>
 Package pdftex.def Info: Imagenes/Bitmap/43.png  used on input line 166. on inp
@@ -3030,14 +3094,14 @@ L/cmm/m/it/10.95 ; PROGN\OT1/cmr/m/n/10.95 2(\OML/cmm/m/it/10.95 Izquierda; Ava
 nza\OT1/cmr/m/n/10.95 ))
  []
 
-<Imagenes/Bitmap/10.jpg, id=905, 621.07031pt x 367.3725pt>
+<Imagenes/Bitmap/10.jpg, id=917, 621.07031pt x 367.3725pt>
 File: Imagenes/Bitmap/10.jpg Graphic file (type jpg)
 <use Imagenes/Bitmap/10.jpg>
 Package pdftex.def Info: Imagenes/Bitmap/10.jpg  used on input line 195. on inp
 ut line 195.
 Package pdftex.def Info: Requested size: 288.0011pt x 170.35556pt on input line
  195.
-<Imagenes/Bitmap/12.jpg, id=907, 426.09187pt x 357.58594pt>
+<Imagenes/Bitmap/12.jpg, id=919, 426.09187pt x 357.58594pt>
 File: Imagenes/Bitmap/12.jpg Graphic file (type jpg)
 <use Imagenes/Bitmap/12.jpg>
 Package pdftex.def Info: Imagenes/Bitmap/12.jpg  used on input line 199. on inp
@@ -3219,7 +3283,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 38.
  [36]
-<Imagenes/Bitmap/13.jpg, id=925, 1027.84pt x 620.3175pt>
+<Imagenes/Bitmap/13.jpg, id=937, 1027.84pt x 620.3175pt>
 File: Imagenes/Bitmap/13.jpg Graphic file (type jpg)
 <use Imagenes/Bitmap/13.jpg>
 Package pdftex.def Info: Imagenes/Bitmap/13.jpg  used on input line 43. on inpu
@@ -3318,7 +3382,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 74.
 [38]
-<Imagenes/Bitmap/14.png, id=938, 240.9pt x 206.7725pt>
+<Imagenes/Bitmap/14.png, id=950, 240.9pt x 206.7725pt>
 File: Imagenes/Bitmap/14.png Graphic file (type png)
 <use Imagenes/Bitmap/14.png>
 Package pdftex.def Info: Imagenes/Bitmap/14.png  used on input line 98. on inpu
@@ -3430,7 +3494,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 125.
  [41]
-<Imagenes/Bitmap/15.png, id=955, 589.20125pt x 360.34625pt>
+<Imagenes/Bitmap/15.png, id=967, 589.20125pt x 360.34625pt>
 File: Imagenes/Bitmap/15.png Graphic file (type png)
 <use Imagenes/Bitmap/15.png>
 Package pdftex.def Info: Imagenes/Bitmap/15.png  used on input line 131. on inp
@@ -3531,7 +3595,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 178.
  [44]
-<Imagenes/Bitmap/16.jpg, id=980, 803.0pt x 602.25pt>
+<Imagenes/Bitmap/16.jpg, id=992, 803.0pt x 602.25pt>
 File: Imagenes/Bitmap/16.jpg Graphic file (type jpg)
 <use Imagenes/Bitmap/16.jpg>
 Package pdftex.def Info: Imagenes/Bitmap/16.jpg  used on input line 191. on inp
@@ -3570,7 +3634,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 192.
 [45]
-<Imagenes/Bitmap/17.jpg, id=987, 803.0pt x 602.25pt>
+<Imagenes/Bitmap/17.jpg, id=999, 803.0pt x 602.25pt>
 File: Imagenes/Bitmap/17.jpg Graphic file (type jpg)
 <use Imagenes/Bitmap/17.jpg>
 Package pdftex.def Info: Imagenes/Bitmap/17.jpg  used on input line 196. on inp
@@ -3636,21 +3700,21 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 202.
  [47 <./Imagenes/Bitmap/17.jpg>]
-<Imagenes/Bitmap/18.png, id=999, 569.12625pt x 163.61125pt>
+<Imagenes/Bitmap/18.png, id=1011, 569.12625pt x 163.61125pt>
 File: Imagenes/Bitmap/18.png Graphic file (type png)
 <use Imagenes/Bitmap/18.png>
 Package pdftex.def Info: Imagenes/Bitmap/18.png  used on input line 208. on inp
 ut line 208.
 Package pdftex.def Info: Requested size: 360.0pt x 103.49753pt on input line 20
 8.
-<Imagenes/Bitmap/19.png, id=1001, 569.12625pt x 163.61125pt>
+<Imagenes/Bitmap/19.png, id=1013, 569.12625pt x 163.61125pt>
 File: Imagenes/Bitmap/19.png Graphic file (type png)
 <use Imagenes/Bitmap/19.png>
 Package pdftex.def Info: Imagenes/Bitmap/19.png  used on input line 213. on inp
 ut line 213.
 Package pdftex.def Info: Requested size: 360.0pt x 103.49753pt on input line 21
 3.
-<Imagenes/Bitmap/20.png, id=1003, 569.12625pt x 385.44pt>
+<Imagenes/Bitmap/20.png, id=1015, 569.12625pt x 385.44pt>
 File: Imagenes/Bitmap/20.png Graphic file (type png)
 <use Imagenes/Bitmap/20.png>
 Package pdftex.def Info: Imagenes/Bitmap/20.png  used on input line 218. on inp
@@ -3781,7 +3845,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language append on input line 258.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 258.
-<Imagenes/Bitmap/21.png, id=1020, 406.51875pt x 357.335pt>
+<Imagenes/Bitmap/21.png, id=1032, 406.51875pt x 357.335pt>
 File: Imagenes/Bitmap/21.png Graphic file (type png)
 <use Imagenes/Bitmap/21.png>
 Package pdftex.def Info: Imagenes/Bitmap/21.png  used on input line 261. on inp
@@ -3815,7 +3879,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 263.
  [51]
-<Imagenes/Bitmap/22.png, id=1025, 358.33875pt x 462.72874pt>
+<Imagenes/Bitmap/22.png, id=1037, 358.33875pt x 462.72874pt>
 File: Imagenes/Bitmap/22.png Graphic file (type png)
 <use Imagenes/Bitmap/22.png>
 Package pdftex.def Info: Imagenes/Bitmap/22.png  used on input line 273. on inp
@@ -3888,14 +3952,14 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language append on input line 276.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 276.
-<Imagenes/Bitmap/24.png, id=1037, 951.555pt x 561.09625pt>
+<Imagenes/Bitmap/24.png, id=1049, 951.555pt x 561.09625pt>
 File: Imagenes/Bitmap/24.png Graphic file (type png)
 <use Imagenes/Bitmap/24.png>
 Package pdftex.def Info: Imagenes/Bitmap/24.png  used on input line 285. on inp
 ut line 285.
 Package pdftex.def Info: Requested size: 323.9978pt x 191.05273pt on input line
  285.
-<Imagenes/Bitmap/25.png, id=1038, 1367.1075pt x 817.0525pt>
+<Imagenes/Bitmap/25.png, id=1050, 1367.1075pt x 817.0525pt>
 File: Imagenes/Bitmap/25.png Graphic file (type png)
 <use Imagenes/Bitmap/25.png>
 Package pdftex.def Info: Imagenes/Bitmap/25.png  used on input line 287. on inp
@@ -3930,7 +3994,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 288.
 
 [54 <./Imagenes/Bitmap/24.png>]
-<Imagenes/Bitmap/26.png, id=1047, 764.8575pt x 249.93375pt>
+<Imagenes/Bitmap/26.png, id=1059, 764.8575pt x 249.93375pt>
 File: Imagenes/Bitmap/26.png Graphic file (type png)
 <use Imagenes/Bitmap/26.png>
 Package pdftex.def Info: Imagenes/Bitmap/26.png  used on input line 291. on inp
@@ -4299,7 +4363,7 @@ l.65 	\item \texit
                   {Curar:} durante cuatro turnos el PNJ no realizará ninguna...
 
 ? 
-<Imagenes/Bitmap/27.png, id=1072, 379.4175pt x 265.99374pt>
+<Imagenes/Bitmap/27.png, id=1084, 379.4175pt x 265.99374pt>
 File: Imagenes/Bitmap/27.png Graphic file (type png)
 <use Imagenes/Bitmap/27.png>
 Package pdftex.def Info: Imagenes/Bitmap/27.png  used on input line 69. on inpu
@@ -4430,7 +4494,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 83.
  [62]
-<Imagenes/Bitmap/28.png, id=1091, 569.12625pt x 449.68pt>
+<Imagenes/Bitmap/28.png, id=1103, 569.12625pt x 449.68pt>
 File: Imagenes/Bitmap/28.png Graphic file (type png)
 <use Imagenes/Bitmap/28.png>
 Package pdftex.def Info: Imagenes/Bitmap/28.png  used on input line 86. on inpu
@@ -4480,7 +4544,7 @@ l.102 &
 l.102 &[0.3, 0.2, 0.05, 0.1, 0.35]&
                                    \par
 ? 
-<Imagenes/Bitmap/29.png, id=1098, 569.12625pt x 377.41pt>
+<Imagenes/Bitmap/29.png, id=1110, 569.12625pt x 377.41pt>
 File: Imagenes/Bitmap/29.png Graphic file (type png)
 <use Imagenes/Bitmap/29.png>
 Package pdftex.def Info: Imagenes/Bitmap/29.png  used on input line 105. on inp
@@ -4553,21 +4617,21 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 112.
  [65 <./Imagenes/Bitmap/29.png>]
-<Imagenes/Bitmap/30.png, id=1114, 569.12625pt x 554.07pt>
+<Imagenes/Bitmap/30.png, id=1126, 569.12625pt x 554.07pt>
 File: Imagenes/Bitmap/30.png Graphic file (type png)
 <use Imagenes/Bitmap/30.png>
 Package pdftex.def Info: Imagenes/Bitmap/30.png  used on input line 122. on inp
 ut line 122.
 Package pdftex.def Info: Requested size: 288.0011pt x 280.39072pt on input line
  122.
-<Imagenes/Bitmap/31.png, id=1115, 497.86pt x 377.41pt>
+<Imagenes/Bitmap/31.png, id=1127, 497.86pt x 377.41pt>
 File: Imagenes/Bitmap/31.png Graphic file (type png)
 <use Imagenes/Bitmap/31.png>
 Package pdftex.def Info: Imagenes/Bitmap/31.png  used on input line 124. on inp
 ut line 124.
 Package pdftex.def Info: Requested size: 288.0011pt x 218.32782pt on input line
  124.
-<Imagenes/Bitmap/32.png, id=1116, 384.43625pt x 425.59pt>
+<Imagenes/Bitmap/32.png, id=1128, 384.43625pt x 425.59pt>
 File: Imagenes/Bitmap/32.png Graphic file (type png)
 <use Imagenes/Bitmap/32.png>
 Package pdftex.def Info: Imagenes/Bitmap/32.png  used on input line 126. on inp
@@ -4601,7 +4665,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 126.
  [66 <./Imagenes/Bitmap/30.png>]
-<Imagenes/Bitmap/33.png, id=1122, 384.43625pt x 256.96pt>
+<Imagenes/Bitmap/33.png, id=1134, 384.43625pt x 256.96pt>
 File: Imagenes/Bitmap/33.png Graphic file (type png)
 <use Imagenes/Bitmap/33.png>
 Package pdftex.def Info: Imagenes/Bitmap/33.png  used on input line 128. on inp
@@ -4635,7 +4699,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 128.
  [67 <./Imagenes/Bitmap/31.png>]
-<Imagenes/Bitmap/34.png, id=1129, 328.22626pt x 206.7725pt>
+<Imagenes/Bitmap/34.png, id=1141, 328.22626pt x 206.7725pt>
 File: Imagenes/Bitmap/34.png Graphic file (type png)
 <use Imagenes/Bitmap/34.png>
 Package pdftex.def Info: Imagenes/Bitmap/34.png  used on input line 130. on inp
@@ -4988,7 +5052,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 223.
  [75]
-<Imagenes/Bitmap/47.png, id=1174, 569.12625pt x 463.7325pt>
+<Imagenes/Bitmap/47.png, id=1186, 569.12625pt x 463.7325pt>
 File: Imagenes/Bitmap/47.png Graphic file (type png)
 <use Imagenes/Bitmap/47.png>
 Package pdftex.def Info: Imagenes/Bitmap/47.png  used on input line 227. on inp
@@ -5046,7 +5110,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 231.
  [76 <./Imagenes/Bitmap/47.png>]
-<Imagenes/Bitmap/44.png, id=1185, 1373.13pt x 803.0pt>
+<Imagenes/Bitmap/44.png, id=1197, 1373.13pt x 803.0pt>
 File: Imagenes/Bitmap/44.png Graphic file (type png)
 <use Imagenes/Bitmap/44.png>
 Package pdftex.def Info: Imagenes/Bitmap/44.png  used on input line 234. on inp
@@ -5058,7 +5122,7 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 234--234
  [][] 
  []
 
-<Imagenes/Bitmap/45.png, id=1186, 603.75563pt x 626.34pt>
+<Imagenes/Bitmap/45.png, id=1198, 603.75563pt x 626.34pt>
 File: Imagenes/Bitmap/45.png Graphic file (type png)
 <use Imagenes/Bitmap/45.png>
 Package pdftex.def Info: Imagenes/Bitmap/45.png  used on input line 236. on inp
@@ -5104,7 +5168,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language append on input line 237.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 237.
-<Imagenes/Bitmap/54.png, id=1192, 1085.55562pt x 701.62125pt>
+<Imagenes/Bitmap/54.png, id=1204, 1085.55562pt x 701.62125pt>
 File: Imagenes/Bitmap/54.png Graphic file (type png)
 <use Imagenes/Bitmap/54.png>
 Package pdftex.def Info: Imagenes/Bitmap/54.png  used on input line 240. on inp
@@ -5138,7 +5202,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 241.
  [78 <./Imagenes/Bitmap/45.png>]
-<Imagenes/Bitmap/57.png, id=1198, 1085.55562pt x 701.62125pt>
+<Imagenes/Bitmap/57.png, id=1210, 1085.55562pt x 701.62125pt>
 File: Imagenes/Bitmap/57.png Graphic file (type png)
 <use Imagenes/Bitmap/57.png>
 Package pdftex.def Info: Imagenes/Bitmap/57.png  used on input line 243. on inp
@@ -5173,7 +5237,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 244.
 
 [79 <./Imagenes/Bitmap/54.png>]
-<Imagenes/Bitmap/55.png, id=1207, 805.0075pt x 835.12pt>
+<Imagenes/Bitmap/55.png, id=1219, 805.0075pt x 835.12pt>
 File: Imagenes/Bitmap/55.png Graphic file (type png)
 <use Imagenes/Bitmap/55.png>
 Package pdftex.def Info: Imagenes/Bitmap/55.png  used on input line 246. on inp
@@ -5240,7 +5304,7 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 248.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-<Imagenes/Bitmap/56.png, id=1217, 805.0075pt x 835.12pt>
+<Imagenes/Bitmap/56.png, id=1229, 805.0075pt x 835.12pt>
 File: Imagenes/Bitmap/56.png Graphic file (type png)
 <use Imagenes/Bitmap/56.png>
 Package pdftex.def Info: Imagenes/Bitmap/56.png  used on input line 278. on inp
@@ -5373,7 +5437,7 @@ Package babel Info: Redefining spanish shorthand "?
 
 
 ]
-<Imagenes/Bitmap/46.png, id=1236, 377.91188pt x 400.49625pt>
+<Imagenes/Bitmap/46.png, id=1248, 377.91188pt x 400.49625pt>
 File: Imagenes/Bitmap/46.png Graphic file (type png)
 <use Imagenes/Bitmap/46.png>
 Package pdftex.def Info: Imagenes/Bitmap/46.png  used on input line 42. on inpu
@@ -5497,21 +5561,21 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language append on input line 30.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 30.
-<Imagenes/Bitmap/48.png, id=1250, 819.06pt x 640.3925pt>
+<Imagenes/Bitmap/48.png, id=1262, 819.06pt x 640.3925pt>
 File: Imagenes/Bitmap/48.png Graphic file (type png)
 <use Imagenes/Bitmap/48.png>
 Package pdftex.def Info: Imagenes/Bitmap/48.png  used on input line 32. on inpu
 t line 32.
 Package pdftex.def Info: Requested size: 360.0pt x 281.47064pt on input line 32
 .
-<Imagenes/Bitmap/49.png, id=1251, 821.0675pt x 647.41875pt>
+<Imagenes/Bitmap/49.png, id=1263, 821.0675pt x 647.41875pt>
 File: Imagenes/Bitmap/49.png Graphic file (type png)
 <use Imagenes/Bitmap/49.png>
 Package pdftex.def Info: Imagenes/Bitmap/49.png  used on input line 34. on inpu
 t line 34.
 Package pdftex.def Info: Requested size: 323.9978pt x 255.4757pt on input line 
 34.
-<Imagenes/Bitmap/52.png, id=1252, 821.0675pt x 647.41875pt>
+<Imagenes/Bitmap/52.png, id=1264, 821.0675pt x 647.41875pt>
 File: Imagenes/Bitmap/52.png Graphic file (type png)
 <use Imagenes/Bitmap/52.png>
 Package pdftex.def Info: Imagenes/Bitmap/52.png  used on input line 36. on inpu
@@ -5545,14 +5609,14 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 36.
  [89 <./Imagenes/Bitmap/48.png>]
-<Imagenes/Bitmap/51.png, id=1258, 821.0675pt x 647.41875pt>
+<Imagenes/Bitmap/51.png, id=1270, 821.0675pt x 647.41875pt>
 File: Imagenes/Bitmap/51.png Graphic file (type png)
 <use Imagenes/Bitmap/51.png>
 Package pdftex.def Info: Imagenes/Bitmap/51.png  used on input line 38. on inpu
 t line 38.
 Package pdftex.def Info: Requested size: 323.9978pt x 255.4757pt on input line 
 38.
-<Imagenes/Bitmap/50.png, id=1259, 821.0675pt x 647.41875pt>
+<Imagenes/Bitmap/50.png, id=1271, 821.0675pt x 647.41875pt>
 File: Imagenes/Bitmap/50.png Graphic file (type png)
 <use Imagenes/Bitmap/50.png>
 Package pdftex.def Info: Imagenes/Bitmap/50.png  used on input line 40. on inpu
@@ -5586,7 +5650,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 40.
  [90 <./Imagenes/Bitmap/49.png> <./Imagenes/Bitmap/52.png>]
-<Imagenes/Bitmap/53.png, id=1266, 821.0675pt x 647.41875pt>
+<Imagenes/Bitmap/53.png, id=1278, 821.0675pt x 647.41875pt>
 File: Imagenes/Bitmap/53.png Graphic file (type png)
 <use Imagenes/Bitmap/53.png>
 Package pdftex.def Info: Imagenes/Bitmap/53.png  used on input line 42. on inpu
@@ -6356,15 +6420,8 @@ LaTeX Info: Redefining \% on input line 25.
 (Cascaras/bibliografia.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 223.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 223.
-
-
-Package rerunfilecheck Warning: File `Tesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Tesis.out':
-(rerunfilecheck)             Before: D55698F9FE951D2F204363D0A581CFDC;5677
-(rerunfilecheck)             After:  D55877D8D12EDC703164E8E1939053A6;5839.
+Package rerunfilecheck Info: File `Tesis.out' has not changed.
+(rerunfilecheck)             Checksum: D55877D8D12EDC703164E8E1939053A6;5839.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 223.
  )
 (\end occurred inside a group at level 2)
@@ -6373,10 +6430,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 223.
 ### semi simple group (level 1) entered at line 147 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 12976 strings out of 493312
- 192426 string characters out of 3138883
+ 12980 strings out of 493312
+ 192487 string characters out of 3138883
  299688 words of memory out of 3000000
- 15534 multiletter control sequences out of 15000+200000
+ 15537 multiletter control sequences out of 15000+200000
  22250 words of font info for 47 fonts, out of 3000000 for 9000
  1379 hyphenation exceptions out of 8191
  55i,14n,53p,1155b,967s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -6412,9 +6469,9 @@ ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/latxfont/line10.pfb>
-Output written on Tesis.pdf (132 pages, 3380415 bytes).
+Output written on tesis1.pdf (132 pages, 3382171 bytes).
 PDF statistics:
- 2279 PDF objects out of 2487 (max. 8388607)
+ 2292 PDF objects out of 2487 (max. 8388607)
  339 named destinations out of 1000 (max. 500000)
- 896 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 920 words of extra memory for PDF output out of 10000 (max. 10000000)
 
