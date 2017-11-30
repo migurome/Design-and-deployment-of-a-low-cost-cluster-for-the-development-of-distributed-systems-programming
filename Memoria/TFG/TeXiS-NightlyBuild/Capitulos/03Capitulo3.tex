@@ -4,7 +4,7 @@
 %
 %---------------------------------------------------------------------
 
-\chapter{Computación evolutiva y Programación genética}
+\chapter{Arquitectura del Cluster}
 
 \begin{FraseCelebre}
 \begin{Frase}
@@ -19,7 +19,7 @@ Manual de mantenimiento de IBM, año 1925
 %...
 %\end{resumen}
 
-\section{Computación evolutiva}
+\section{Componentes}
 \subsection{Antecedentes biológicos}
 Durante mucho tiempo, la teoría que se creyó válida acerca del origen de las especies fue el creacionismo: Todas las especies del planeta fueron creadas por Dios. Posteriormente, Georges Louis Leclerc y Jean-Baptiste Lamarck enunciaron sendas teorías que rebatían completamente la teoría creacionista, pero sin llegar a concretar bien cómo se desarrollaba este proceso de evolución. Más tarde, Charles Darwin indicó que la evolución se origina por medio de cambios aleatorios en rasgos hereditarios, combinados con un proceso de selección natural. Otros científicos, como August Weismann, Johann Gregor Mendel y James Mark Baldwin, completaron la teoría Darwinista, diciendo que había células que podían transmitir información hereditaria, mientras que otras no. Llevaron a cabo un experimento con ratas que demostraba que, no por el hecho de perder una extremidad, los descendientes nacen sin ella; o proponiendo que, si el aprendizaje ayuda a la supervivencia, tendrán más descendencia los individuos con más capacidad de aprendizaje. Todo ello, dio origen al llamado Neo-Darwinismo.\par
 Actualmente, el pensamiento evolutivo se explica mediante el Neo-Darwinismo, que promulga que hacen falta cuatro procesos para explicar toda vida en el planeta:\par
@@ -30,7 +30,11 @@ Actualmente, el pensamiento evolutivo se explica mediante el Neo-Darwinismo, que
 \item Competencia
 \end{itemize}
 
-\subsection{Representación}
+\subsection{Diseño de prototipos}
+\subsection{Prototipo A}
+\subsection{Prototipo B}
+\subsection{Prototipo C}
+
 La computación evolutiva es una manera de solucionar problemas complejos, a través de la búsqueda y el aprendizaje, por medio de procesos inspirados en la evolución natural. La extensión de dichos modelos a la computación general es conocida como computación evolutiva. Dichos algoritmos tienen como propósito general transformar una determinada estructura, pasando por una serie de transformaciones de forma iterativa, para que ésta vaya siendo cada vez más apta para cumplir un determinado cometido.\par
 Los AGs son parte fundamental dentro de la computación evolutiva. Son una técnica de búsqueda y optimización inspirada en el proceso genético de los seres vivos. Con el paso de las generaciones las poblaciones van evolucionando y prevalecen los más fuertes o más adaptados al medio. Las poblaciones se representan mediante cadenas binarias y cada uno de sus miembros tiene un número determinado de posiciones, a las que se denominan Genes.\par
 En un AG, se seleccionan un número determinado de individuos, pudiendo utilizar diferentes métodos para hacer la selección, siendo los individuos seleccionados los progenitores. Estos progenitores se cruzan con otros y son sometidos a un proceso de mutación de los que surge la descendencia, que debe recombinarse con la población inicial. Este proceso se puede repetir las veces que se crea conveniente. \par
@@ -45,7 +49,7 @@ Un Algoritmo Evolutivo (AE) tiene la misma estructura básica del AG, pero tambié
 \item Operadores genéticos específicos para la representación, además de los propios de los AGs.
 \end{itemize}
 
-\subsection{Operadores genéticos}
+\subsection{Evaluacion de prototipos}
 Los operadores genéticos son los métodos que emplean los algoritmos genéticos y los algoritmos evolutivos para que se pueda mantener la diversidad de la población. Los principales operadores genéticos existentes son:\par
 \begin{itemize}
 \item Operadores de selección: Son los encargados de elegir cuáles individuos son los que tendrán oportunidad de reproducirse, cruzarse con otros o ser mutados para pasar a la siguiente generación.
