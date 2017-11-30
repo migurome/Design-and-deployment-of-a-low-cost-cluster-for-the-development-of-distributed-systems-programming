@@ -1,3 +1,4 @@
+
 module panelLateral()
 {
     color("DarkKhaki") 
@@ -21,7 +22,10 @@ module rasp()
 }
 module cluster_rasp()
 {
-    
+ 
+color("grey") 
+translate([0,0,135]) 
+    rasp();    
 color("YellowGreen") 
 translate([0,0,115]) 
     rasp();
@@ -42,25 +46,25 @@ translate([0,0,15])
     rasp();
 }
 
-module switch()
-{
-    color("DarkCyan")
-    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\switch.stl",convexity = 3);
-}
+
 module ventilador()
 {
     color("Grey") 
     import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\fan.stl",convexity = 3);
 }
-module usb3()
-{
+
+module usb()
+{ 
     color("Grey") 
     import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\usb3.stl",convexity = 3);
     color("DarkSlateGray")
     translate([0,6,0])
-    cube([41,15,128]);
+    //Medidas reales
+    cube([40,25,195]);
+    color("Grey") 
+    translate([0,0,66])
+    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\usb3.stl",convexity = 3);
 }
-
 
 module pared()
 {
@@ -74,73 +78,59 @@ module liston()
     cube([25,3,10]);   
 }
 
-module acceso_tarjetas(){
- 
-    cylinder(  150,   3, 3,false); 
-    
-    translate([0,25,0])
-        cylinder(  150,   3, 3,false); 
+module switch()
+{
+  /* 
+    intersection (){
+    translate([70,45,0]) 
+    resize(newsize=[200,160,70]) sphere(r=10);
+    cube([140,90,30]);
+        }
+        
+    */
+    cube([140,90,30]);
 
-    translate([0,0,140])
-    rotate([0,0,90])
-        liston();
-
-    translate([0,0,0])
-    rotate([0,0,90])
-        liston();
 }
+
 
 module box()
 {
-    
-    //TARJETAS
-    color("RoyalBlue")    translate([0,-55,0])
-        acceso_tarjetas();
-    translate([155,-240,5])
-    panelLateral();
-    translate([155,-115,5])
-    panelLateral();
+  
+   // translate([155,-240,5])
+   // panelLateral();
+   // translate([155,-115,5])
+   // panelLateral();
 
-    /*
-    translate([0,-70,140])
-    rotate([0,0,90])
-    liston();
-    translate([0,-70,0])
-    rotate([0,0,90])
-    liston();
-    rotate([0,0,270])
-    translate([0,150,0])
-    pared();
-    rotate([0,180,90])
-    translate([70,0,-150])
-    pared();
-    */
     //BASE
-    translate([0,-240,0])
+    translate([0,-300,0])
     minkowski()
     {
-      cube([150,240,1.5]);
+      cube([200,300,1.5]);
       //cylinder(r=2,h=1);
       cylinder(2,10,3);
     }
-    
-    carcasaVentilador();
 }
+
 module box_things()
 {
-    translate([50,-100,10])
-    //rotate([90,180,90])
-    usb3();
+    translate([0,-55,110])
+    rotate([90,180,90])
+    usb();
 
-    translate([16,-240,5])
+    translate([40,-120,160])
+    rotate([90,180,90])
     ventilador();
 
-    translate([50,-40,0])
-    rotate([0,0,180])
+   translate([0,-50,30])
+    rotate([90,0,90])
     cluster_rasp();
+    
+    translate([40,-280,5])
+    color("RoyalBlue") 
+    switch();
 }
 
-//box_things();
+box_things();
 box();
 
 

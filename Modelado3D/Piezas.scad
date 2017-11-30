@@ -11,34 +11,28 @@ module rasp()
     import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\rasp.stl",convexity = 3);
 }
 
-module usb1()
-{
-    color("Grey") 
-    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\usb3.stl",convexity = 3);
-}
-
-module usb2()
-{
-    color("Grey") 
-    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\usb2.stl",convexity = 3);
-}
-
-module usb3()
-{
+module usb()
+{ 
     color("Grey") 
     import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\usb3.stl",convexity = 3);
     color("DarkSlateGray")
     translate([0,6,0])
-    cube([41,15,128]);
+    //Medidas reales
+    cube([40,25,195]);
+    color("Grey") 
+    translate([0,0,66])
+    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\usb3.stl",convexity = 3);
 }
 
 module switch()
 {
-    color("DarkCyan")
-    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\switch.stl",convexity = 3);
+   
+    intersection (){
+    translate([70,45,0]) 
+    resize(newsize=[200,160,70]) sphere(r=10);
+    cube([140,90,30]);
+        }
 }
-
-switch();
 
 module cluster_rasp()
 {
@@ -56,9 +50,8 @@ translate([0,0,15])
     rasp();
 }
 
+//usb();
+color("red")
+switch();
 
-module switch()
-{
-    color("DarkCyan")
-    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\switch.stl",convexity = 3);
-}
+
