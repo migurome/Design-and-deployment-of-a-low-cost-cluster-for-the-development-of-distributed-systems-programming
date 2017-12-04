@@ -3,7 +3,7 @@
 %                          Capítulo 4
 %
 %---------------------------------------------------------------------
-\chapter{T\'ecnicas para la generaci\'on de mazmorras}
+\chapter{Configuraci\'on del cluster}
 
 \begin{FraseCelebre}
 \begin{Frase}
@@ -18,17 +18,33 @@ Douglas Adams Novelista y humorista inglés.
 %...
 %\end{resumen}
 
-\section{Idea inicial}
+\section{Virtualizaci\'on del Sistema}
+\subsection{Raspbian y sus vicisitudes}
 La idea inicial de este trabajo era investigar y desarrollar técnicas para automatizar diferentes partes o elementos de un videojuego mediante AGs, y, si fuese posible, utilizar una red neuronal como elemento que otorgue una nota o medida de calidad -fitness- a los individuos. La intención es que, mediante técnicas de programación evolutiva, se logre automatizar los procesos de desarrollo del mayor número de elementos posibles de un juego.\par
 
-\section{Generaci\'on de mazmorras mediante algoritmos gen\'eticos}
-\subsection{Introducci\'on}
+\section{Montaje de servidores}
+\subsection{DHCP}
+\subsection{NFS}
+\subsection{SSH}
 Como se ha explicado anteriormente, se quieren generar mazmorras de forma automática utilizando AG. Con la descripción de mazmorra que hemos dado, la tarea principal es encontrar una implementación de cromosoma que describa correctamente toda la información relevante de una mazmorra, pero con la que además sea posible aplicar los operadores genéticos propios del AG.\par
 Un individuo de nuestro AG es entonces una mazmorra completa, es decir, un conjunto de salas interconectadas.\par
 Por lo tanto parece viable  que la representación para nuestro individuo sea un grafo que represente los elementos interconectados. Desde el punto de vista del AG, los grafos presentan ciertas ventajas: son fáciles de implementar, se pueden cortar y combinar con facilidad en poco tiempo y las mutaciones pueden consistir en añadir o quitar tanto nodos como aristas aleatorias.\par
 Otras ventajas que tiene la implementación mediante grafos son la gran variedad de implementaciones disponibles y la facilidad para realizar combinaciones y mutaciones entre grafos.\par
 
-\subsection{Decisiones de implementaci\'on}
+\section{Instalaci\'on de SIMCAN}
+\subsection{Gu\'ia paso a paso de instalaci\'on en arquitectura ARM}
+
+
+\section{Optimizaci\'on y rendimiento}
+\subsection{Modificaci\'on del GRUB}
+\subsection{Paralelizaci\'on del arranque en servidor}
+
+
+\section{Seguridad}
+\subsection{Eliminaci\'on de usuarios y permisos}
+
+\section{Inicializaci\'on del sistema mediante scripts}
+
 Ya decidido que la representación de las mazmorras será un grafo, existen múltiples formas de implementarlo. Teniendo en cuenta las operaciones a realizar, las distintas implementaciones tendrán diferentes costes, tanto temporales como en espacio.\par
 En nuestro caso comparamos tres implementaciones típicas, como se puede ver en \ref{fig:13}:\par
 \begin{itemize}
@@ -97,7 +113,6 @@ Nodo considerado & Lista de adyacencia\\
 \figurahere{Bitmap/14}{width=.6\textwidth}{fig:14}%
 {Adyacencia nodos}
 
-\subsection{Evaluación de las mazmorras: Visión general}
 El grafo será entonces el esqueleto que determina cómo están unidas las salas. El segundo paso consiste en rellenar ese esqueleto con los elementos propios del juego como puertas que unen las salas, enemigos, cofres y demás elementos decorativos. Esto se llevaría a cabo tras haber generado un grafo suficientemente bueno.\par
 Sin embargo, nos presentaban un problema fundamental para el correcto funcionamiento del AG, la función de evaluación, esto es, ¿cuán bueno es un grafo?\par
 Debido a la complejidad de la implementación, tuvimos que descartar la idea inicial de que la función de evaluación la realizara una red neuronal previamente entrenada con ejemplos a mano. Optamos entonces por crear una función de fitness que tuviese un funcionamiento similar, evaluando cada grafo en función de diversos aspectos clave, cada uno de ellos con un peso que podríamos variar hasta dar con una ponderación adecuada. Ahora bien, ¿cuáles son estos aspectos clave?\par
@@ -113,18 +128,14 @@ Tras un profundo análisis, consideramos que había 5 puntos importantes que eran 
 \item \textbf{El tamaño de las salas:} se favorece que las salas tengan una forma rectangular (apaisada), de manera que representarlas en una pantalla sea m\'as estético. Este parámetro es el menos relevante.
 \end{itemize}
 
-\subsection{Evaluación de las mazmorras: Detalle}
 A continuación explicamos cómo valoramos cada uno de esos aspectos.\par
-\subsubsection{Distancia entre salas clave}
 El recorrido natural del jugador debería ser ir desde la sala inicial hasta la que contenga la llave, y luego encontrar la sala final para pasar al siguiente nivel. Por este motivo, decidimos \textbf{maximizar} la distancia (en salas o nodos) desde el origen hasta la sala de la llave y desde la sala de la llave hasta la sala final. Para el cálculo de la distancia, realizamos un recorrido en anchura (BFS) sobre el grafo. Para que una CC pueda puntuar en este aspecto, es necesario que contenga las tres salas clave. Favorecer mazmorras que solo tuviesen dos de ellas podría desembocar en individuos a los que les faltase una de las salas clave, lo cual no es permisible.\par
 
 
 	\[DistanciaSalasClave = distancia(SalaInicio, SalaLlave) +\]\[+ distancia(SalaLlave, SalaFin)\]\par
 
-\subsubsection{Tamaño de la mazmorra}
 El tamaño de la mazmorra no es más que el número de salas que tiene la CC. Determinar si este era un aspecto que debíamos maximizar o minimizar no fue sencillo. Si maximizamos, corríamos el riesgo de generar mazmorras demasiado grandes y si minimizamos, sucedería lo contrario. Decidimos que lo mejor sería \textbf{minimizar} este aspecto, y en combinación con la distancia entre salas clave, se produciría un ``tira y afloja''\ en el que un aspecto favorecería mazmorras con muchas salas, mientras que el otro potenciaría aquellas más pequeñas. Si estos dos parámetros se ajustaban correctamente, podríamos generar mazmorras con un número adecuado de salas (entre 15 y 30, según nuestro criterio).\par
 
-\subsubsection{Conexión entre salas}
 Para evitar mazmorras demasiado complejas debíamos \textbf{minimizar} la interconexión entre salas. A \textit{priori} puede parecer que minimizar este aspecto conllevaría favorecer aquellas mazmorras que tuviesen pocas salas, pero al valorar la distancia entre salas clave como algo positivo lo que este factor favorece es la generación de mazmorras con varias salas interconectadas, pero de forma mínima \ref{fig:15}. \par
 
 \figurahere{Bitmap/15}{width=1\textwidth}{fig:15}%
@@ -137,7 +148,6 @@ La forma de minimizar la interconexión es penalizar aquellas CCs en donde las sa
 
 Donde \textit{n} es el número de salas que tiene la CC y \textit{grado(i)} es el número de aristas que tiene la sala \textit{i}.\par
 
-\subsubsection{Dispersión de enemigos y cofres}
 Este parámetro sin duda debía ser maximizado ya que lo que se buscaba era que estos elementos del juego estuviesen muy repartidos. Para un elemento del juego, por ejemplo cofres, el parámetro de dispersión se establece como la distancia media (en salas) que separa a cada cofre del resto. Esta distancia se calcula para cada cofre de la CC y luego se realiza la media total. Más formalmente:\par
 
 	\[Dispersion(e) = \frac{\sum\limits_{i=1}^{n_e}\frac{\sum\limits_{k=1}^{n_e}distancia(i, k)}{n-1}}{n}
@@ -145,13 +155,11 @@ Este parámetro sin duda debía ser maximizado ya que lo que se buscaba era que es
 
 Donde \textit{e} es un elemento del juego (enemigos o cofres) y $n_e$ es la cantidad de dicho elemento en la CC. La función \textit{distancia(i, k)} devuelve la distancia en salas entre el elemento \textit{i} y el elemento \textit{k}, si ambos están dentro de la misma sala la función vale 0.\par
 
-\subsubsection{Tama\'no de las salas}
 Para favorecer las salas de forma apaisada, se debía \textbf{maximizar} el ratio entre ancho y alto de las salas. Para ello, se calcula la media de ancho y alto de todas las salas de la CC. Luego se calcula el \textit{ratio}, simplemente dividiendo estos dos valores. Por último, se le resta 1. Si el \textit{ratio} entre ancho y alto de una CC es menor que 1, implica que, de media, sus salas son más altas que anchas, luego este parámetro será negativo y penalizará en la función de fitness. De forma contraria, si el ratio es mayor que 1, el valor sumará. Si es igual a 1, es decir, salas normalmente cuadradas, el parámetro no penaliza, pero tampoco suma al fitness.\par
 
 	\[RatioSalas = \frac{mediaAncho}{mediaAlto} - 1
 \]
 
-\subsubsection{La funci\'on de fitness}
 La función que determinaría entonces cuán buena es una mazmorra sería la que sigue:\par
 
 \begin{fleqn}
@@ -167,11 +175,9 @@ La función que determinaría entonces cuán buena es una mazmorra sería la que sig
 
 Multiplicamos por 0.4 el número de salas de la CC para que evitar que se penalicen de más las mazmorras grandes, ya que tras algunas pruebas, restar el número directamente provocaba que las mazmorras resultantes fueran demasiado pequeñas.\par
 
-\subsection{Operadores del Algoritmo Gen\'etico}
 Ya hemos determinado cuál es la estructura de los individuos dentro del AG, así como la forma de evaluar cada uno de ellos. Falta entonces explicar otro de los aspectos fundamentales de la programación evolutiva: los operadores de selección, cruce y mutación.\par
 Como ya se ha explicado anteriormente, variando entre diferentes métodos se modifica la forma en la que una población de individuos evoluciona. En concreto, nosotros decidimos implementar y probar las posibles combinaciones de los siguientes métodos.\par
 
-\subsubsection{M\'etodos de selecci\'on}
 Con distintos operadores de selección, se determina qué individuos pasarán a la fase de cruce, es decir, se eligen los individuos que podrían ser progenitores de nuevos individuos que conformarán la siguiente generación. Puede parecer lógico optar por un método de selección que siempre elige a los mejores individuos de cada generación, sin embargo, al hacer esto se puede estar reduciendo significativamente el espacio de soluciones posibles que el AE pueda alcanzar. En ocasiones puede suceder que la combinación entre un buen individuo y otro no tan bueno ocasione la creación de un nuevo individuo que supere al mejor individuo obtenido.\par
 Distintos métodos de selección afectan de forma diferente a las poblaciones que se obtienen. Un método de selección que favorezca mucho a los mejores individuos provoca un aumento en la presión selectiva y a su vez se puede producir una evolución en avalancha o una convergencia prematura a causa de la falta de diversidad.\par
 La presión selectiva se define como la aptitud máxima entre la aptitud media de una población.\par
@@ -183,7 +189,6 @@ Dicho esto, los operadores probados en la generación de mapas han sido:\par
 \item Selección por Torneo: Se seleccionan individuos en grupos de 3 y se van escogiendo los que mejor adaptación tengan, hasta completar la población.
 \item Selección por Ranking: Se ordena en orden decreciente a los individuos según su fitness o adaptación. 
 \end{itemize}
-\subsubsection{M\'etodos de cruce}
 En el caso particular de los grafos, es difícil aplicar operadores de cruce complejos que realmente aporten algo nuevo en la generación de nuevos individuos. Por el momento, hemos probado con:\par
 \begin{itemize}
 \item Cruce monopunto: se elige un número aleatorio entre 1 y N-2, siendo N el número total de nodos del grafo. Esto genera dos subgrafos diferentes que serán combinados con los subgrafos del otro progenitor.\par
@@ -198,7 +203,6 @@ Sin embargo, no es suficiente con unir los subgrafos de A y B; es necesario que 
 Para evitarlo, una vez unidos los subgrafos en uno solo, se elige un conjunto pequeño de las posibles aristas entre los nodos del subgrafo A y los de B y se añaden al nuevo grafo. Una vez se han añadido estas aristas aleatorias, se reescriben los índices para que el rango sea de nuevo de  0 a N-1 \ref{fig:17}.\par
 \item Cruce multipunto: el cruce multipunto se basa en varios cortes monopunto. Se eligen varios puntos de corte, y se combinan los diferentes subgrafos de A y B para conseguir los nuevos individuos.
 \end{itemize}
-\subsubsection{M\'etodos de mutaci\'on}
 De manera eventual e intentando imitar el fenómeno de la mutación aleatoria que sucede de forma natural, algunos individuos pueden modificar su estructura interna sin necesidad de combinarlo con otros. Éste es el operador de mutación.\par
 Hasta el momento, tenemos cuatro implementaciones de mutación para los grafos: \par
 \begin{itemize}
@@ -219,7 +223,6 @@ Hasta el momento, tenemos cuatro implementaciones de mutación para los grafos: \
 
 \item Mutación combinada: una mutación que combina las 3 anteriores como una sola.\par
 \end{itemize}
-\subsection{La implementaci\'on en detalle}
 Una vez vistos los conceptos teóricos del cromosoma, es necesario explicar cómo será internamente un individuo del AG en lenguaje C++.\par
 Para empezar, hemos decidido abstraer el concepto de Grafo del concepto Cromosoma. En lugar de que el Cromosoma en sí contenga los elementos propios de un grafo, hemos optado por encapsular el Grafo dentro del Cromosoma. \par
 Aun así, el Cromosoma mantiene las operaciones propias de un individuo: función de evaluación, control del bloating, guarda parámetros de adaptación, acumulada, etc.\par
@@ -255,7 +258,6 @@ Por último, implementamos un método que permitiese conocer las CCs de un grafo, 
 En un primer momento, decidimos que la clase \emph{ComponenteConexa \textless N \textgreater} (la cual hereda de Grafo) nos podía permitir extender las operaciones que tenían los Grafos, como por ejemplo saber cuántos ciclos presentaba, sabiendo que en ellas no existen nodos inconexos unos de otros.
 Sin embargo, como se explicó anteriormente, está es una operación compleja y muy costosa en tiempo, así que a efectos prácticos, las CCs son iguales que los Grafos, pero con la garantía de que todos los nodos están conectados.
 Dentro del repositorio del proyecto se pueden encontrar más métodos, pero estos son los más relevantes.
-\subsection{Individuos obtenidos}
 A continuación se muestran ejemplos de mazmorras obtenidas con estos parámetros:
 \figurahere{Bitmap/21}{width=1\textwidth}{fig:21}%
 {Ejemplo de mazmorra 1}
@@ -273,7 +275,6 @@ A continuación se muestran ejemplos de mazmorras obtenidas con estos parámetros:
 {Ejemplo de mazmorra 2}
 Como se observa, las mazmorras son bastante buenas, ya que tienen el número de salas adecuado (entre 15 y 30) y  no están demasiado interconectadas. Por tanto, en vista a los resultados empíricos llevados a cabo, podemos suponer que la función de fitness es lo suficientemente adecuada.
 Estos individuos han sido obtenidos tras varias horas de pruebas de parámetros del AG. El tiempo de generación de individuos con un fitness aceptable (como los mostrados), está entre 1 y 3 minutos, un tiempo que consideramos aceptable como tiempo de carga de contenido en la ejecución del juego.\par
-\section{Interfaz de usuario}
 Al elegir como lenguaje de desarrollo C++, tuvimos que superar el problema de la  representación gráfica. Este problema nos surgió en el desarrollo de las mazmorras. Decidimos utilizar la misma librería gráfica con la que posteriormente desarrollaríamos el juego:  SFML. 
 Para poder extraer conclusiones de la ejecución de los distintos AGs era necesario crear algo similar a un visor de gráficas de función. Para visualizar las gráficas de evolución y analizar la convergencia, se ha implementado un visor de funciones \ref{fig:24} -similar a la librería de java jMathPlot- con algunas de las operaciones que necesitábamos. A saber:
 \begin{itemize}

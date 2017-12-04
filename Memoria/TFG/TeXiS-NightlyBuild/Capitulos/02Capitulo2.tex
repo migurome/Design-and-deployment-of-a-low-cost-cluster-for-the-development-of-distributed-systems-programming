@@ -27,7 +27,6 @@ Para analizar el estado del arte de este proyecto, tenemos que tener en cuenta 3
 \end{itemize}
 
 
-\section{Generación Procedural}
 
 Generación procedural es el método de creación de contenidos a través de algoritmos, en oposición a un método de creación manual, y se aplica tanto en simulaciones gráficas por computadora como en videojuegos, instalaciones, programación y en música. Los fractales son un ejemplo de animación mediante generación procedural: funciones matemáticas gráficas repetidas hasta el infinito. El sonido digital también se puede generar de forma procedural, un uso que se ha desarrollado mucho para la música electrónica.\par
 En videojuegos e instalaciones la generación procedural se utiliza en función de que el contenido se genere en la computadora que los contiene, en tiempo real, y no de manera previa y renderizado en paquetes gráficos predefinidos. Se utiliza principalmente para la generación de ambientes y mapas, aunque también se aplica para IA y jugabilidad. Se utiliza para generar de manera rápida y detallada espacios infinitos y patrones de singularidad en objetos, simulaciones y personajes. También se utiliza para la creación de sistemas de partículas para agua, fuego y gases; o para generar un sinfín de actores digitales únicos y diferentes como reemplazo de extras. Sin embargo, no se suele utilizar para el contenido final, el cual en general se muestra ya preestablecido. En \citep*{Gamasutra} se muestra una técnica para generar mazmorras aleatorias. Los pasos para ello son:\par
@@ -44,7 +43,6 @@ En videojuegos e instalaciones la generación procedural se utiliza en función de
 \item Finalmente, se añaden los pasillos a la mazmorra. Si los nodos están cerca horizontalmente, se añade una línea horizontal. Lo mismo para los nodos cercanos verticalmente. Si no es así, se añaden dos líneas que formen una L.
 \end{itemize}
  
-\section{Técnicas Evolutivas}
 Existen proyectos que, mediante gramáticas evolutivas, generan historias de fondo que aportan consistencia a la experiencia de juego, con la intención de evitar que éstas deban ser ideadas por desarrolladores de forma manual \citep*{Garcia}.\par
 Existen herramientas que permiten utilizar algoritmos genéticos para generar mazmorras en base a unos parámetros de diseño \citep*{Font}, que tienen que venir definidos previamente.\par
 En este sentido cabe reseñar el ejemplo explicado en \citep*{Toguelius},  que cuenta cómo se pueden desarrollar funciones heurísticas que miden propiedades de los mapas y comprueban si afectan a la experiencia de juego. Se diseñaron dos representaciones diferentes de mapas, una para un juego de estrategia genérico y otro para el videojuego Starcraft. Mediante este método se puede automatizar completamente la generación de mapas o como herramienta de apoyo para diseñadores humanos.\par
@@ -89,7 +87,6 @@ Se trata de un problema NP-completo. No hay un método que asegure que se va a ob
 En este problema, un individuo es una permutación de todos los nodos del grafo. La población de individuos se selecciona mediante el método de la Ruleta. Dada la facilidad para evaluar si hay que añadir un color extra o no, los individuos suelen ser bastante buenos. \par
 Dada una permutación de nodos de un grafo, hay que colorear dicho grafo recorriendo en orden los nodos, asignándoles a cada uno el primer color que puede tener cumpliendo las restricciones. La función de Fitness busca obtener el mínimo número de colores necesarios para el coloreamiento completo del grafo. Para la reproducción de los individuos se puede utilizar cruce monopunto, mientras que la mutación se puede cambiar de orden dos nodos del individuo.\par
 
-\section{Inteligencia Artificial}
 
 En un videojuego, se define la inteligencia artificial -IA- como la simulación de inteligencia -comportamiento, modo de actuar, etc.- de los PNJs y que normalmente incluirá algo relacionado con los siguientes aspectos:\par
 \begin{itemize}

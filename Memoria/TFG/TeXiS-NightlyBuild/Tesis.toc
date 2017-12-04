@@ -13,86 +13,49 @@
 \contentsline {section}{\numberline {1.5}Goals}{6}{section.1.5}
 \contentsline {section}{\numberline {1.6}Structure}{7}{section.1.6}
 \contentsline {chapter}{\numberline {2}Trabajo relacionado}{10}{chapter.2}
-\contentsline {section}{\numberline {2.1}Generaci\'on Procedural}{10}{section.2.1}
-\contentsline {section}{\numberline {2.2}T\'ecnicas Evolutivas}{12}{section.2.2}
-\contentsline {section}{\numberline {2.3}Inteligencia Artificial}{15}{section.2.3}
-\contentsline {section}{\numberline {2.4}Nuestra aportaci\'on}{16}{section.2.4}
+\contentsline {section}{\numberline {2.1}Nuestra aportaci\'on}{16}{section.2.1}
 \contentsline {chapter}{\numberline {3}Arquitectura del Cluster}{18}{chapter.3}
-\contentsline {section}{\numberline {3.1}Componentes}{18}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Antecedentes biol\'ogicos}{18}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Dise\~no de prototipos}{19}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Prototipo A}{19}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Prototipo B}{19}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}Prototipo C}{19}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Evaluacion de prototipos}{20}{subsection.3.1.6}
-\contentsline {subsubsection}{\numberline {3.1.6.1}Operadores de selecci\'on}{21}{subsubsection.3.1.6.1}
-\contentsline {subsubsection}{\numberline {3.1.6.2}Operadores de cruce}{23}{subsubsection.3.1.6.2}
-\contentsline {subsubsection}{\numberline {3.1.6.3}Operadores de mutaci\'on}{24}{subsubsection.3.1.6.3}
-\contentsline {subsection}{\numberline {3.1.7}Funci\'on de Fitness}{25}{subsection.3.1.7}
-\contentsline {subsection}{\numberline {3.1.8}Mejoras en el algoritmo evolutivo}{25}{subsection.3.1.8}
-\contentsline {subsubsection}{\numberline {3.1.8.1}Elitismo}{25}{subsubsection.3.1.8.1}
-\contentsline {subsubsection}{\numberline {3.1.8.2}Contractividad}{25}{subsubsection.3.1.8.2}
-\contentsline {section}{\numberline {3.2}Programaci\'on gen\'etica}{25}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Representaci\'on}{26}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}M\'etodos de inicializaci\'on}{27}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Operadores}{27}{subsection.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.3.1}Operadores de selecci\'on}{27}{subsubsection.3.2.3.1}
-\contentsline {subsubsection}{\numberline {3.2.3.2}Operadores de cruce}{28}{subsubsection.3.2.3.2}
-\contentsline {subsubsection}{\numberline {3.2.3.3}Operadores de mutaci\'on}{28}{subsubsection.3.2.3.3}
-\contentsline {subsubsection}{\numberline {3.2.3.4}Funci\'on de evaluaci\'on -Fitness-}{31}{subsubsection.3.2.3.4}
-\contentsline {subsection}{\numberline {3.2.4}Mejoras en el algoritmo evolutivo}{31}{subsection.3.2.4}
-\contentsline {subsubsection}{\numberline {3.2.4.1}Control del bloating}{31}{subsubsection.3.2.4.1}
-\contentsline {subsubsection}{\numberline {3.2.4.2}Intrones}{32}{subsubsection.3.2.4.2}
-\contentsline {subsection}{\numberline {3.2.5}Ejemplos}{32}{subsection.3.2.5}
-\contentsline {chapter}{\numberline {4}T\'ecnicas para la generaci\'on de mazmorras}{35}{chapter.4}
-\contentsline {section}{\numberline {4.1}Idea inicial}{35}{section.4.1}
-\contentsline {section}{\numberline {4.2}Generaci\'on de mazmorras mediante algoritmos gen\'eticos}{36}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Introducci\'on}{36}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Decisiones de implementaci\'on}{36}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Evaluaci\'on de las mazmorras: Visi\'on general}{39}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Evaluaci\'on de las mazmorras: Detalle}{41}{subsection.4.2.4}
-\contentsline {subsubsection}{\numberline {4.2.4.1}Distancia entre salas clave}{41}{subsubsection.4.2.4.1}
-\contentsline {subsubsection}{\numberline {4.2.4.2}Tama\~no de la mazmorra}{41}{subsubsection.4.2.4.2}
-\contentsline {subsubsection}{\numberline {4.2.4.3}Conexi\'on entre salas}{42}{subsubsection.4.2.4.3}
-\contentsline {subsubsection}{\numberline {4.2.4.4}Dispersi\'on de enemigos y cofres}{43}{subsubsection.4.2.4.4}
-\contentsline {subsubsection}{\numberline {4.2.4.5}Tama\'no de las salas}{43}{subsubsection.4.2.4.5}
-\contentsline {subsubsection}{\numberline {4.2.4.6}La funci\'on de fitness}{43}{subsubsection.4.2.4.6}
-\contentsline {subsection}{\numberline {4.2.5}Operadores del Algoritmo Gen\'etico}{44}{subsection.4.2.5}
-\contentsline {subsubsection}{\numberline {4.2.5.1}M\'etodos de selecci\'on}{44}{subsubsection.4.2.5.1}
-\contentsline {subsubsection}{\numberline {4.2.5.2}M\'etodos de cruce}{45}{subsubsection.4.2.5.2}
-\contentsline {subsubsection}{\numberline {4.2.5.3}M\'etodos de mutaci\'on}{48}{subsubsection.4.2.5.3}
-\contentsline {subsection}{\numberline {4.2.6}La implementaci\'on en detalle}{49}{subsection.4.2.6}
-\contentsline {subsection}{\numberline {4.2.7}Individuos obtenidos}{51}{subsection.4.2.7}
-\contentsline {section}{\numberline {4.3}Interfaz de usuario}{54}{section.4.3}
-\contentsline {chapter}{\numberline {5}T\'ecnicas para la generaci\'on de la inteligencia artificial}{57}{chapter.5}
-\contentsline {section}{\numberline {5.1}Idea inicial}{57}{section.5.1}
-\contentsline {section}{\numberline {5.2}Decisiones de implementaci\'on}{58}{section.5.2}
-\contentsline {section}{\numberline {5.3}Funci\'on de evaluaci\'on}{61}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Introducci\'on}{62}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Primera aproximaci\'on}{62}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Segunda aproximaci\'on}{65}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Tercera aproximaci\'on}{69}{subsection.5.3.4}
-\contentsline {subsection}{\numberline {5.3.5}Aproximaci\'on final}{70}{subsection.5.3.5}
-\contentsline {section}{\numberline {5.4}Operadores}{74}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Inicializador de la poblaci\'on}{74}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}M\'etodos de selecci\'on}{74}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Operador de cruce}{75}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Operadores de mutaci\'on}{75}{subsection.5.4.4}
-\contentsline {subsection}{\numberline {5.4.5}Eliminaci\'on de intrones}{75}{subsection.5.4.5}
-\contentsline {section}{\numberline {5.5}Paralelizaci\'on del fitness}{76}{section.5.5}
-\contentsline {section}{\numberline {5.6}Interfaz de usuario}{77}{section.5.6}
-\contentsline {section}{\numberline {5.7}Resultados}{78}{section.5.7}
-\contentsline {chapter}{\numberline {6}Framework de pruebas}{85}{chapter.6}
-\contentsline {chapter}{\numberline {7}Videojuego}{88}{chapter.7}
-\contentsline {section}{\numberline {7.1}Im\'agenes del videojuego}{89}{section.7.1}
-\contentsline {chapter}{\numberline {8}Trabajo individual}{93}{chapter.8}
-\contentsline {chapter}{\numberline {9}Conclusiones y trabajo futuro}{98}{chapter.9}
-\contentsline {section}{\numberline {9.1}Conclusiones en la generaci\'on de mazmorras}{98}{section.9.1}
-\contentsline {section}{\numberline {9.2}Conclusiones en la generaci\'on de inteligencias artificiales}{99}{section.9.2}
-\contentsline {section}{\numberline {9.3}Conclusiones generales}{99}{section.9.3}
-\contentsline {section}{\numberline {9.4}Trabajo futuro}{100}{section.9.4}
-\contentsline {section}{\numberline {9.5}Conclusions in dungeon generation:}{101}{section.9.5}
-\contentsline {section}{\numberline {9.6}Conclusions in artificial intelligence generation:}{101}{section.9.6}
-\contentsline {section}{\numberline {9.7}General conclusions:}{102}{section.9.7}
-\contentsline {section}{\numberline {9.8}Future work:}{102}{section.9.8}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{106}{appendix*.64}
+\contentsline {section}{\numberline {3.1}Componentes}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}Dise\~no del prototipo A}{19}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Modelado 3D}{19}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Resultados (fotos)}{19}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Dise\~no del prototipo B}{19}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Modelado 3D}{19}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Resultados (fotos)}{19}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Dise\~no del prototipo C}{19}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Modelado 3D}{19}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Resultados (fotos)}{19}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Evaluaci\'on de prototipos A,B,C}{19}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Rendimiento prototipos A.B,C}{19}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Temperatura prototipos A,B,C}{19}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Problemas}{20}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Falta de energ\'ia}{20}{subsection.3.6.1}
+\contentsline {subsubsection}{\numberline {3.6.1.1}Operadores de selecci\'on}{27}{subsubsection.3.6.1.1}
+\contentsline {chapter}{\numberline {4}Configuraci\'on del cluster}{34}{chapter.4}
+\contentsline {section}{\numberline {4.1}Virtualizaci\'on del Sistema}{34}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Raspbian y sus vicisitudes}{34}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Montaje de servidores}{35}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}DHCP}{35}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}NFS}{35}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}SSH}{35}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Instalaci\'on de SIMCAN}{36}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Gu\'ia paso a paso de instalaci\'on en arquitectura ARM}{36}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Optimizaci\'on y rendimiento}{36}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Modificaci\'on del GRUB}{36}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Paralelizaci\'on del arranque en servidor}{36}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}Seguridad}{36}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Eliminaci\'on de usuarios y permisos}{36}{subsection.4.5.1}
+\contentsline {section}{\numberline {4.6}Inicializaci\'on del sistema mediante scripts}{36}{section.4.6}
+\contentsline {chapter}{\numberline {5}Desarrollo del software}{56}{chapter.5}
+\contentsline {section}{\numberline {5.1}Nuestra aportaci\'on}{62}{section.5.1}
+\contentsline {chapter}{\numberline {6}Pruebas}{63}{chapter.6}
+\contentsline {section}{\numberline {6.1}Comparaci\'on con otros procesadores de mayor potencia}{63}{section.6.1}
+\contentsline {section}{\numberline {6.2}Estudio a partir de qu\'e nivel de uso del cluster merece la pena ante un procesador normal}{63}{section.6.2}
+\contentsline {section}{\numberline {6.3}Pruebas contra el cluster de Amazon(???)}{63}{section.6.3}
+\contentsline {chapter}{\numberline {7}Trabajo individual}{66}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusiones y trabajo futuro}{71}{chapter.8}
+\contentsline {section}{\numberline {8.1}Conclusiones generales}{72}{section.8.1}
+\contentsline {section}{\numberline {8.2}Trabajo futuro}{73}{section.8.2}
+\contentsline {section}{\numberline {8.3}General conclusions:}{74}{section.8.3}
+\contentsline {section}{\numberline {8.4}Future work:}{75}{section.8.4}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{79}{appendix*.45}

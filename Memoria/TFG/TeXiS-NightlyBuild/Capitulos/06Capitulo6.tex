@@ -4,7 +4,7 @@
 %
 %---------------------------------------------------------------------
 
-\chapter{Framework de pruebas}
+\chapter{Pruebas}
 
 \begin{FraseCelebre}
 \begin{Frase}
@@ -18,7 +18,9 @@ Richard Feynman, Físico estadounidense y premio Nobel de Física.
 %\begin{resumen}
 %...
 %\end{resumen}
-
+\section{Comparaci\'on con otros procesadores de mayor potencia}
+\section{Estudio a partir de qu\'e nivel de uso del cluster merece la pena ante un procesador normal}
+\section{Pruebas contra el cluster de Amazon(???)}
 Con la intención de que la estructura que ya teníamos fuese más versátil, decidimos ir un paso más allá permitiendo parametrizar el AE de una forma más fácil mediante una ventana en la interfaz desde la que poder establecer todos los parámetros.\par
 Además de los parámetros propios de evolución - población, operadores, probabilidades - permitimos seleccionar desde la interfaz que operaciones pueden ser utilizadas dentro de los árboles.\par
 Otra de las opciones seleccionables era la paralelización de la función de evaluación, lo que reduce de forma drástica el tiempo que tarda en evaluarse cada individuo, a costa eso sí, de no poder ver la simulación sobre los mapas. De está forma, si se pretende analizar la influencia de un nuevo operador sobre la evolución, se puede optar por no paralelizar y ver de forma fácil cuales son las estrategias de los individuos conforme evolucionan. Por otro lado, si ya se han realizado las pruebas necesarias y lo que se busca la obtención de resultados, seleccionando la opción de paralelizar se pueden reducir hasta 120 veces el tiempo total de ejecución, especialmente en poblaciones grandes.\par

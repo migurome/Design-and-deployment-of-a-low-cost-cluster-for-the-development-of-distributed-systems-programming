@@ -1,303 +1,123 @@
 %---------------------------------------------------------------------
 %
-%                          Capítulo 4
+%                          Capítulo 2
 %
 %---------------------------------------------------------------------
-\chapter{T\'ecnicas para la generaci\'on de la inteligencia artificial}
+
+\chapter{Desarrollo del software}
+
 \begin{FraseCelebre}
 \begin{Frase}
-    Las tres leyes de la robótica son:\par
-    1. Un robot no puede dañar a un ser humano ni, por inacción, permitir que un ser humano sufra daño.\par
-    2. Un robot debe obedecer las órdenes dadas por los seres humanos excepto cuando tales órdenes entren en conflicto con la Primera Ley.\par
-    3. Un robot debe proteger su propia existencia hasta donde esta protección no entre en conflicto con la Primera o Segunda Ley. \par
+Me gusta y me fascina el trabajo. Podría estar sentado horas y horas mirando a otros cómo trabajan.
 \end{Frase}
 \begin{Fuente}
-Isaac Asimov, Bioquímico y escritor estadounidense. 	
+Jerome K. Jerome, Humorista inglés.
 \end{Fuente}
 \end{FraseCelebre}
+
 %\begin{resumen}
 %...
 %\end{resumen}
-\section{Idea inicial}
-Para la parte relativa a la inteligencia artificial se pensó inicialmente en utilizar gramáticas evolutivas. Después de un profundo estudio y un análisis de las ventajas y desventajas, decidimos decantarnos por la \textbf{programación genética}. Las razón principal es que al utilizar programación genética trabajamos directamente con una codificación de los individuos en forma de árbol. Esto es importante ya que facilita mucho la adaptación al  videojuego y separa lo máximo posible la implementación y uso del AE con la inclusión de la IA en el videojuego. Por tanto, nuestro algoritmo para la IA se basa en la evolución de \textbf{árboles} que representan las distintas decisiones que toman nuestros PNJs.\par 
-Una vez habíamos decidido la tecnología, planteamos cómo íbamos a generar estas IAs para el videojuego. Decidimos que para cada PNJ íbamos a tener dos árboles: uno representa el árbol correspondiente al estado \textit{Patrulla}, que consiste en que los PNJs se mueven por la sala intentando encontrar al jugador y el otro representa el árbol correspondiente al estado \textit{Ataque}, en el cual los PNJs, una vez han encontrado al jugador, intentan acabar con él. De esta forma el enfoque utiliza programación genética con árboles diferentes dentro de cada estado de una máquina de estados.\par
-Es importante destacar que las IAs, a diferencia de las mazmorras, no se crean en tiempo de ejecución. Estas IAs se generan previamente y se añaden al videojuego. En nuestro caso concreto, se genera un número de IAs y en la ejecución del juego se asignan de forma aleatoria a cada PNJ. Esto nos facilitó el proceso ya que no debíamos preocuparnos por la eficiencia en tiempo. Lo que nos preocupaba únicamente era que las IAs fueran lo más realistas y divertidas posibles dentro de las limitaciones que teníamos.\par
-\section{Decisiones de implementaci\'on}
-Una vez elegida la técnica y representación para soportar la IA, lo primero que tuvimos que decidir eran las operaciones o acciones a realizar por nuestros PNJs.\par
-Las IAs debían ser capaces de realizar acciones básicas, como moverse, girar o atacar, en función de decisiones que dependerían de su estado dentro del mapa.\par
-Con estas directrices, las acciones serían nodos hoja en el árbol, mientras que las decisiones serían nodos intermedios, que, en base a la condición que representen, determinarían cuál o cuáles de sus hijos deben ser ejecutados.\par
-La gramática del árbol se divide entonces entre una serie de operaciones terminales y otras operaciones de función. Las reglas son sencillas. Como forman un árbol, las operaciones de función hacen las veces de nodos no hoja y las operaciones de terminales hacen de nodos hoja. Las operaciones de función pueden tener dos o más hijos. Por el contrario, las operaciones terminales no pueden tener ningún hijo, ya que son hoja. A continuación enumeramos todas las operaciones originales distinguiendo su tipo y explicando lo que implican en el juego.\par
-Las operaciones representadas con elementos terminales (nodos hoja) son:\par
-\begin{itemize}
-\item \texit{Avanzar:} el PNJ avanza una casilla en la dirección en la que mira.
-\item \texit{Girar Izquierda:} el PNJ gira 90º a la izquierda.
-\item \texit{Girar Derecha:} el PNJ gira 90º a la derecha.
-\item \texit{Cambiar Estado:} el PNJ cambia del árbol de \textit{Patrulla} al de \textit{Ataque}. Esta operación solo puede estar en el árbol de \textit{Patrulla}.
-\item \texit{Bloquear N:} el PNJ bloquea ataques en la dirección que mira durante \textit{N} ticks del juego. Esta operación solo puede estar en el árbol de \textit{Ataque}.
-\item \texit{Atacar:} el PNJ ataca en la dirección que mira. Esta operación solo puede estar en el árbol de \textit{Ataque}.
-\item \texit{Retroceder:} el PNJ retrocede en la dirección contraria a la que mira manteniendo su orientación fija. Esta operación solo puede estar en el árbol de \textit{Ataque}.
-\end{itemize}
-Las operaciones correspondientes a funciones son:\par
-\begin{itemize}
-\item \texit{ProgN2:} encadena dos operaciones.
-\item \texit{ProgN3:} encadena tres operaciones.
-\item \texit{Si jugador:} si hay un jugador está en la casilla adyacente al PNJ y en la dirección que mira, ejecuta  la primera acción y en caso contrario ejecuta la segunda. Este terminal solo puede estar en el árbol de \textit{Patrulla}.
-\item \texit{Si bloqueado:} si delante hay una casilla bloqueada (un borde, un muro, …) realiza una acción, si no otra.
-\item \texit{Si jugador en rango:} si el jugador está en rango de ataque, realiza una acción, si no, otra.
-\item \texit{Si jugador detectado:} si el jugador está en rango de detección, realiza una acción, si no, otra.
-\end{itemize}
-Estas funciones toman la forma de un \textit{if-then-else}, de tal forma que si se cumple la condición realizamos la operación del nodo derecho y si no, la del izquierdo.\par
-Después de muchas pruebas, como se detalla más adelante en el punto \textbf{5.3.5}, decidimos que necesitábamos cambiar algunos de los nodos del árbol de ataque. Los nuevos nodos función del árbol de ataque quedaron en esto:\par
-\begin{itemize}
-	\item \texit{ProgN2:} encadena dos operaciones.
-	\item \texit{ProgN3:} encadena tres operaciones.
-	\item \texit{Si bloqueado:} si delante hay una casilla bloqueada (un borde, un muro…) realiza una acción, si no otra.
-	\item \texit{Si jugador en rango:} si el jugador está en rango de ataque, realiza una acción, si no, otra.
-	\item \texit{Vida IA:} en función de la cantidad de vida del PNJ, realiza una acción u otra.
-	\item \texit{Vida Jugador:} en función de la cantidad de vida del jugador, realiza una acción u otra.
-\end{itemize}
-Los nuevos nodos terminales quedaron así:\par
-\begin{itemize}
-	\item \texit{Bloquear N:} el PNJ bloquea ataques en la dirección que mira durante N ticks del juego. 
-	\item \texit{Atacar:} el PNJ ataca en la dirección que mira.
-	\item \texit{Acercar:} el PNJ se acerca al jugador utilizando el algoritmo A*. Esto lo permitimos ya que decidimos que una vez el árbol de patrulla detecta al jugador, se conoce siempre la posición de este.
-	\item \texit{Alejar:} el PNJ retrocede en la dirección contraria a la que mira manteniendo su orientación fija
-	\item \texit{Curar:} durante cuatro turnos el PNJ no realizará ninguna acción y, una vez se hayan terminado, gana un punto de vida hasta el máximo.
-\end{itemize}
-Un ejemplo de programa en formato de árbol sería el indicado en la figura \ref{fig:27}.
-\figurahere{Bitmap/27}{width=.7\textwidth}{fig:27}%
-{Ejemplo árbol}
-Y así sería el ejemplo de este mismo árbol como instrucciones:\par
-	\[PROGN2 (SIBLOQ (GiraD, Avanza), SIJUGADOR (CambiaEstado, Avanza))
-\]
-Estas operaciones las decidimos mantener en un Enumerado. \par
-Posteriormente, elaboramos una clase Nodo que representa una operación dentro del árbol de decisión de la IA. Esta clase Nodo contiene a su vez un \textit{hash map} para poder acceder de forma constante al número de nodos hijos que puede tener una operación en el árbol.\par
-Para evitar que los árboles se volvieran demasiado largos, implementamos una función de control del bloating. En este caso concreto el control del bloating consiste en, una vez el árbol ha superado una profundidad máxima, podarlo y transformar todos los nodos situados en el nivel inferior en nodos terminales u hojas.\par
-\section{Función de evaluación}
-La función de evaluación de las IAs ha sido, sin duda, la parte más desafiante de este proyecto. Nos hemos frustrado en ocasiones y realizado multitud de pruebas, como se destaca en las siguientes páginas. Comenzó siendo una suma de valores ponderados y ha acabado siendo algo más parecido a lo que utilizamos en las mazmorras, una suma de elementos a maximizar, sustrayendo de estos elementos que consideramos malos y que por tanto deberían ser minimizados. El principal problema ha sido el tiempo de ejecución que rondaba unas doce horas. Eso nos ha dificultado mucho la posibilidad de realizar más pruebas y nos frenó bastante durante las primeras aproximaciones hasta que encontramos la solución.\par
-\subsection{Introducción}
-La función de evaluación nos planteó  una serie de preguntas a contestar que no eran sencillas. Teníamos varias dificultades añadidas de las cuales no hemos encontrado mucha información sobre el tema. En el tema de los videojuegos, como hemos podido leer en el estado del arte, sí que hay muchos estudios y técnicas desarrolladas para generar IAs que jueguen a videojuegos, desde juegos simples como el \textit{Space Invaders} hasta más complejos como el \textit{Street Fighter} \citep*{Street}. La ventaja que tienen esos juegos sobre el nuestro es que son IAs que se van a enfrentar a otras IAs y los mapas son siempre conocidos o irrelevantes. Sin embargo, nuestra IA teóricamente debe enfrentarse a un humano que no tiene por qué seguir una estrategia siquiera similar. Además los mapas son aleatorios puesto que se generan en cada ejecución del juego.\par
-Nuestro objetivo es intentar conseguir unas IAs buenas para un videojuego de forma automática. Esto es importante ya que las IAs no deben ganar siempre. Deben parecer inteligentes - podría ser más óptimo avanzar pegando espadazos a diestro y siniestro, pero no parecería muy natural - y tienen que ser divertidas, ya que, si te ganan siempre, el juego perdería su componente principal que es divertir al jugador.\par
-\subsection{Primera aproximación}
-Para conseguir una IA versátil decidimos crear una serie de mapas de prueba (6) y lanzar varias pruebas sobre cada uno de los mapas. Para cada prueba variamos la posición tanto del jugador como del PNJ. Para simular un jugador humano decidimos que era mejor que realizara actos aleatorios y no crearle nosotros un patrón de conducta o un árbol de decisión con el objetivo de evitar que nuestro algoritmo nos genere PNJs que sólo sepan jugar contra un tipo concreto de estrategia. De esta forma intentamos introducir el mayor grado de aleatoriedad a nuestro jugador con el objetivo de obtener un árbol de decisión capaz de enfrentarse a diferentes situaciones. Es por tanto una estrategia reactiva con la que se decide el movimiento o acción posible a partir del estado de juego actual, pero no tienen en cuenta las decisiones tomadas previamente.\par
-También pensamos que lo mejor sería dividir este AE en dos árboles simulando dos estados de una máquina de estados. Estos estados serían \textit{Patrulla} y \textit{Ataque}. En el primero, el algoritmo se centra en premiar el mayor número de superficie observada y el tiempo que tarda el PNJ en encontrar al jugador. En el árbol de Ataque, se parte de la premisa de que sabemos la posición del jugador -o la casilla inmediatamente anterior-. Esta función de evaluación premia el atacar el mayor número de veces al jugador y recibir el menor número de golpes, siendo este último menos importante; el enemigo siempre preferirá morir él y el jugador a que escapen ambos.\par
-Para evaluar un individuo, calculamos la media de puntuaciones obtenida en cada uno de los mapas de prueba. Para cada mapa de prueba el individuo tiene un número de turnos para demostrar su nivel adaptación. En esta primera aproximación el individuo disponía de 100 turnos por mapa, siguiendo el diagrama de flujo indicado en la figura \ref{fig:28}.\par
-\figurahere{Bitmap/28}{width=1\textwidth}{fig:28}%
-{Diagrama de flujo}
-Una vez el individuo ha terminado de evaluarse en este mapa, se guardan unos valores que determinan lo bueno que es.\par
-Estos valores eran:\par
-\begin{itemize}
-\item El número de casillas exploradas
-\item Turnos en el árbol de patrulla
-\item Golpes intentados
-\item Golpes recibidos
-\item Daño al jugador
-\end{itemize}
-De estos valores, nos interesaba maximizar el número de casillas exploradas, el número de golpes intentados y el daño al jugador. Por el contrario, queríamos minimizar el número de turnos en patrulla y los golpes recibidos por el PNJ.\par
-Como la función de evaluación queríamos que estuviese entre cero y uno, generamos un array con los valores óptimos para cada elemento a considerar. Estos óptimos eran:\par
-\noindent
-&[DimensionDelMapa, 0, 20, 0, 3]&\par
-Y una vez teníamos un valor entre cero y uno para cada elemento, pasamos a ponderarlo para conseguir un único valor que nos indicaría el fitness. Los pesos eran los siguientes: \par
-\noindent
-&[0.3, 0.2, 0.05, 0.1, 0.35]&\par
-Una vez se ha realizado el proceso como se muestra en la figura \ref{fig:29} se calcula la media de todos los mapas, la cual nos daría la evaluación final del individuo.\par
-\figurahere{Bitmap/29}{width=1\textwidth}{fig:29}%
-{Evaluación mapa}
-\subsection{Segunda aproximación}
-Después de esta nueva aproximación, decidimos modificar la función de evaluación para evitar el minimizar valores ya que siempre puntuaban al máximo si el individuo no hacía nada. Por ejemplo, si te quedas quieto, el jugador probablemente no irá a por ti y no recibirás heridas, o, si tu árbol de patrulla es simplemente cambiar al de ataque, los turnos eran mínimos, lo cual no nos parecía coherente. Finalmente decidimos que el árbol de patrulla iba a estar determinado por el tamaño del área explorada y el árbol de ataque por el número de golpes efectuados con éxito (aunque el jugador bloquee el golpe), el número de golpes bloqueados y el número de heridas infligidas al jugador. \par
-La simulación se lanza sobre seis mapas. En el primero sólo se coloca al jugador en una posición y es vacío. En los demás, están rellenos como se muestran en las figuras \ref{fig:30}, \ref{fig:31}, \ref{fig:32}, \ref{fig:33} y \ref{fig:34} y se lanzan cinco veces distintas, colocando cada vez al jugador en una de las casillas marcadas.\par
-Como se puede apreciar en las imágenes, el objetivo era crear una serie de salas diferentes para que el individuo, al ser colocado de forma aleatoria en cada una de las evaluaciones, se enfrente a diferentes situaciones y ver cómo de bueno es ese árbol de decisión con salas dispares.\par
-El flujo de la función de evaluación es el mismo que en la figura \ref{fig:28} y los elementos que valoramos pasaron a ser los siguientes:\par
-\begin{itemize}
-\item Número de casillas exploradas.
-\item Golpes intentados.
-\item Golpes bloqueados.
-\item Daño al jugador.
-\end{itemize}
-Eliminamos los óptimos por lo que la función de evaluación podía tomar cualquier valor y cuanto más grande fueran estos valores, más adaptado estaba ese individuo.\par
-Sin embargo, estos valores sí que decidimos ponderarlos de la siguiente manera:\par
-[0.5, 0.1, 0.05, 0.35]\par
-Estos valores surgieron de la discusión de intentar valorar, sobre uno, la mitad en el árbol de ataque y la mitad en el árbol de patrulla. Estos valores los fuimos refinando con pruebas y aproximaciones.\par
-\figurahere{Bitmap/30}{width=.8\textwidth}{fig:30}%
-{Mapa 1}
-\figurahere{Bitmap/31}{width=.8\textwidth}{fig:31}%
-{Mapa 2}
-\figurahere{Bitmap/32}{width=.8\textwidth}{fig:32}%
-{Mapa 3}
-\figurahere{Bitmap/33}{width=.8\textwidth}{fig:33}%
-{Mapa 4}
-\figurahere{Bitmap/34}{width=.7\textwidth}{fig:34}%
-{Mapa 5}
-\subsection{Tercera aproximación}
-Tras varias ejecuciones, nos dimos cuenta de que estábamos infravalorando el árbol de patrulla de la mayoría de individuos, ya que sólo valorábamos las casillas exploradas, lo que descartaba a individuos que se movían por la sala de forma más o menos ``inteligente''.\par
-Para está tercera aproximación, además de los elementos considerados anteriormente, incluimos en los cálculos cuántas casillas cubría el individuo.\par
-Otro factor importante para valorar a los individuos era que debían tener la oportunidad de detectar al jugador, algo que hasta el momento podía resultar difícil si el jugador y el individuo aparecían en lugares muy separados. Por está razón, decidimos que la posición aleatoria del individuo debía estar cerca de la del jugador pero siendo aún así aleatoria.\par
-Con tantos mapas de prueba, la función de evaluación demoraba mucho tiempo, así que decidimos optimizar en la medida de lo posible este paso. En primer lugar, en vez de re-evaluar cada individuo tras una modificación (cruce, mutación, bloating, intrones…) es más eficiente marcar a estos individuos como modificados y evaluarlos a todos tras haber pasado todas las posibles modificaciones.\par
-En lo respectivo a la función de fitness, consideramos una buena idea descartar a un individuo si no puntuaba en alguno de los mapas. Esto es, si tras ser probado en un mapa, el individuo no consigue puntuar en ningún aspecto, se detiene su evaluación y se le puntúa con 0.\par
-\subsection{Aproximación final}
-Entre la anterior aproximación y está implementación final tuvieron lugar varias decenas de combinaciones de los parámetros importantes de los individuos. Antes de hallar una función de fitness definitiva, pudimos comprobar que, dados los nodos originales utilizados en el árbol de ataque, era prácticamente imposible para las IAs matar al jugador. La mayoría de ejecuciones terminaban con individuos con árboles de patrulla prácticamente perfectos, pero que, o bien no pasaban a ataque, o pasaban pero no conseguían atacar al jugador.\par
-Por esto, decidimos cambiar los nodos utilizados en el árbol de ataque como se mencionó en el punto 5.2.\par
-La intención de estos nuevos nodos es proporcionar a las IAs algo más de información. En nuestro primer enfoque, existía un problema fundamental. Durante la patrulla, la IA debe encontrar al jugador y para ello no requiere -ni se le proporciona- ninguna información más allá de la que pueda conseguir por sí misma. Sin embargo, cometimos el error de pensar que, una vez encontrado el jugador, el árbol de ataque se encargaría de perseguir y matar al mismo, pero no fue así. Entre los factores que consideramos importantes en la fase de ataque no estaba el hecho de perseguir al jugador, ya que al incluirlo, los árboles de ataque tendían a hacer lo mismo que los de patrulla.\par
-Desde el comienzo, nuestra intención ha sido la de crear IAs que sean buenas y que no requieran de más información de la que puedan disponer. Sin embargo, nos parecía lógico que, una vez la IA hubiese patrullado hasta encontrar al jugador, pudiese saber donde se encuentra. Esto dio lugar a reemplazar el terminal de ``Avanza'' por un terminal algo más complejo, pero con una semántica similar: \textit{Acercar}. Este terminal, como una única acción, trazaría un camino hasta el jugador -mediante \textit{A*} \citep*{Intriago}- y movería al enemigo hasta una posición adyacente que se aproxime a él.\par
-Otro de los grandes obstáculos que obligabamos a superar a los individuos era enfrentarse a un jugador completamente aleatorio. Tras investigar más concretamente sobre evolucionar IAs en videojuegos roguelike, comprobamos que el hecho de que los individuos vivieran hasta consumir todos los turnos que tenían para ser evaluados era contraproducente, ya que en la mayoría de casos, los enemigos no suelen durar más de unos pocos segundos antes de que el jugador acabe con ellos. Si el jugador al que se enfrentaban nuestras IAs era poco realista, la evolución produciría IAs que podrían matar a una entidad que no representa un jugador real. Por tanto, a la hora de la verdad no tendrían un comportamiento como el observado durante su evolución.\par
-Por este motivo, decidimos hacer más inteligente el movimiento del jugador, pero sin  ser excesivo. La nueva implementación del jugador hacía que, de forma eventual, se fuese acercando al enemigo -nuestra IA- y una vez cerca, atacase o bloquease ataques de forma aleatoria, dando prioridad a la acción de atacar.\par
-Como la nueva operación de ``Acercar'', en conjunción a la nueva IA del jugador, podría facilitar demasiado el trabajo de atacar a la IA, incluimos los nuevos nodos de función VidaIA y VidaJugador, que permitirían a los individuos tomar decisiones en función de su nivel de vida como el del jugador respectivamente. Estos, junto con la acción de Curar, darían lugar a estrategias más complejas e interesantes.\par
-De forma análoga a las mazmorras, con la función de evaluación se pretendía favorecer a los individuos que hiciesen lo que tienen que hacer -se explica más adelante- y penalizar acciones inútiles o contraproducentes. La función de evaluación quedó de esta forma:\par
-En primer lugar, determinamos lo que los individuos debían hacer tanto en patrulla como en ataque. Las acciones que cuentan en patrulla son las casillas que la IA cubre, bien sean las andadas o las exploradas.\par
-\[PuntuacionPatrulla = CasillasAndadasPatrulla + \] \[ + CasillasExploradasPatrulla\]
-En el ataque podíamos puntuar más acciones. Como es lógico, lo primero son golpes que la IA intenta realizar. Si una IA no realiza la acción de atacar no puede ser buena, ya que nunca mataría al jugador.  También nos parecía relevante puntuar aquellas veces que el jugador intentaba atacar a la IA y está conseguía bloquear el ataque, ya que podría dar lugar a estrategias defensivas.\par
-Para favorecer a los individuos que también en ataque se mueven por la sala, decidimos contar también cuántas casillas cubría la IA en la fase de ataque. Con la intención de que el nuevo nodo Curar tuviese su importancia en la función de fitness, más allá del hecho de que podría mantener con vida a la IA durante más turnos, incluimos el número de veces que la IA conseguía recuperar un punto de vida, no simplemente realizar la acción de Curar, sino que además fuese útil.\par
-Por último, para evitar IAs que constantemente atacasen con la esperanza de que el jugador se posicionase justo delante, penalizamos todos los golpes que la IA intentaba donde no estaba el jugador. Si el jugador estaba delante, pero bloquea el ataque, ese golpe no es fallido.\par
-\[PuntuacionAtaque =Golpes + Bloqueos + CasillasAndadasAtaque +\] \[ + Curaciones - GolpesFallados \]
-Como se puede observar en ambos bloques, apenas hay acciones que penalizar, por esto, decidimos aplicar un factor que penalizase de forma drástica todo el conjunto de acciones realizadas si no se alcanzaban ciertos hitos.\par
-El primer factor  crucial para la patrulla es que la IA encuentre al jugador. Encontrar al jugador con el árbol de patrulla implica que se tiene que dar una secuencia de dos acciones. Primero, la IA debe haber ejecutado la acción SiDetectado y haber tomado la rama de Sí, lo que implica que en ese turno, el jugador está delante de la IA y esta lo ha visto. La segunda acción necesaria es que, tras haber detectado al jugador, las decisiones que tome la IA durante ese turno lleven a ejecutar un nodo CambiaEstado. A está secuencia de acciones lo denominamos el factor de patrulla, que tomará el valor 1 si se ha realizado y 0 en caso contrario. Si una IA no realiza estas dos acciones combinadas, puntuará 0.\par
-El segundo factor es el número de heridas que la IA ha conseguido infringir al jugador. Esto implica que una IA que no consigue herir al jugador también puntúe 0. Sin embargo, una IA que mate al jugador -conseguir herirlo 3 veces- multiplicará por 3 su fitness.\par
-Por último, se tuvieron en cuenta dos factores análogos que evitaban la propagación de individuos demasiado pasivos que no se mueven. Los factores AndarAtaque y AndarPatrulla tomarán valor 0 si la IA no se ha movido en ataque o en patrulla respectivamente, y 1 en caso contrario. Esto provoca que IAs que no se muevan en ambos estados  puntuen 0.\par
-\[FactorFinal = FactorAtaque * FactorPatrulla * \]\[ *AndarAtaque * AndarPatrulla\]
-La conclusión es que un individuo debe realizar todas estas acciones para poder puntuar. Después de mucha investigación hemos concluido que esta función de fitness debe ser muy estricta para conseguir que los individuos hagan lo que tienen que hacer y una vez lo han hecho, se les puntúe acorde a la calidad de las acciones realizadas. Por ello, consideramos una condición necesaria aplicar elitismo en la evolución. El elitismo evita que se pierdan aquellos individuos con árboles que cumplen todos los hitos.\par
-Sin embargo, el elitismo por sí mismo no es suficiente para conseguir individuos que superen este corte tan estricto. Es condición indispensable que exista variedad en la población, lo que nos obligó a utilizar grandes tamaños de población, de 50 o 100 individuos mínimo. El hecho de utilizar selección por torneo también ha afectado positivamente al control de la diversidad mediante análisis de la presión selectiva.\par
-Como se mencionó en la introducción de este apartado, la función de evaluación de la IAs obligaba a probar cada individuo sobre varios mapas, lo que consumía la mayor parte de nuestro tiempo a la hora de realizar pruebas. Conseguimos reducir de forma significativa -hasta 120 veces menos- el tiempo que se tardaba en evaluar la población realizando dos simples mejoras.\par
-La primera y más básica es utilizar un conjunto de individuos marcados. Cada vez que un individuo sufre una modificación,  bien sea por haber sido cruzado, mutado o se le haya cortado alguna rama debido al control de bloating, en lugar de ser evaluado, se marca para su posterior evaluación. Así, si un individuo pasa por un cruce y luego es mutado, sólo se evalúa una vez. De la misma forma, un individuo que atraviesa una generación sin sufrir cambios, no necesita ser reevaluado.\par
-Las segunda y más importante optimización es la paralelización de la evaluación del fitness. En lugar de probar a un individuo sobre cada uno de los mapas de forma secuencial, se ejecuta cada simulación de cada mapa por separado y se obtiene el fitness en cada uno de ellos. Con esto, la función de fitness demora como mucho el tiempo que tarda en simularse el más lento de los mapas, en lugar de la suma de todos ellos.\par
-Finalmente, la función de evaluación queda como sigue:\par
-\[Evaluacion =FactorFinal*(PuntuacionPatrulla+PuntuacionAtaque)\]
-Estos parámetros significan lo siguiente:\par
-\begin{table}[h]
-\begin{center}
-\begin{tabular}{|l|l|}
-\hline
-\textbf{Variable} & \textbf{Significado}\\
-\hline
-\textit{FactorAtaque} &  Número de heridas infligidas\\
-\hline
-\textit{FactorPatrulla} & 1 si ocurre siDetectado - CambiaEstado, 0 si no\\
-\hline
-\textit{AndarAtaque} &  1 si anda en ataque, 0 en caso contrario\\
-\hline
-\textit{AndarPatrulla} &  1 si anda en patrulla, 0 en caso contrario\\
-\hline
-\textit{CasillasAndadasPatrulla} &  Número de casillas andadas en patrulla\\
-\hline
-\textit{CasillasExploradasPatrulla} &  Número de casillas exploradas en patrulla\\
-\hline
-\textit{Golpes} &  Número de impactos sobre el jugador\\
-\hline
-\textit{Bloqueos} &  Número de ataques bloqueados\\
-\hline
-\textit{Curaciones} &  Número de curaciones con éxito\\
-\hline
-\textit{GolpesFallados} & Número de ataques no impactados\\
-\hline
-\end{tabular}
-\caption{Lista de parámetros IA\\}
-\end{center}
-\end{table}
-Para conseguir que la función de evaluación haya obtenido resultados importantes, además del cambio de algunas operaciones fueron fundamentales varias optimizaciones que realizamos.\par
-El principal problema que nos encontramos en la nueva función de evaluación es que debía ser muy exigente para evitar evolucionar individuos con malas estrategias. Debido a esto, consideramos una condición necesaria aplicar elitismo en la evolución.\par
-Debido a esta función restrictiva, también nos dimos cuenta que era necesario que la población fuera suficientemente grande ya que, sin variedad, no funcionaba bien.\par
-La necesidad de tener poblaciones grandes acrecentaba aún más nuestro problema de tiempos, que estaba del orden de los quince o veinte minutos por generación para poblaciones de 100 individuos. Por esta razón decidimos paralelizar la función de evaluación de manera que para un individuo se evalúan simultáneamente todos los mapas.\par
-\section{Operadores}
-\subsection{Inicializador de la población}
-Para inicializar la población utilizamos el método L&L. Nos decantamos por este ya que es el más completo de los tres. Con este método obtenemos una mezcla de árboles irregulares de diferentes profundidades creadas por el método creciente y árboles más regulares creados por el método completo.\par
-\subsection{Métodos de selección}
-De los métodos de selección explicados anteriormente, hemos decidido utilizar la selección por Torneo ya que favorece la supervivencia de los mejores individuos. Otra de las razones de utilizar el método de torneo es que es el único de los implementados que tiene en cuenta el fitness de manera directa. todo esto es necesario porque, como hemos explicado anteriormente, la función de fitness es muy exigente.
-\subsection{Operador de cruce}
-El operador de cruce que hemos utilizado aquí es el monopunto o simple, ya que no consideramos que uno más complejo fuera a favorecer la mejoría de los individuos.
-\subsection{Operadores de mutación}
-De los operadores de mutación y después de múltiples pruebas, decidimos decantarnos por la combinada. Observamos que al ser la que más variedad permitía, más favorecía a conseguir las acciones obligatorias que nuestros individuos deben llegar a realizar.
-\subsection{Eliminación de intrones}
-La eliminación de intrones pretende corregir aquellos árboles en los que se encuentran expresiones redundantes. En programación genética, la existencia de intrones depende de la semántica que tenga el árbol y su contexto. En nuestro caso, muchos de los intrones se pueden detectar y simplificar surgen del hecho de que los árboles deben ser ejecutados durante un turno. Esto implica, por ejemplo, que si un nodo SiBloqueado devuelve NO, mientras la IA no ejecute una acción de giro o retroceso, seguirá bloqueada y el resto de nodos SiBloqueado también seguirán por la rama del NO. A continuación se explican cuáles han sido los intrones que hemos considerado:
-\begin{enumerate}
-\item Nodo PROGN2 
-	\begin{enumerate} 
-		\item Acciones contrarias: Si un nodo PROGN2 tiene como hijos dos acciones que realizan acciones contrarias, como por ejemplo GiraIzquierda y GiraDerecha, se sustituye el nodo PROGN2 por un terminal aleatorio.
-		\item Primer hijo CambiarEstado: Dada la naturaleza del nodo CambiarEstado, que provoca el cambio instantáneo al árbol de ataque, el resto de hijos de PROGN2 no se ejecutarán, así que sustituimos el nodo PROGN2 directamente por un nodo CambiarEstado.
-	\end{enumerate}
-\item Nodo PROGN3
-	\begin{enumerate} 
-		\item Primer hijo CambiarEstado: Caso análogo al de PROGN2, sustituimos el nodo PROGN3 directamente por un nodo CambiarEstado.
-	\end{enumerate}
-\item Nodo tipo condicional
-	\begin{enumerate} 
-		\item Ambos hijos terminales iguales: Si ambas opciones de un nodo de decisión son la misma, siendo estas acciones terminales, semánticamente dicho nodo es equivalente a cualquiera de sus hijos.
-		\item Hijo equivalente: Si un hijo de un nodo condicional es a su vez el mismo condicional, dicho hijo puede ser sustituido por la rama condicional en la que él mismo se encuentra.
-	\end{enumerate}
-\end{enumerate}
-\figurahere{Bitmap/47}{width=1\textwidth}{fig:47}%
-{Ejemplo de intrones}
-\section{Paralelización del fitness}
-Para conseguir las mejoras que hemos mencionado y alcanzar la función de fitness final, fue fundamental paralelizar la evaluación de los individuos. Para poder hacer esto, decidimos crear un thread por cada mapa de evaluación, de tal forma que se podían evaluar todos los mapas y se tardaba en evaluar todos lo que tardase el mapa más largo.
-\section{Interfaz de usuario}
-La GUI para la sección de IA es similar a la utilizada en la generación de mazmorras. Mantenemos el visor de gráficas para poder ver la evolución de los individuos. Para poder visualizar de forma clara cómo se comportan los individuos, decidimos crear un visor de la evaluación de los individuos. Con él podemos ver en tiempo real qué movimientos está llevando a cabo el individuo, así como las casillas que ha cubierto o la dirección hacia la que mira \ref{fig:44}.\par 
-Con el objetivo de facilitar también la visualización de los árboles de patrulla y ataque, creamos una ventana adicional \ref{fig:45} en la que se muestran los árboles del individuo que está siendo evaluado. Todas estas ventanas decidimos complementarlas con la posibilidad de manipular los atributos del AG, creando un framework usando SFML. Esto se detalla en el siguiente capítulo.\par
-\figurahere{Bitmap/44}{width=1.2\textwidth}{fig:44}%
-{Visualización GUI de la parte de la IA}
-\figurahere{Bitmap/45}{width=1\textwidth}{fig:45}%
-{Árboles de patrulla y ataque}
-\section{Resultados}
-Como se puede apreciar en la imagen \ref{fig:54}, la gráfica presenta una mejora clara generación tras generación, tanto en la tendencia de la media como en el mejor individuo. El mejor individuo de la generación -Mejor gen en la leyenda- y el mejor individuo absoluto coinciden perfectamente ya que para las IAs siempre activamos elitismo, por lo tanto el mejor nunca se descarta.\par
-\figurahere{Bitmap/54}{width=1\textwidth}{fig:54}
-{Gráfica de evaluación}
-Sin embargo, si no ponemos elitismo, se aprecia en la figura \ref{fig:57} que van variando el mejor y el de la mejor generación. Se obtienen individuos con menor fitness, tanto el mejor como el resto de la población. Por estas razones podemos concluir que el elitismo es un parámetro fundamental en la generación de las IAs.
-\figurahere{Bitmap/57}{width=1\textwidth}{fig:57}
-{Gráfica de evaluación sin elitismo}
-En la imagen \ref{fig:55} podemos apreciar una estrategia algo defensiva ya que tiende a bloquear y curarse bastante. Sin embargo, la que vimos anteriormente, en la figura \ref{fig:45} es una mucho más ofensiva.\par
-\figurahere{Bitmap/55}{width=1\textwidth}{fig:55}
-{Ejemplo de estrategia defensiva}
-\newpage
-\begin{Verbatim}
-Patrulla:
-(SIDETECTADO)
-    (CambiaEstado)
-    (PROGN3 
-		(Avanza 
-		(SIBLOQUEADO) 
-			(GiraIzquierda)
-			(PROGN3
-				(Avanza
-				GiraDerecha
-				(SIDETECTADO)
-					(GiraDerecha)
-					(Avanza))
-		GiraIzquierda)
- 
-Ataque:
-(PROGN3
-    ((VIDAIA)
-        (Curar)
-        (PROGN3 (Curar Alejar Curar))
-        ((SIRANGO)
-			(Bloquear)
-			(Acercar))
-    Atacar
-    Bloquear))
-\end{Verbatim}
 
-En esta otra figura \ref{fig:56} podemos apreciar otra estrategia algo más simple, como suelen ser en los videojuegos rogue-like.\par  
-\figurahere{Bitmap/56}{width=1\textwidth}{fig:56}
-{Ejemplo de estrategia típica rogue-like}
-\begin{Verbatim}
-Patrulla:
-(PROGN2
-    ((PROGN2
-        ((SIDETECTADO)
-            (PROGN3 (GiraIzquierda Avanza CambiaEstado ))
-            (GiraDerecha)
-        Avanza))
-    (SIBLOQUEADO)
-        (GiraDerecha)
-        (GiraIzquierda)))
-Ataque:
-(PROGN2
-    ((VIDAIA)
-        (Bloquear)
-        ((SIRANGO)
-		(Atacar)
-		(Acercar))
-        (PROGN2 (Atacar Atacar))
-    Acercar))
-\end{Verbatim}
-El algoritmo ha acabado siendo muy robusto ya que no hay ninguna ejecución en la que no se pueda aprovechar ningún individuo. Sin embargo, siempre es necesario retocarlos un poco ya que es muy complicado el conseguir árboles sintácticamente perfectos cuando las funciones y terminales, como es nuestro caso, son bastante complicadas.\par
+Para analizar el estado del arte de este proyecto, tenemos que tener en cuenta 3 aspectos fundamentales:\par
+\begin{itemize}
+\item La generación procedural de contenido para videojuegos.
+\item La generación de contenido para videojuegos mediante algoritmos evolutivos.
+\item Las diferentes implementaciones de IAs existentes.
+\end{itemize}
+
+
+
+Generación procedural es el método de creación de contenidos a través de algoritmos, en oposición a un método de creación manual, y se aplica tanto en simulaciones gráficas por computadora como en videojuegos, instalaciones, programación y en música. Los fractales son un ejemplo de animación mediante generación procedural: funciones matemáticas gráficas repetidas hasta el infinito. El sonido digital también se puede generar de forma procedural, un uso que se ha desarrollado mucho para la música electrónica.\par
+En videojuegos e instalaciones la generación procedural se utiliza en función de que el contenido se genere en la computadora que los contiene, en tiempo real, y no de manera previa y renderizado en paquetes gráficos predefinidos. Se utiliza principalmente para la generación de ambientes y mapas, aunque también se aplica para IA y jugabilidad. Se utiliza para generar de manera rápida y detallada espacios infinitos y patrones de singularidad en objetos, simulaciones y personajes. También se utiliza para la creación de sistemas de partículas para agua, fuego y gases; o para generar un sinfín de actores digitales únicos y diferentes como reemplazo de extras. Sin embargo, no se suele utilizar para el contenido final, el cual en general se muestra ya preestablecido. En \citep*{Gamasutra} se muestra una técnica para generar mazmorras aleatorias. Los pasos para ello son:\par
+
+\figurahere{Bitmap/1}{width=.7\textwidth}{fig:1}%
+{Escenario creado mediante Generación Procedural}
+
+\begin{itemize}
+\item Generar una serie de salas con una determinada anchura y altura y colocarlas aleatoriamente dentro de un círculo.
+\item Separar las diferentes salas aplicando físicas de colisión, hasta que no se superpongan.
+\item Después, para escoger qué salas son las principales, se tendrán en cuenta aquellas que estén por encima de 1.25 en el ratio ancho/alto.
+\item Tomar los puntos medios de las salas principales y aplicarles el Procedimiento de Delaunay \citep*{Delaunay} para obtener un grafo a partir de los triángulos obtenidos.
+\item A partir del grafo, se debe obtener el árbol de expansión mínimo \citep*{Krusk}. Esto hará que todas las habitaciones principales sean accesibles, pero que no estén conectadas directamente.
+\item Finalmente, se añaden los pasillos a la mazmorra. Si los nodos están cerca horizontalmente, se añade una línea horizontal. Lo mismo para los nodos cercanos verticalmente. Si no es así, se añaden dos líneas que formen una L.
+\end{itemize}
+ 
+Existen proyectos que, mediante gramáticas evolutivas, generan historias de fondo que aportan consistencia a la experiencia de juego, con la intención de evitar que éstas deban ser ideadas por desarrolladores de forma manual \citep*{Garcia}.\par
+Existen herramientas que permiten utilizar algoritmos genéticos para generar mazmorras en base a unos parámetros de diseño \citep*{Font}, que tienen que venir definidos previamente.\par
+En este sentido cabe reseñar el ejemplo explicado en \citep*{Toguelius},  que cuenta cómo se pueden desarrollar funciones heurísticas que miden propiedades de los mapas y comprueban si afectan a la experiencia de juego. Se diseñaron dos representaciones diferentes de mapas, una para un juego de estrategia genérico y otro para el videojuego Starcraft. Mediante este método se puede automatizar completamente la generación de mapas o como herramienta de apoyo para diseñadores humanos.\par
+Otro ejemplo más es el referido en \citep*{Perez} que analiza 3 subcomponentes diferentes en el proceso de generación de mapas y propone soluciones a todos ellos. Los mapas se representan mediante 2 conceptos distintos, la geometría y la disposición del contenido. La geometría se lleva a cabo tanto en el exterior como en el interior conectando segmentos de mapas pre-hechos para formar mapas más grandes y completos. La disposición del contenido a través del mapa se determina mediante el uso de características de la geometría como el uso de una Red de Producción de Patrones de Composición. Por último están las preferencias del jugador para diseño del contenido, que se capturan y se utilizan en un marco de sistema recomendador. Todas las soluciones se combinan y se prueban en el videojuego de acción y disparos \textit{Angry Bots} \citep*{Bots} y se evalúan en un experimento a gran escala.\par
+Existe un precedente de uso de AGs para evolucionar el comportamiento de los bots -enemigos jugadores controlados por el ordenador- en un videojuego más o menos actual, concretamente el \textit{Unreal Tournament 2004} \citep*{Bullen}.Los resultados demostraron una mejora considerable en el rendimiento de los bots evolucionados, con respecto al grupo de control.\par
+En otra ocasión se usó programación genética  para la evolución de estrategias defensivas. En \citep{Jackson} se utiliza la programación genética para evolucionar estrategias en un simple juego que emula los invasores del espacio \ref{fig:2}. \par
+\figurahere{Bitmap/2}{width=.7\textwidth}{fig:2}%
+{Emulador de \textsl{Space Invaders}}
+Para la función de evaluación se realizaron un conjunto de pruebas. En cada una, el defensor se colocaba en la parte inferior del mapa, mientras que los oponentes se colocaban en cualquiera de las filas superiores, desplazándose inicialmente en una dirección elegida al azar. Después, irían descendiendo de izquierda a derecha, bajando cuando llegasen a los límites laterales del tablero y lanzando bombas de vez en cuando. Se utilizaron los operadores genéticos más comunes.\par
+Se demostró que mediante programación genética es posible desarrollar estrategias de defensa para hacer frente a juegos de una determinada dificultad. Esas estrategias incorporan muchos de los aspectos de la evasión, la búsqueda y la conducta de orientación que se encuentran en jugadores humanos.\par
+
+Se define un conjunto de elementos terminales:\par
+
+	\[T = {\{IZQUIERDA, DERECHA, FUEGO, DIST_Y, DIST_X\}}
+\]
+y un conjunto de funciones:\par
+
+	\[O = {\{IF, EQ, PROGN2, PROGN3\}}
+\]
+
+Después de un proceso evolutivo se obtienen soluciones representadas de la siguiente forma:\par
+
+\begin{flushleft}
+
+	\[(IF (EQ (DIST_Y DIST_X))\]\par
+
+\end{flushleft}
+
+
+	\[\hspace{2cm(PROGN3 (FUEGO IZQUIERDA DIST_X))}\]\par
+	\[\hspace{2cm(PROGN2 (IZQUIERDA IZQUIERDA))})\]\par
+	
+El significado de esa expresión es el siguiente: \par
+
+\begin{itemize}
+\item Si la distancia en Y es igual que la distancia en X, se ejecuta\par $PROGN3 (FUEGO\;IZQUIERDA\;DIST_X)$, que disparar\'a, avanzar\'a a la izquierda y calcular\'a la distancia horizontal hasta el defensor.
+\item Si no es igual, se ejecuta $PROGN2 (IZQUIERDA\;IZQUIERDA)$, que avanzar\'a dos casillas hacia la izquierda.
+\end{itemize}
+
+Por otro lado, combinando el uso de algoritmos genéticos con Grafos tenemos el problema del coloreamiento mínimo de un grafo \citep*{Grafo}. Se han de utilizar el menor número de colores cumpliéndose la restricción siguiente: Dos nodos adyacentes no pueden tener el mismo color.\par
+Se trata de un problema NP-completo. No hay un método que asegure que se va a obtener el coloreamiento óptimo para todos los tipos de grafos que se presenten. Esto se debe a que con sólo añadir alguna arista o nodo a un grafo dado, la solución cambia radicalmente.\par
+En este problema, un individuo es una permutación de todos los nodos del grafo. La población de individuos se selecciona mediante el método de la Ruleta. Dada la facilidad para evaluar si hay que añadir un color extra o no, los individuos suelen ser bastante buenos. \par
+Dada una permutación de nodos de un grafo, hay que colorear dicho grafo recorriendo en orden los nodos, asignándoles a cada uno el primer color que puede tener cumpliendo las restricciones. La función de Fitness busca obtener el mínimo número de colores necesarios para el coloreamiento completo del grafo. Para la reproducción de los individuos se puede utilizar cruce monopunto, mientras que la mutación se puede cambiar de orden dos nodos del individuo.\par
+
+
+En un videojuego, se define la inteligencia artificial -IA- como la simulación de inteligencia -comportamiento, modo de actuar, etc.- de los PNJs y que normalmente incluirá algo relacionado con los siguientes aspectos:\par
+\begin{itemize}
+\item Conseguir comportamientos muy básicos en los PNJs -coger un elemento, golpear, etc…-
+\item Moverse a través de unos escenarios en los que pueden aparecer obstáculos.
+\item Tomar decisiones para saber qué acciones realizar y en qué orden.
+\end{itemize}
+Hay diversas maneras de implementación de estas IAs \citep*{Alcala}:\par
+\begin{itemize}
+\item Algoritmos minimax: se utiliza normalmente en juegos de tablero como el Ajedrez o las damas. Está basado en la prueba de todas las posibilidades de jugada de cada jugador. Se puede optimizar utilizando la poda alfa-beta.
+\item Algoritmos de búsqueda de camino (Dijkstra, A*…). Búsqueda del camino más corto para llegar de un punto A a otro punto B. A* es una combinación de recorridos de tipo \textit{primero en anchura} con \textit{primero en profundidad} y garantiza encontrar siempre el camino óptimo. Dijkstra, por su parte, determina en un grafo valorado el camino más corto para llegar desde un vértice a todos los demás del grafo.
+\item Agentes inteligentes: se aplica cuando los PNJs perciben mediante sensores la existencia de algún elemento extraño en el entorno -pared, esquina donde hay que girar, un enemigo- y actúa consecuentemente -dándose la vuelta, girando, pasando a modo ataque- con la mejor acción posible, gracias a unos \textit{actuadores} que le indican cómo debe hacerlo. Dos tipos:\par
+\begin{itemize}
+\item Reactivo: actúa promovido por un cambio en el entorno (Guardián de algún tesoro).
+\item Proactivo: decide actuar antes de que se produzcan los sucesos (Jefe final de un juego).
+\end{itemize}
+\item Máquinas de estados finitos: entidad abstracta que está formada por diferentes estados y las transiciones que se producen entre ellos. Estas transiciones están producidas por cambios que se van produciendo en el entorno. Según el estado en se encuentre, se pueden llevar a cabo una serie de acciones.
+\item Redes neuronales: están inspiradas en el comportamiento de las neuronas y conexiones del cerebro humano, tratando de crear programas capaces de solucionar problemas difíciles, actuando como haría un humano. Necesitan entrenamiento con muchos ejemplos.
+\item Algoritmos evolutivos y Programación genética: Son sistemas muy robustos que resuelven problemas de optimización, donde los individuos más capaces son los que finalmente sobreviven, tras aplicarles una serie de transformaciones.
+\end{itemize}
+
+\section{Nuestra aportación}
+
+Nuestro proyecto pretende analizar el rendimiento de los AGs, y determinar si es viable usarlos como mecanismo de generación automática de elementos de un juego sin necesidad de un diseño previo, así como estudiar la calidad de los elementos generados y la dificultad que puede conllevar establecer unos buenos parámetros para estos algoritmos. \par
+En la parte de generación de los mapas hemos optado por representar cada individuo mediante un grafo que representa el esqueleto de nuestra mazmorra. Se aplica un algoritmo evolutivo para transformar una de las CCs del grafo hasta obtener una mazmorra satisfactoria.\par
+Dada la pequeña cantidad de proyectos y documentación en relación a la generación automática de IAs en videojuegos, nuestro proyecto trata de hacer un análisis sobre la posibilidad de aplicar técnicas evolutivas en este aspecto. De forma análoga al proyecto MADE \citep*{Garcia}, intentaremos automatizar los procesos de desarrollo de elementos principales de un videojuego, centrándonos en analizar aspectos clave, como la calidad de los elementos generados y el tiempo que conlleva generarlos.\par
+En este sentido, hay que tener en cuenta la generación de 2 árboles diferentes (patrulla y ataque) y las transiciones entre estados de uno y otro árbol, siendo en cierta manera cada uno de los estados un árbol diferente (exploración y ataque, como comentábamos antes) \ref{fig:3}.\par
+
+\figurahere{Bitmap/3}{width=1\textwidth}{fig:3}%
+{Ejemplo de máquina de estados y decisiones}
+	
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX
 %%%
