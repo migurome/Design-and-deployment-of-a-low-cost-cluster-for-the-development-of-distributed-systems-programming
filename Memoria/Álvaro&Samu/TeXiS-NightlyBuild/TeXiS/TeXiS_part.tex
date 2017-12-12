@@ -1,0 +1,154 @@
+%---------------------------------------------------------------------
+%
+%                            TeXiS_part.tex
+%
+%---------------------------------------------------------------------
+%
+% TeXiS_part.tex
+% Copyright 2009 Marco Antonio Gomez-Martin, Pedro Pablo Gomez-Martin
+%
+% This file belongs to TeXiS, a LaTeX template for writting
+% Thesis and other documents. The complete last TeXiS package can
+% be obtained from http://gaia.fdi.ucm.es/projects/texis/
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainers of this work are Marco Antonio Gomez-Martin
+% and Pedro Pablo Gomez-Martin
+%
+%---------------------------------------------------------------------
+%
+% Fichero que define los comandos necesarios para crear distintas
+% partes del documento.
+%
+%---------------------------------------------------------------------
+
+%%%
+% Gestión de la configuración
+%%%
+
+% Título de la parte
+\def\partTitleVal{}
+\newcommand{\partTitle}[1]{
+\def\partTitleVal{#1}
+}
+
+% Descripción de la parte
+\def\partDescVal{}
+\newcommand{\partDesc}[1]{
+\def\partDescVal{#1}
+}
+
+% Descripción en la parte trasera de la hoja
+% (solamente se utilizará en twoside)
+\def\partBackTextVal{}
+\newcommand{\partBackText}[1]{
+\def\partBackTextVal{#1}
+}
+
+%%%
+% Configuración terminada
+%%%
+
+
+%%%
+%% COMANDOS NECESARIOS PARA CREAR LA PARTE
+%%%
+\newcommand{\makepart}{\part{\partTitleVal}\partDesc{}\partBackText{}\def\tienePartesTeXiS{}}
+\newcommand{\makespart}{\part*{\partTitleVal}\partDesc{}\partBackText{}\def\tienePartesTeXiS{}}
+
+% El \makepart se basa en  el comando LaTeX \part{...} que redefinimos
+% aquí (cambiando la  definición de book) para permitir  el uso de los
+% comandos anteriores.  En realidad el usuario  podría seguir haciendo
+% uso del comando de LaTeX \part, pero podría añadir las descripciones
+% en la propia página, ni en la página trasera.
+
+\makeatletter
+\renewcommand\part{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \thispagestyle{empty}% Cambiado; antes era plain pero
+% no queremos número de página...
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi
+  \null\vspace*{2cm}% Cambiado; en vez de \vfil, un espacio fijo de
+                    % dos centímetros, para que el título no cambie de
+                    % posición dependiendo de la longitud de la descripción.
+  \secdef\@part\@spart}
+
+% Versión "sin estrella" del comando part. Se mete en el toc y se pone
+% "Parte I"; después viene el título y descripción.
+\def\@part[#1]#2{%
+    \ifnum \c@secnumdepth >-2\relax
+      \refstepcounter{part}%
+      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+    \else
+      \addcontentsline{toc}{part}{#1}%
+    \fi
+    \markboth{}{}%
+    {\centering
+     \interlinepenalty \@M
+     \normalfont
+     \ifnum \c@secnumdepth >-2\relax
+       \huge\bfseries \partname\nobreakspace\thepart
+       \par
+       \vskip 20\p@
+     \fi
+     \Huge \bfseries #2\par}
+    % Si hay descripción de la parte, la ponemos después de 2 centímetros
+    {\vspace*{2cm}\noindent\partDescVal}%
+    \@endpart}
+
+% Versión "con estrella" del comando part. Se pone el título y la
+% descripción.
+\def\@spart#1{%
+    {\centering
+     \interlinepenalty \@M
+     \normalfont
+     \Huge \bfseries #1\par%
+    % Si hay descripción de la parte, la ponemos después de 2 centímetros
+    {\vspace*{2cm}\noindent\partDescVal}%
+}%
+    \@endpart}
+
+% Final del comando part; salta de página y si se está en twoside
+% deja la página de atrás en blanco, añadiendo la descripción
+% trasera si existe.
+\def\@endpart{\vfil\newpage
+              \if@twoside
+               \if@openright
+                \null
+                \thispagestyle{empty}%
+                {\partBackTextVal}
+                \newpage
+               \fi
+              \fi
+              \if@tempswa
+                \twocolumn
+              \fi}
+\makeatother
+
+
+
+% Variable local para emacs, para que encuentre el fichero
+% maestro de compilación
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:

@@ -1,0 +1,95 @@
+\select@language {spanish}
+\contentsline {chapter}{Agradecimientos}{\es@scroman {ix}}{chapter*.1}
+\contentsline {chapter}{Resumen}{\es@scroman {x}}{chapter*.2}
+\contentsline {chapter}{Palabras clave}{\es@scroman {xii}}{chapter*.3}
+\contentsline {chapter}{Siglas}{\es@scroman {xiii}}{chapter*.4}
+\contentsline {chapter}{Abstract}{\es@scroman {xiv}}{chapter*.5}
+\contentsline {chapter}{Keywords}{\es@scroman {xv}}{chapter*.6}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivaci\'on}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Objetivos}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Estructura}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Motivation}{5}{section.1.4}
+\contentsline {section}{\numberline {1.5}Goals}{6}{section.1.5}
+\contentsline {section}{\numberline {1.6}Structure}{7}{section.1.6}
+\contentsline {chapter}{\numberline {2}Trabajo relacionado}{10}{chapter.2}
+\contentsline {section}{\numberline {2.1}Generaci\'on Procedural}{10}{section.2.1}
+\contentsline {section}{\numberline {2.2}T\'ecnicas Evolutivas}{12}{section.2.2}
+\contentsline {section}{\numberline {2.3}Inteligencia Artificial}{15}{section.2.3}
+\contentsline {section}{\numberline {2.4}Nuestra aportaci\'on}{17}{section.2.4}
+\contentsline {chapter}{\numberline {3}Computaci\'on evolutiva y Programaci\'on gen\'etica}{18}{chapter.3}
+\contentsline {section}{\numberline {3.1}Computaci\'on evolutiva}{18}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Antecedentes biol\'ogicos}{18}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Representaci\'on}{19}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Operadores gen\'eticos}{20}{subsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.3.1}Operadores de selecci\'on}{21}{subsubsection.3.1.3.1}
+\contentsline {subsubsection}{\numberline {3.1.3.2}Operadores de cruce}{22}{subsubsection.3.1.3.2}
+\contentsline {subsubsection}{\numberline {3.1.3.3}Operadores de mutaci\'on}{24}{subsubsection.3.1.3.3}
+\contentsline {subsection}{\numberline {3.1.4}Funci\'on de Fitness}{25}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Mejoras en el algoritmo evolutivo}{25}{subsection.3.1.5}
+\contentsline {subsubsection}{\numberline {3.1.5.1}Elitismo}{25}{subsubsection.3.1.5.1}
+\contentsline {subsubsection}{\numberline {3.1.5.2}Contractividad}{25}{subsubsection.3.1.5.2}
+\contentsline {section}{\numberline {3.2}Programaci\'on gen\'etica}{25}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Representaci\'on}{26}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}M\'etodos de inicializaci\'on}{27}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Operadores}{27}{subsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Operadores de selecci\'on}{27}{subsubsection.3.2.3.1}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Operadores de cruce}{28}{subsubsection.3.2.3.2}
+\contentsline {subsubsection}{\numberline {3.2.3.3}Operadores de mutaci\'on}{28}{subsubsection.3.2.3.3}
+\contentsline {subsubsection}{\numberline {3.2.3.4}Funci\'on de evaluaci\'on -Fitness-}{31}{subsubsection.3.2.3.4}
+\contentsline {subsection}{\numberline {3.2.4}Mejoras en el algoritmo evolutivo}{31}{subsection.3.2.4}
+\contentsline {subsubsection}{\numberline {3.2.4.1}Control del bloating}{31}{subsubsection.3.2.4.1}
+\contentsline {subsubsection}{\numberline {3.2.4.2}Intrones}{32}{subsubsection.3.2.4.2}
+\contentsline {subsection}{\numberline {3.2.5}Ejemplos}{32}{subsection.3.2.5}
+\contentsline {chapter}{\numberline {4}T\'ecnicas para la generaci\'on de mazmorras}{35}{chapter.4}
+\contentsline {section}{\numberline {4.1}Idea inicial}{35}{section.4.1}
+\contentsline {section}{\numberline {4.2}Generaci\'on de mazmorras mediante algoritmos gen\'eticos}{36}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Introducci\'on}{36}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Decisiones de implementaci\'on}{36}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Evaluaci\'on de las mazmorras: Visi\'on general}{39}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Evaluaci\'on de las mazmorras: Detalle}{41}{subsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.4.1}Distancia entre salas clave}{41}{subsubsection.4.2.4.1}
+\contentsline {subsubsection}{\numberline {4.2.4.2}Tama\~no de la mazmorra}{41}{subsubsection.4.2.4.2}
+\contentsline {subsubsection}{\numberline {4.2.4.3}Conexi\'on entre salas}{42}{subsubsection.4.2.4.3}
+\contentsline {subsubsection}{\numberline {4.2.4.4}Dispersi\'on de enemigos y cofres}{43}{subsubsection.4.2.4.4}
+\contentsline {subsubsection}{\numberline {4.2.4.5}Tama\'no de las salas}{43}{subsubsection.4.2.4.5}
+\contentsline {subsubsection}{\numberline {4.2.4.6}La funci\'on de fitness}{43}{subsubsection.4.2.4.6}
+\contentsline {subsection}{\numberline {4.2.5}Operadores del Algoritmo Gen\'etico}{44}{subsection.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.5.1}M\'etodos de selecci\'on}{44}{subsubsection.4.2.5.1}
+\contentsline {subsubsection}{\numberline {4.2.5.2}M\'etodos de cruce}{45}{subsubsection.4.2.5.2}
+\contentsline {subsubsection}{\numberline {4.2.5.3}M\'etodos de mutaci\'on}{48}{subsubsection.4.2.5.3}
+\contentsline {subsection}{\numberline {4.2.6}La implementaci\'on en detalle}{49}{subsection.4.2.6}
+\contentsline {subsection}{\numberline {4.2.7}Individuos obtenidos}{51}{subsection.4.2.7}
+\contentsline {section}{\numberline {4.3}Interfaz de usuario}{54}{section.4.3}
+\contentsline {chapter}{\numberline {5}T\'ecnicas para la generaci\'on de la inteligencia artificial}{57}{chapter.5}
+\contentsline {section}{\numberline {5.1}Idea inicial}{57}{section.5.1}
+\contentsline {section}{\numberline {5.2}Decisiones de implementaci\'on}{58}{section.5.2}
+\contentsline {section}{\numberline {5.3}Funci\'on de evaluaci\'on}{61}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Introducci\'on}{62}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Primera aproximaci\'on}{62}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Segunda aproximaci\'on}{65}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Tercera aproximaci\'on}{69}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Aproximaci\'on final}{70}{subsection.5.3.5}
+\contentsline {section}{\numberline {5.4}Operadores}{74}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Inicializador de la poblaci\'on}{74}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}M\'etodos de selecci\'on}{74}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Operador de cruce}{75}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Operadores de mutaci\'on}{75}{subsection.5.4.4}
+\contentsline {subsection}{\numberline {5.4.5}Eliminaci\'on de intrones}{75}{subsection.5.4.5}
+\contentsline {section}{\numberline {5.5}Paralelizaci\'on del fitness}{76}{section.5.5}
+\contentsline {section}{\numberline {5.6}Interfaz de usuario}{77}{section.5.6}
+\contentsline {section}{\numberline {5.7}Resultados}{78}{section.5.7}
+\contentsline {chapter}{\numberline {6}Framework de pruebas}{85}{chapter.6}
+\contentsline {chapter}{\numberline {7}Videojuego}{88}{chapter.7}
+\contentsline {section}{\numberline {7.1}Im\'agenes del videojuego}{89}{section.7.1}
+\contentsline {chapter}{\numberline {8}Trabajo individual}{93}{chapter.8}
+\contentsline {chapter}{\numberline {9}Conclusiones y trabajo futuro}{98}{chapter.9}
+\contentsline {section}{\numberline {9.1}Conclusiones en la generaci\'on de mazmorras}{98}{section.9.1}
+\contentsline {section}{\numberline {9.2}Conclusiones en la generaci\'on de inteligencias artificiales}{99}{section.9.2}
+\contentsline {section}{\numberline {9.3}Conclusiones generales}{99}{section.9.3}
+\contentsline {section}{\numberline {9.4}Trabajo futuro}{100}{section.9.4}
+\contentsline {section}{\numberline {9.5}Conclusions in dungeon generation:}{101}{section.9.5}
+\contentsline {section}{\numberline {9.6}Conclusions in artificial intelligence generation:}{101}{section.9.6}
+\contentsline {section}{\numberline {9.7}General conclusions:}{102}{section.9.7}
+\contentsline {section}{\numberline {9.8}Future work:}{102}{section.9.8}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{106}{appendix*.64}

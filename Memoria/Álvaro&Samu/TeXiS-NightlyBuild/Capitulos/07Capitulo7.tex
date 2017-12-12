@@ -1,0 +1,49 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 7
+%
+%---------------------------------------------------------------------
+
+\chapter{Videojuego}
+
+\begin{FraseCelebre}
+\begin{Frase}
+Mi trabajo es un juego, un juego muy serio.
+\end{Frase}
+\begin{Fuente}
+Maurits Cornelis Escher, Artista neerlandés. 	
+\end{Fuente}
+\end{FraseCelebre}
+
+%\begin{resumen}
+%...
+%\end{resumen}
+
+Aquí explicamos el desarrollo del videojuego como prueba de concepto. Hemos desarrollado un juego estilo rogue-like muy simple e introducido tanto la generación de mazmorras como las inteligencias articiales generadas. Este tipo de videojuegos consiste en explorar una mazmorra, eliminando enemigos y consiguiendo mejoras que te ayuden en el viaje. El juego que hemos implementado carece de historia y es estilo arcade. El jugador debe intentar superar el máximo número de niveles posibles en un intento.\par
+Los controles son muy sencillos. Con las teclas \texit{W-A-S-D} nos movemos y con las teclas \texit{K y L} atacamos y bloqueamos. Para abrir los cofres basta con atacarlos. Para moverse entre salas o recoger la llave, es suficiente con pasar por encima.
+Las mazmorras se generan cada vez que el jugador juega una partida o avanza una fase. Por el contrario las IAs son ?jas ya que los tiempos de ejecución no las hacían viables para que se generen en cada partida. Además, aunque los tiempos hubiesen sido viables, no son tan consistentes como las mazmorras y es arriesgado introducir IAs sin revisarlas previamente.\par
+En nuestro videojuego, el jugador debe explorar infinitos niveles de una mazmorra. Para pasar de un nivel al siguiente, debe llegar al portal que simboliza el fin del nivel. Para poder atravesarlo deberá haber encontrado antes una llave situada en algún lugar del nivel. Durante sus aventuras, el jugador irá explorando salas en las que habrá portales para moverse, enemigos que le dificultarán su viaje y cofres para ayudarle.\par
+Conforme elimina a sus enemigos, consigue bonus de los cofres, o avanza niveles, el jugador recibe puntos.\par
+No hemos implementado ningún tipo de historia por lo que el objetivo del juego es puramente arcade. \par
+De esta forma, hemos conseguido incluir las técnicas evolutivas para la generación de mapas y de inteligencias artificiales en un juego completo.
+
+\section{Imágenes del videojuego}
+\figurahere{Bitmap/48}{width=1\textwidth}{fig:48}%
+{Pantalla de inicio}
+\figurahere{Bitmap/49}{width=.9\textwidth}{fig:49}%
+{Ejemplo de una sala de la mazmorra}
+\figurahere{Bitmap/52}{width=.9\textwidth}{fig:52}%
+{Ejemplo de otra sala de la mazmorra}
+\figurahere{Bitmap/51}{width=.9\textwidth}{fig:51}%
+{Ejemplo de sala con la llave}
+\figurahere{Bitmap/50}{width=.9\textwidth}{fig:50}%
+{Ejemplo de sala con el portal de fin}
+\figurahere{Bitmap/53}{width=.9\textwidth}{fig:53}%
+{Ejemplo de pausa}
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:

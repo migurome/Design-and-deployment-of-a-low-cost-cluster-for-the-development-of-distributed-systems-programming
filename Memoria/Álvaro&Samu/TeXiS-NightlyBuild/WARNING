@@ -1,0 +1,21 @@
+Este fichero es resultado de una compilación nocturna.
+
+Las compilaciones nocturnas se crean automáticamente cada noche
+utilizando la última versión extraída de nuestro gestor de versiones
+(SVN). Si no tienes problemas con la versión normal, es posible que
+esta versión no te sea demasiado útil. Las versiones nocturnas se usan
+para ver si ciertos errores se han resuelto o probar características
+nuevas.
+
+Algunos de los problemas que existían en las versiones anteriores
+puede que se hayan resuelto aquí, pero como la versión no está
+"cerrada", puede que hayan aparecido otros nuevos.
+
+Incluso dado que el origen de esta compilación nocturna es el propio
+gestor de versiones que almacena "trabajo en curso", puede que haya
+problemas al generar los propios ficheros PDF.
+
+No obstante, intentamos que las versiones nocturnas sean perfectamente
+funcionales, por lo que todos los avisos anteriores deberían ser eso,
+solamente avisos. Si detectas algún problema en esta versión nocturna
+haznoslo saber para arreglarlo lo antes posible.

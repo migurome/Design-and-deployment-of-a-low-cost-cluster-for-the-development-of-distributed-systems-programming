@@ -1,0 +1,206 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 3
+%
+%---------------------------------------------------------------------
+
+\chapter{Computación evolutiva y Programación genética}
+
+\begin{FraseCelebre}
+\begin{Frase}
+Todas las piezas deben unirse sin ser forzadas. Debe recordar que los componentes que está reensamblando fueron desmontados por usted, por lo que si no puede unirlos debe existir una razón. Pero sobre todo, no use un martillo.
+\end{Frase}
+\begin{Fuente}
+Manual de mantenimiento de IBM, año 1925
+\end{Fuente}
+\end{FraseCelebre}
+
+%\begin{resumen}
+%...
+%\end{resumen}
+
+\section{Computación evolutiva}
+\subsection{Antecedentes biológicos}
+Durante mucho tiempo, la teoría que se creyó válida acerca del origen de las especies fue el creacionismo: Todas las especies del planeta fueron creadas por Dios. Posteriormente, Georges Louis Leclerc y Jean-Baptiste Lamarck enunciaron sendas teorías que rebatían completamente la teoría creacionista, pero sin llegar a concretar bien cómo se desarrollaba este proceso de evolución. Más tarde, Charles Darwin indicó que la evolución se origina por medio de cambios aleatorios en rasgos hereditarios, combinados con un proceso de selección natural. Otros científicos, como August Weismann, Johann Gregor Mendel y James Mark Baldwin, completaron la teoría Darwinista, diciendo que había células que podían transmitir información hereditaria, mientras que otras no. Llevaron a cabo un experimento con ratas que demostraba que, no por el hecho de perder una extremidad, los descendientes nacen sin ella; o proponiendo que, si el aprendizaje ayuda a la supervivencia, tendrán más descendencia los individuos con más capacidad de aprendizaje. Todo ello, dio origen al llamado Neo-Darwinismo.\par
+Actualmente, el pensamiento evolutivo se explica mediante el Neo-Darwinismo, que promulga que hacen falta cuatro procesos para explicar toda vida en el planeta:\par
+\begin{itemize}
+\item Seleccción
+\item Reproducción
+\item Mutación
+\item Competencia
+\end{itemize}
+
+\subsection{Representación}
+La computación evolutiva es una manera de solucionar problemas complejos, a través de la búsqueda y el aprendizaje, por medio de procesos inspirados en la evolución natural. La extensión de dichos modelos a la computación general es conocida como computación evolutiva. Dichos algoritmos tienen como propósito general transformar una determinada estructura, pasando por una serie de transformaciones de forma iterativa, para que ésta vaya siendo cada vez más apta para cumplir un determinado cometido.\par
+Los AGs son parte fundamental dentro de la computación evolutiva. Son una técnica de búsqueda y optimización inspirada en el proceso genético de los seres vivos. Con el paso de las generaciones las poblaciones van evolucionando y prevalecen los más fuertes o más adaptados al medio. Las poblaciones se representan mediante cadenas binarias y cada uno de sus miembros tiene un número determinado de posiciones, a las que se denominan Genes.\par
+En un AG, se seleccionan un número determinado de individuos, pudiendo utilizar diferentes métodos para hacer la selección, siendo los individuos seleccionados los progenitores. Estos progenitores se cruzan con otros y son sometidos a un proceso de mutación de los que surge la descendencia, que debe recombinarse con la población inicial. Este proceso se puede repetir las veces que se crea conveniente. \par
+
+\figurahere{Bitmap/5}{width=.8\textwidth}{fig:5}%
+{Pasos en un algoritmo evolutivo}
+
+Un Algoritmo Evolutivo (AE) tiene la misma estructura básica del AG, pero también consta de algunas diferencias:\par
+\begin{itemize}
+\item La representación es natural, en lugar de binaria, y está más próxima al dominio real del problema.
+\item Pueden ser utilizadas estructuras de datos más complejas, como vectores, listas o árboles.
+\item Operadores genéticos específicos para la representación, además de los propios de los AGs.
+\end{itemize}
+
+\subsection{Operadores genéticos}
+Los operadores genéticos son los métodos que emplean los algoritmos genéticos y los algoritmos evolutivos para que se pueda mantener la diversidad de la población. Los principales operadores genéticos existentes son:\par
+\begin{itemize}
+\item Operadores de selección: Son los encargados de elegir cuáles individuos son los que tendrán oportunidad de reproducirse, cruzarse con otros o ser mutados para pasar a la siguiente generación.
+\item Operadores de cruce o recombinación: Se trata de una recombinación de genes entre los individuos seleccionados, para producir la descendencia que pasará a la siguiente generación.
+\item Operadores de copia: Se trata de una estrategia de reproducción a partir de la generación anterior similar a la de cruce. La diferencia es que en ésta sólo se copia el individuo padre, pasando tal cual a la generación siguiente.
+\item Operadores de mutación: La mutación consiste en variar el valor de alguno de los genes (generalmente sólo uno) de forma aleatoria.
+\end{itemize}
+En este Trabajo de Final de Grado se utilizarán los operadores genéticos de selección, cruce y mutación.\par
+\subsubsection{Operadores de selección}
+Los operadores de selección principales que se utilizan son:\par
+\begin{itemize}
+\item \textit{Selección por Ruleta:} Para realizar la selección, se debe ajustar la adaptación de cada individuo para que la suma de todos ellos sea 1. Una vez ajustada, se reparte el segmento de forma proporcional. Un número aleatorio entre 0 y 1 determinará qué individuo será seleccionado. Para saber qué individuo es el seleccionado, cada uno debe tener no solo su adaptación, sino también su adaptación acumulada, de forma que si el número aleatorio se encuentra entre la puntuación acumulada del individuo `i'\ y la del `i+1', entonces el individuo `i'\ será seleccionado. Con este método, cabe la posibilidad de que un individuo sea seleccionado más de una vez. De la misma forma, estadísticamente, los individuos con menos adaptación tienen mayor probabilidad de quedar fuera de la población seleccionada. Este proceso se repite con tantos números aleatorios como el tamaño de la población.
+
+\item \textit{Selección Estocástica universal:} Se realiza una distribución idéntica al método de selección por ruleta, pero esta vez sólo se genera un número aleatorio. Un número `i'\ será el punto inicial a partir del cual se irán seleccionando los individuos, este número estará comprendido entre 0 y 1/N, siendo N el tamaño de la población. El ratio `r'\ por el cual serán seleccionados los individuos será 1/N.
+
+\item \textit{Selección por Torneo:} un tipo de selección más elitista. Se van seleccionando pequeños grupos de individuos, y se escoge el que mejor adaptación tenga. El proceso repite hasta completar la población. Existen otras variantes, en las que se puede elegir de forma probabilística al menos adaptado.
+\item \textit{Selección por Ranking:} Se otorga un valor a los individuos que hace que éstos sean ordenados decrecientemente. Este valor asignado sólo depende de su ranking, que puede no depender directamente de su valor objetivo.
+\end{itemize}
+
+\figurahere{Bitmap/6}{width=1\textwidth}{fig:6}%
+{Ejemplo de selección por ruleta}
+
+\figurahere{Bitmap/7}{width=1\textwidth}{fig:7}%
+{Ejemplo de selección estocástica}
+
+\subsubsection{Operadores de cruce}
+Los principales operadores de cruce existentes son:\par
+\begin{itemize}
+\item \textit{Cruce monopunto:} Se divide en dos partes a los individuos que se van a cruzar y luego se combinan, generando dos nuevos individuos con una parte de cada progenitor.\ref{fig:8}.
+\item \textit{Cruce multipunto:} Similar al corte monopunto, pero los individuos se dividen en más de dos partes. Una vez cortadas, se combinan generando los nuevos individuos con al menos una parte de cada progenitor.
+\item \textit{Cruce uniforme:} En este caso se decide con una probabilidad \texit{Pi} (normalmente del 50%) si se intercambian los genes de los progenitores o si quedan sin intercambiar en los descendientes.
+\item \textit{Cruces específicos con representación no binaria:} Los siguientes operadores de cruce no pueden utilizarse con representación binaria, pues requieren de operaciones que darían un resultado real:
+\begin{itemize}
+\item \textit{Cruce aritmético:} Se realiza una combinación lineal de los genes de los padres. Una forma de hacer es que el gen de los hijos se genere haciendo una media aritmética de los genes de los padres. Dado que, de los 2 padres, sólo se genera un gen para un hijo; se puede perder población. Por esa razón, tras haber obtenido un hijo, éste se suele cruzar con uno de los padres para obtener al segundo. 
+\item \textit{Cruce geométrico:} Se realiza la raíz cuadrada del producto de los genes de los padres. Presenta el mismo problema de pérdida de población que el anterior.
+\item \textit{Cruce SBX:} El cruce SBX favorece que se generen individuos cercanos a los padres, si la diferencia entre ellos es pequeña. Está basado en el cruce monopunto binario.
+\end{itemize}
+\end{itemize}
+
+\figurahere{Bitmap/8}{width=.7\textwidth}{fig:8}%
+{Ejemplo de cruce monopunto}
+
+\subsubsection{Operadores de mutación}
+Los operadores de mutación que se utilizarán en este proyecto serán explicados en cada una de las secciones siguientes, porque serán diferentes según se trate de la parte de generación de mazmorras o de la IA \ref{fig:9}.\par
+
+\figurahere{Bitmap/9}{width=.7\textwidth}{fig:9}%
+{Ejemplo de mutación}
+
+\subsection{Función de Fitness}
+En computación evolutiva, el concepto de Fitness se asocia a la capacidad que tiene un individuo de sobrevivir y reproducirse. Para evaluar esa capacidad se asigna un valor a cada individuo que determinará su aptitud. Lo que se pretende con esto es que, con el paso de las generaciones, sean los individuos con mejor Fitness los que sobrevivan.\par
+\subsection{Mejoras en el algoritmo evolutivo}
+\subsubsection{Elitismo}
+Se selecciona, en un pequeño porcentaje, a los mejores individuos de cada generación, permitiéndoles pasar intactos a la generación siguiente.
+\subsubsection{Contractividad}
+Proceso utilizado en los AGs que consiste en, si en una generación los individuos no mejoran lo suficiente, no se tiene en cuenta. Este proceso se hace un número finito de veces y, si en ese tiempo no se ha mejorado, se detiene el algoritmo, ya que podemos suponer que la mejora ha alcanzado su punto de convergencia.
+
+\section{Programación genética}
+La programación genética es una técnica evolutiva en la cual los individuos representan expresiones codificadas en forma de árbol.\par
+John Koza es considerado el padre de la programación genética \citep*{Koza}. Él definió un AG de la siguiente manera:\par
+``Es un algoritmo matemático altamente paralelo que transforma un conjunto de objetos matemáticos individuales con respecto al tiempo usando operaciones modeladas de acuerdo al principio Darwiniano de reproducción y supervivencia del más apto, y tras haberse presentado de forma natural una serie de operaciones genéticas de entre las que destaca la recombinación sexual. Cada uno de estos objetos matemáticos suele ser una cadena de caracteres (letras o números) de longitud fija que se ajusta al modelo de las cadenas de cromosomas, y se les asocia con una cierta función matemática que refleja su aptitud.''
+
+\subsection{Representación}
+Cada individuo de la población se representa en forma de árbol con las siguientes características:
+\begin{itemize}
+\item Los nodos internos del árbol representan las funciones, que son las operaciones que se llevan a cabo. Estas operaciones pueden ser condicionales o la ejecución de otras operaciones en secuencia.
+\item Las hojas del árbol representan símbolos terminales, que son las acciones que se pueden ejecutar cuando indiquen las operaciones. Estos elementos terminales pueden ser del tipo avanzar, girar o disparar.
+\end{itemize}
+Estos árboles representan expresiones que combinan elementos terminales y no terminales\par
+Para llevar a cabo un problema de programación genética se deben seguir estos pasos:
+\begin{itemize}
+\item Identificar los elementos terminales, es decir, los elementos por los cuales el árbol no se seguirá expandiendo.
+\item Identificar bien las funciones que vamos a necesitar y el número de elementos en los que aplicará (aridad).
+\item Reconocer la función de adaptación que vamos a necesitar.
+\item Establecer los parámetros del algoritmo.
+\item Determinar bajo qué criterios consideraremos que deberá terminar la ejecución del algoritmo.
+\end{itemize}
+\subsection{Métodos de inicialización}
+Existen varios métodos para inicializar los individuos de la población cuando el genotipo de los individuos es un árbol.\par
+\begin{itemize}
+\item \textit{Creciente:} Puede haber cualquier tipo de nodo en cualquier profundidad sin superar la profundidad máxima.
+\item \textit{Completa:} Se fija una profundidad máxima del árbol y se van generando nodos no terminales hasta que se alcanza la profundidad máxima momento en el que solo se seleccionan nodos terminales.
+\item \textit{Ramped \& half:} Se genera la mitad de la población con el método completo, es decir, profundidad máxima y la otra mitad con el método creciente. En la mitad de la población que se genera con el método de inicialización creciente constan de una profundidad máxima y mínima.
+\item \textit{L \& L (método propio):} Para este método se escoge una profundidad mínima y una máxima. Hasta la mínima se usa el método de inicialización completa y una vez se ha alcanzado la profundidad mínima, desde esa hasta la máxima, el método creciente. Decidimos implementar este método porque es un método híbrido y favorece  una población variada en tamaños.
+\end{itemize}
+\subsection{Operadores}
+Al igual que en la computación evolutiva general, los operadores que se usan en programación genética son los de selección, cruce y mutación. Particularmente, hemos utilizado los siguientes:\par
+\subsubsection{Operadores de selección}
+\begin{itemize}
+\item \textit{Selección por ruleta:} a cada individuo se le asigna una parte proporcional en base a su aptitud y a un número aleatorio calculado para cada individuo. La suma de todas las aptitudes debe ser 1.
+\item \textit{Selección estocástica:} similar a la selección por ruleta, con la diferencia de que se genera un sólo número aleatorio para toda la población.
+\item \textit{Selección por ranking:} se ordena a los individuos en orden decreciente según su Fitness. En base a esa ordenación, se le otorga un valor a cada uno que será lo que determine su elección o no.
+\item \textit{Selección por torneo:} se hace competir a los individuos, según su Fitness y un factor aleatorio. En base al resultado obtenido, los mejores tendrán más posibilidades de ser elegidos.
+\end{itemize}
+\subsubsection{Operadores de cruce}
+\begin{enumerate}
+	\item \textit{Cruce simple}: se seleccionan dos nodos distintos de la raíz en dos árboles. Se cortan por esos puntos y se intercambian los subárboles como se indica en \ref{fig:35}.
+end{enumerate}
+\figurahere{Bitmap/35}{width=.7\textwidth}{fig:35}%
+{Cruce monopunto}
+\subsubsection{Operadores de mutación}
+\begin{enumerate}
+\item \textit{Mutación de árbol}: se selecciona un nodo y se sustituye por un subárbol generado aleatoriamente. Ver \ref{fig:37}. 
+\item \textit{Mutación de función}: se selecciona un nodo que represente un operador de función y se sustituye por otro que corresponda a otra función con la misma aridad, es decir, que tenga el mismo número de hijos. Ver \ref{fig:39}.
+\item \textit{Mutación de terminal}: se selecciona un nodo que represente un terminal y se sustituye por otro. Ver \ref{fig:41}.
+\item \textit{Mutación combinada}: se elige aleatoriamente qué tipo de mutación de las tres anteriores se va a utilizar y se aplica.
+\item \textit{Mutación por permutación}: consiste en intercambiar los hijos de un padre. Esta mutación decidimos no introducirla ya que, después de varias pruebas con las mencionadas anteriormente, constatamos que no iba a suponer ninguna mejora. Ver \ref{fig:43}.
+\figurahere{Bitmap/37}{width=.8\textwidth}{fig:37}%
+{Mutación de árbol}
+\figurahere{Bitmap/39}{width=.7\textwidth}{fig:39}%
+{Mutación de funcion}
+\figurahere{Bitmap/41}{width=.7\textwidth}{fig:41}%
+{Mutación terminal}
+\figurahere{Bitmap/43}{width=.4\textwidth}{fig:43}%
+{Mutación por permutación}
+\end{enumerate}
+\subsubsection{Función de evaluación -Fitness-}
+La función de fitness calcula la aptitud de un individuo en base al resultado con que éste resuelve el problema. Se tienen que evaluar las operaciones que figuran en su árbol y compararlas con los valores óptimos. Se deberá calcular su aptitud dependiendo de si el óptimo es un valor concreto, o si el problema debe maximizar o minimizar.\par
+\subsection{Mejoras en el algoritmo evolutivo}
+\subsubsection{Control del bloating}
+Cuando el genotipo de los individuos se basa en una estructura de datos que puede expandirse de forma infinita, como por ejemplo un árbol, se limita su crecimiento para evitar individuos excesivamente grandes. Cuando los individuos crecen en exceso, sin que ello suponga una mejora significativa del fitness, se utilizan muchas técnicas para controlar ese crecimiento:
+\begin{enumerate}
+\item Penalizar a los individuos muy grandes en la función de fitness.
+\item Establecer límites al tamaño de los individuos.
+\item Evaluar a varios individuos y, en caso de aptitud similar, escoger a los más pequeños.
+\item Evitar cruces que produzcan hijos peores que los padres.
+\end{enumerate}
+Algunos de los métodos de control de bloating son Penalización bien fundamentada o Tarpeian.
+\subsubsection{Intrones}
+Debido a la representación en forma de árbol de los individuos, en ocasiones pueden aparecer ramas con expresiones redundantes. Estas expresiones provocan que los individuos contengan información irrelevante que puede ser eliminada o sustituida por expresiones más simples. Un caso típico en programación genética son aquellos nodos de decisión -equivalente a una sentencia if then else- en la que ambas ramas conducen a ejecutar las mismas acciones. Este tipo de expresiones redundantes se denominan intrones.\par
+La detección de intrones depende siempre del problema concreto que se pretende resolver, ya que es un problema asociado directamente a la semántica y el contexto de los individuos. Las mismas expresiones pueden ser consideradas intrones para un problema concreto y no serlo para otro.
+\subsection{Ejemplos}
+Un ejemplo para ilustrar lo que es la programación genética es el problema de ``la hormiga artificial sobre el rastro de Santa Fe'' \citep*{PEV} \citep*{Koza}. Hay que diseñar una hormiga artificial que sea capaz de encontrar toda la comida situada en un tablero de 32x32 casillas, empezando desde la casilla situada en la esquina superior izquierda.\par
+Hacen falta operaciones que permitan avanzar, girar en ambas direcciones o comer. Por tanto, se pueden utilizar las siguientes funciones y los siguientes terminales:\par
+\begin{itemize}
+\item TERMINALES = {Avanza, Derecha, Izquierda}; donde Avanza hace que la hormiga avance una casilla en la dirección en que esté mirando en ese momento, y Derecha e Izquierda giran 90º en la dirección correspondiente.
+\item FUNCIONES = {SIC(a, b), PROGN2(a, b), PROGN3(a, b, c)}; donde \textit{SIC(a, b)} ejecuta la orden \textit{a} si detecta comida delante y \textit{b} en otro caso, y ambos \textit{PROGN} evalúan sus argumentos en orden devolviendo el último de ellos.
+\end{itemize}
+Un posible individuo y el correspondiente árbol que lo representa sería:\par
+	\[PROGN3(Derecha, PROGN2(Avanza, Avanza), PROGN2(Izquierda, Avanza))
+	\]
+En la figura \ref{fig:10} puede verse el árbol de este individuo.\par
+\figurahere{Bitmap/10}{width=.8\textwidth}{fig:10}%
+{Ejemplo de árbol de un individuo}
+Para medir la aptitud de los individuos en este problema se puede utilizar la cantidad de comida consumida por la hormiga en un intervalo de tiempo determinado. Se considera que cada operación de avance o giro consume una unidad de tiempo. Para probar a los distintos individuos se propuso un modelo de rastro llamado ``rastro de Santa Fe'' y tiene un rastro irregular, porque hay algunos huecos de una o dos posiciones que también pueden estar en las esquinas.\par
+En la figura \ref{fig:12} se muestra un ejemplo de ejecución (en negro) sobre dicho rastro en el cual se ve que la hormiga ha seguido una estrategia de tipo zig zag.\par
+\figurahere{Bitmap/12}{width=.7\textwidth}{fig:12}%
+{Ejemplo hormiga usando estrategia en zig zag}
+Ejemplo de ejecución de (PROGN3 Derecha (PROGN2 (Avanza Avanza)) (PROGN2 (Izquierda) (Avanza))
+
+
+
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:
