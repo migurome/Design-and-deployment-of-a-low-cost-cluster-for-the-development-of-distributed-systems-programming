@@ -7,6 +7,14 @@
 
 
 \section{Virtualizaci\'on del Sistema}
+Debido al volumen del material necesario para el desarrollo del proyecto, la necesidad de realizar el montaje y desmontaje de forma manual de éste y la dificultad en el acceso y configuración de cada uno de los nodos que lo componen decidimos invertir tiempo en realizar una virtualización del sistema para minimizar los problemas antes descritos. Así, al disponer de un entorno virtual, que replica el cluster real, se minimiza el tiempo necesario para la configuración de los distintos servicios y servidores del sistema operativo y sirve como banco de pruebas para el desarrollo software.\par
+
+Para ello hemos utilizamos VMware workstation 12 como plataforma de software de virtualización y una ISO de Raspbian basada en Debian Stretch disponible en la página oficial de Raspberry Pi. Aunque el sistema del cluster parte de una versión diferente de debian el sistema de carpetas y sobre todo la instalación de SIMCAN es similar al del entorno real.\par
+
+En el repositorio en github existe una réplica del sistema de carpetas tanto para el servidor como para los nodos slave. Cada una de las carpetas y ficheros modificados en el sistema durante la configuración del sistema quedan reflejados en el repositorio, disponiendo así de un listado en forma de árbol de todas las configuraciones necesarias para el correcto funcionamiento de este.\par
+
+\figurahere{Bitmap/2}{width=.7\textwidth}{fig:2}%
+{Estructura en árbol}
 \subsection{Raspbian y sus vicisitudes}
 
 \section{Montaje de servidores}
@@ -14,7 +22,24 @@
 \subsection{NFS}
 \subsection{SSH}
 \section{Instalaci\'on de SIMCAN}
+
+Antes de poder instalar el software SIMCAN es necesario realizar la instalación previa del simulador modular de eventos discretos de redes Omnet++ en su versión 4.6. Además de la suite Inet, que implementa modelos de código abierto OMNeT++ para redes cableadas, inalámbricas y móviles.\par
+
+Debido a la baja potencia de la Raspberry esta no es capaz de lanzar la aplicación de forma gráfica, esto supone un problema a la hora de realizar la instalación del software. Es por esto que todas las instalaciones han de realizarse de forma manual a través del terminal.\par
+
+Esto afecta principalmente a la instalación de Inet, ya que las principales guías de instalación disponibles en las webs oficiales parten siempre del entorno gráfico de Omnet++.\par
+
+Durante el desarrollo del proyecto hemos generado unas guías de instalación y configuración paso a paso que se desglosarán el el siguiente apartado.\par
+
 \subsection{Gu\'ia paso a paso de instalaci\'on en arquitectura ARM}
+
+\begin{itemize}
+\item Descargar los tar.gz de Omnet 4.6, Inet, simcan.tar.
+\item Esta última (simcan) incluye las bibliotecas que se necesitan para la compilación.
+\item Copia los archivos .tar de Omnet e Inet en /pi y se descomprimen
+\item Desde el directorio /pi ejecuta los siguientes comandos
+\end{itemize}
+
 
 
 \section{Optimizaci\'on y rendimiento}

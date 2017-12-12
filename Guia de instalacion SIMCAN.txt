@@ -1,4 +1,4 @@
-Descargar los tar.gz de Omnet 4.6, Imnet, simcan.tar del repositorio en Drive
+﻿Descargar los tar.gz de Omnet 4.6, Imnet, simcan.tar del repositorio en Drive
 Esta última (simcan) incluye las bibliotecas que se necesitan para la compilación.
 
 Copiamos los archivos tar de omnet e imnet en /pi y se descomprimen
@@ -18,7 +18,7 @@ cd omnetpp-4.6
 ./configure
 make
 
-INSTALACION DE IMNET
+INSTALACION DE InNET
 
 Creamos un directorio nuevo en /omnet-4.6 llamado proyect
 Copiamos en el el directorio inet descomprimido y ejecutamos 
