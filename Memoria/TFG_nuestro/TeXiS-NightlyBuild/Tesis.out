@@ -37,30 +37,32 @@
 \BOOKMARK [2][-]{subsection.3.6.1}{Falta de energ\355a}{section.3.6}% 37
 \BOOKMARK [0][-]{chapter.4}{Configuraci\363n del cluster}{}% 38
 \BOOKMARK [1][-]{section.4.1}{Virtualizaci\363n del Sistema}{chapter.4}% 39
-\BOOKMARK [2][-]{subsection.4.1.1}{Raspbian y sus vicisitudes}{section.4.1}% 40
-\BOOKMARK [1][-]{section.4.2}{Montaje de servidores}{chapter.4}% 41
-\BOOKMARK [2][-]{subsection.4.2.1}{DHCP}{section.4.2}% 42
-\BOOKMARK [2][-]{subsection.4.2.2}{NFS}{section.4.2}% 43
-\BOOKMARK [2][-]{subsection.4.2.3}{SSH}{section.4.2}% 44
-\BOOKMARK [1][-]{section.4.3}{Instalaci\363n de SIMCAN}{chapter.4}% 45
-\BOOKMARK [2][-]{subsection.4.3.1}{Gu\355a paso a paso de instalaci\363n en arquitectura ARM}{section.4.3}% 46
-\BOOKMARK [1][-]{section.4.4}{Optimizaci\363n y rendimiento}{chapter.4}% 47
-\BOOKMARK [2][-]{subsection.4.4.1}{Modificaci\363n del GRUB}{section.4.4}% 48
-\BOOKMARK [2][-]{subsection.4.4.2}{Paralelizaci\363n del arranque en servidor}{section.4.4}% 49
-\BOOKMARK [1][-]{section.4.5}{Seguridad}{chapter.4}% 50
-\BOOKMARK [2][-]{subsection.4.5.1}{Eliminaci\363n de usuarios y permisos}{section.4.5}% 51
-\BOOKMARK [1][-]{section.4.6}{Inicializaci\363n del sistema mediante scripts}{chapter.4}% 52
-\BOOKMARK [0][-]{chapter.5}{Desarrollo del software}{}% 53
-\BOOKMARK [0][-]{chapter.6}{Pruebas}{}% 54
-\BOOKMARK [1][-]{section.6.1}{Comparaci\363n con otros procesadores de mayor potencia}{chapter.6}% 55
-\BOOKMARK [1][-]{section.6.2}{Estudio a partir de qu\351 nivel de uso del cluster merece la pena ante un procesador normal}{chapter.6}% 56
-\BOOKMARK [1][-]{section.6.3}{Pruebas contra el cluster de Amazon\(???\)}{chapter.6}% 57
-\BOOKMARK [0][-]{chapter.7}{Trabajo individual}{}% 58
-\BOOKMARK [1][-]{section.7.1}{Miguel Romero Mart\355nez:}{chapter.7}% 59
-\BOOKMARK [1][-]{section.7.2}{Daniel Qui\361ones S\341nchez:}{chapter.7}% 60
-\BOOKMARK [0][-]{chapter.8}{Conclusiones y trabajo futuro}{}% 61
-\BOOKMARK [1][-]{section.8.1}{Conclusiones generales}{chapter.8}% 62
-\BOOKMARK [1][-]{section.8.2}{Trabajo futuro}{chapter.8}% 63
-\BOOKMARK [1][-]{section.8.3}{General conclusions:}{chapter.8}% 64
-\BOOKMARK [1][-]{section.8.4}{Future work:}{chapter.8}% 65
-\BOOKMARK [0][-]{appendix*.13}{Bibliograf\355a}{}% 66
+\BOOKMARK [1][-]{section.4.2}{Montaje de servidores}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.3}{Dynamic Host Configuration Protocol \(DHCP\)}{chapter.4}% 41
+\BOOKMARK [2][-]{subsection.4.3.1}{Guia paso a paso de instalaci\363n de DHCP}{section.4.3}% 42
+\BOOKMARK [1][-]{section.4.4}{Network File System \(NFS\)}{chapter.4}% 43
+\BOOKMARK [2][-]{subsection.4.4.1}{Guia paso a paso de instalaci\363n de NFS}{section.4.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.2}{Creaci\363n y lanzamiento de servidor NFS como un daemon del sistema}{section.4.4}% 45
+\BOOKMARK [2][-]{subsection.4.4.3}{SSH}{section.4.4}% 46
+\BOOKMARK [1][-]{section.4.5}{Instalaci\363n de SIMCAN}{chapter.4}% 47
+\BOOKMARK [2][-]{subsection.4.5.1}{Gu\355a paso a paso de instalaci\363n en arquitectura ARM}{section.4.5}% 48
+\BOOKMARK [1][-]{section.4.6}{Optimizaci\363n y rendimiento}{chapter.4}% 49
+\BOOKMARK [2][-]{subsection.4.6.1}{Modificaci\363n del GRUB}{section.4.6}% 50
+\BOOKMARK [2][-]{subsection.4.6.2}{Paralelizaci\363n del arranque en servidor}{section.4.6}% 51
+\BOOKMARK [1][-]{section.4.7}{Seguridad}{chapter.4}% 52
+\BOOKMARK [2][-]{subsection.4.7.1}{Eliminaci\363n de usuarios y permisos}{section.4.7}% 53
+\BOOKMARK [1][-]{section.4.8}{Inicializaci\363n del sistema mediante scripts}{chapter.4}% 54
+\BOOKMARK [0][-]{chapter.5}{Desarrollo del software}{}% 55
+\BOOKMARK [0][-]{chapter.6}{Pruebas}{}% 56
+\BOOKMARK [1][-]{section.6.1}{Comparaci\363n con otros procesadores de mayor potencia}{chapter.6}% 57
+\BOOKMARK [1][-]{section.6.2}{Estudio a partir de qu\351 nivel de uso del cluster merece la pena ante un procesador normal}{chapter.6}% 58
+\BOOKMARK [1][-]{section.6.3}{Pruebas contra el cluster de Amazon\(???\)}{chapter.6}% 59
+\BOOKMARK [0][-]{chapter.7}{Trabajo individual}{}% 60
+\BOOKMARK [1][-]{section.7.1}{Miguel Romero Mart\355nez:}{chapter.7}% 61
+\BOOKMARK [1][-]{section.7.2}{Daniel Qui\361ones S\341nchez:}{chapter.7}% 62
+\BOOKMARK [0][-]{chapter.8}{Conclusiones y trabajo futuro}{}% 63
+\BOOKMARK [1][-]{section.8.1}{Conclusiones generales}{chapter.8}% 64
+\BOOKMARK [1][-]{section.8.2}{Trabajo futuro}{chapter.8}% 65
+\BOOKMARK [1][-]{section.8.3}{General conclusions:}{chapter.8}% 66
+\BOOKMARK [1][-]{section.8.4}{Future work:}{chapter.8}% 67
+\BOOKMARK [0][-]{appendix*.15}{Bibliograf\355a}{}% 68

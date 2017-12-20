@@ -8,6 +8,101 @@
 \section{Virtualización del Sistema}
 Debido al volumen del material necesario para el desarrollo del proyecto, la necesidad de realizar el montaje y desmontaje de forma manual de éste y la dificultad en el acceso y configuración de cada uno de los nodos que lo componen decidimos invertir tiempo en realizar una virtualización del sistema para minimizar los problemas antes descritos. Así, al disponer de un entorno virtual, que replica el cluster real, se minimiza el tiempo necesario para la configuración de los distintos servicios y servidores del sistema operativo y sirve como banco de pruebas para el desarrollo software.\par
 
+
+\begin{lstlisting}[frame=single]
+1 sudo apt-get install pollas
+2 sudo apt-get update
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single][language=c][numbers=left][stepnumber=1]  % Start your code-block
+3 sudo apt-get update
+4 sudo apt-get install isc-dhcp-server
+\end{lstlisting}
+
+SERVIDOR: editar fichero isc-dchp-server
+
+\begin{lstlisting}[frame=single][language=c]  % Start your code-block
+5 sudo nano /etc/default/isc-dchp-server
+INTERFACES = “eth0”
+\end{lstlisting}
+
+
+SERVIDOR: editar fichero interfaces.d
+
+\begin{lstlisting}[frame=single][language=c]  % Start your code-block
+nano /etc/network/interfaces
+source-directory /etc/network/interfaces.d
+
+auto eth0	
+iface eth0 inet static
+address 172.16.111.106
+netmask 255.255.255.0
+network 192.168.100.0
+gateway 172.16.111.105
+
+allow-hotplug wlan0
+iface wlan0 inet manual
+    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+allow-hotplug wlan1
+iface wlan1 inet manual
+    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+\end{lstlisting}
+
+
+SERVIDOR: Editar fichero de configuración /etc/dhcp/dhcpd.conf
+
+\begin{lstlisting}[frame=single][language=c]  % Start your code-block
+Incluir la siguiente configuración al final del fichero:
+
+subnet 172.16.111.0 netmask 255.255.255.0{
+	range 172.16.111.106	172.16.111.255;
+	option domain-name-servers 8.8.8.8, 4.4.4.4;
+	default-lease-time	7776000;
+	option routers		172.16.111.105;
+}
+
+host Rick{
+	hardware ethernet <dir MAC del servidor>
+fixed-address 172.16.111.110;
+}
+\end{lstlisting}
+
+SERVIDOR: Activación de la red eth0
+
+\begin{lstlisting}[frame=single][language=c]  % Start your code-block
+sudo ifconfig eth0 up
+\end{lstlisting}
+
+
+SERVIDOR: reiniciar
+
+\begin{lstlisting}[frame=single][language=c]  % Start your code-block
+sudo reboot now 
+\end{lstlisting}
+
+
+SERVIDOR: Arranque del servicio dhcp
+
+\begin{lstlisting}[frame=single][language=c]  % Start your code-block
+sudo /usr/sbin/dhcpd
+\end{lstlisting}
+
+
+SERVIDOR: Comprobación del correcto funcionamiento del sistema
+
+\begin{lstlisting}[frame=single][language=c]  % Start your code-block
+ps -ef | grep dhcpd
+\end{lstlisting}
+
+
+SERVIDOR: Muestra de las maquinas conectadas al servicio 
+
+\begin{lstlisting}[frame=single][language=c]  % Start your code-block
+cat /var/lib/dhcp/dhcp.leases 
+\end{lstlisting}
+
+
 Para ello hemos utilizamos VMware workstation 12 como plataforma de software de virtualización y una ISO de Raspbian basada en Debian Stretch disponible en la página oficial de Raspberry Pi. Aunque el sistema del cluster parte de una versión diferente de debian el sistema de carpetas y sobre todo la instalación de SIMCAN es similar al del entorno real.\par
 
 En el repositorio en github existe una réplica del sistema de carpetas tanto para el servidor como para los nodos slave. Cada una de las carpetas y ficheros modificados en el sistema durante la configuración del sistema quedan reflejados en el repositorio, disponiendo así de un listado en forma de árbol de todas las configuraciones necesarias para el correcto funcionamiento de este.\par
@@ -227,5 +322,5 @@ Durante el desarrollo del proyecto hemos generado unas guías de instalación y co
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Tesis.tex"
-%%% End:::::
+%%% End:
 

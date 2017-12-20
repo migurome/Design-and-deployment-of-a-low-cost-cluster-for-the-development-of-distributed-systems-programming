@@ -32,30 +32,32 @@
 \contentsline {subsection}{\numberline {3.6.1}Falta de energ\'ia}{4}{subsection.3.6.1}
 \contentsline {chapter}{\numberline {4}Configuraci\'on del cluster}{5}{chapter.4}
 \contentsline {section}{\numberline {4.1}Virtualizaci\'on del Sistema}{5}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Raspbian y sus vicisitudes}{6}{subsection.4.1.1}
-\contentsline {section}{\numberline {4.2}Montaje de servidores}{6}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}DHCP}{6}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}NFS}{6}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}SSH}{6}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Instalaci\'on de SIMCAN}{6}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Gu\'ia paso a paso de instalaci\'on en arquitectura ARM}{7}{subsection.4.3.1}
-\contentsline {section}{\numberline {4.4}Optimizaci\'on y rendimiento}{7}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Modificaci\'on del GRUB}{7}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Paralelizaci\'on del arranque en servidor}{7}{subsection.4.4.2}
-\contentsline {section}{\numberline {4.5}Seguridad}{7}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Eliminaci\'on de usuarios y permisos}{7}{subsection.4.5.1}
-\contentsline {section}{\numberline {4.6}Inicializaci\'on del sistema mediante scripts}{7}{section.4.6}
-\contentsline {chapter}{\numberline {5}Desarrollo del software}{8}{chapter.5}
-\contentsline {chapter}{\numberline {6}Pruebas}{9}{chapter.6}
-\contentsline {section}{\numberline {6.1}Comparaci\'on con otros procesadores de mayor potencia}{9}{section.6.1}
-\contentsline {section}{\numberline {6.2}Estudio a partir de qu\'e nivel de uso del cluster merece la pena ante un procesador normal}{9}{section.6.2}
-\contentsline {section}{\numberline {6.3}Pruebas contra el cluster de Amazon(???)}{9}{section.6.3}
-\contentsline {chapter}{\numberline {7}Trabajo individual}{10}{chapter.7}
-\contentsline {section}{\numberline {7.1}Miguel Romero Mart\'inez:}{10}{section.7.1}
-\contentsline {section}{\numberline {7.2}\'Daniel Qui\~nones S\'anchez:}{10}{section.7.2}
-\contentsline {chapter}{\numberline {8}Conclusiones y trabajo futuro}{11}{chapter.8}
-\contentsline {section}{\numberline {8.1}Conclusiones generales}{11}{section.8.1}
-\contentsline {section}{\numberline {8.2}Trabajo futuro}{11}{section.8.2}
-\contentsline {section}{\numberline {8.3}General conclusions:}{11}{section.8.3}
-\contentsline {section}{\numberline {8.4}Future work:}{11}{section.8.4}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{13}{appendix*.13}
+\contentsline {section}{\numberline {4.2}Montaje de servidores}{8}{section.4.2}
+\contentsline {section}{\numberline {4.3}Dynamic Host Configuration Protocol (DHCP)}{9}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Guia paso a paso de instalaci\'on de DHCP}{10}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Network File System (NFS)}{11}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Guia paso a paso de instalaci\'on de NFS}{12}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Creaci\'on y lanzamiento de servidor NFS como un daemon del sistema}{13}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}SSH}{14}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Instalaci\'on de SIMCAN}{14}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Gu\'ia paso a paso de instalaci\'on en arquitectura ARM}{14}{subsection.4.5.1}
+\contentsline {section}{\numberline {4.6}Optimizaci\'on y rendimiento}{15}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Modificaci\'on del GRUB}{15}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Paralelizaci\'on del arranque en servidor}{15}{subsection.4.6.2}
+\contentsline {section}{\numberline {4.7}Seguridad}{15}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Eliminaci\'on de usuarios y permisos}{15}{subsection.4.7.1}
+\contentsline {section}{\numberline {4.8}Inicializaci\'on del sistema mediante scripts}{15}{section.4.8}
+\contentsline {chapter}{\numberline {5}Desarrollo del software}{16}{chapter.5}
+\contentsline {chapter}{\numberline {6}Pruebas}{17}{chapter.6}
+\contentsline {section}{\numberline {6.1}Comparaci\'on con otros procesadores de mayor potencia}{17}{section.6.1}
+\contentsline {section}{\numberline {6.2}Estudio a partir de qu\'e nivel de uso del cluster merece la pena ante un procesador normal}{17}{section.6.2}
+\contentsline {section}{\numberline {6.3}Pruebas contra el cluster de Amazon(???)}{17}{section.6.3}
+\contentsline {chapter}{\numberline {7}Trabajo individual}{18}{chapter.7}
+\contentsline {section}{\numberline {7.1}Miguel Romero Mart\'inez:}{18}{section.7.1}
+\contentsline {section}{\numberline {7.2}\'Daniel Qui\~nones S\'anchez:}{18}{section.7.2}
+\contentsline {chapter}{\numberline {8}Conclusiones y trabajo futuro}{19}{chapter.8}
+\contentsline {section}{\numberline {8.1}Conclusiones generales}{19}{section.8.1}
+\contentsline {section}{\numberline {8.2}Trabajo futuro}{19}{section.8.2}
+\contentsline {section}{\numberline {8.3}General conclusions:}{19}{section.8.3}
+\contentsline {section}{\numberline {8.4}Future work:}{19}{section.8.4}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{21}{appendix*.15}
