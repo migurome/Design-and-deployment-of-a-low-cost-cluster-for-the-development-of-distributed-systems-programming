@@ -1,3 +1,10 @@
+#     ____       _             _ _                
+#    / ___|_   _(_) __ _    __| | |__   ___ _ __  
+#   | |  _| | | | |/ _` |  / _` | '_ \ / __| '_ \ 
+#   | |_| | |_| | | (_| | | (_| | | | | (__| |_) |
+#    \____|\__,_|_|\__,_|  \__,_|_| |_|\___| .__/ 
+#              
+
 sudo Antes de nada debemos configurar las redes de nuestras maquinas virtuales como tarjeta de red interna, en vez de NAT que viene por defecto
 
 
@@ -10,10 +17,10 @@ $sudo apt-get install isc-dhcp-server
 
 $sudo nano /etc/default/isc-dchp-server
 
-Bajamos a INTERFACES y en ÒÓ escribimos Òeth0Ó
+Bajamos a INTERFACES y en Ã’Ã“ escribimos Ã’eth0Ã“
 
 
-Configuración del archivo /etc/network/interfaces en servidor
+ConfiguraciÃ³n del archivo /etc/network/interfaces en servidor
 
 # interfaces(5) file used by ifup(8) and ifdown(8)
 
@@ -44,10 +51,10 @@ iface wlan1 inet manual
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Configuración del fichero /etc/dhcp/dhcpd.conf en el servidor
+ConfiguraciÃ³n del fichero /etc/dhcp/dhcpd.conf en el servidor
 
 Comentaremos todo salvo authoritative que lo debemos dejar descomentado, 
-Al final del archivo a–adiremos estas lineas
+Al final del archivo aâ€“adiremos estas lineas
 
 subnet 172.16.111.0 netmask 255.255.255.0{
 	range 172.16.111.106	172.16.111.255;
@@ -56,7 +63,7 @@ subnet 172.16.111.0 netmask 255.255.255.0{
 	option routers		172.16.111.105;
 }
 host maquina1{
-	hardware ethernet<Aqui introduciremos nuestra direcci—n MAC>
+	hardware ethernet<Aqui introduciremos nuestra direcciâ€”n MAC>
 	fixed-address 172.16.111.110;
 }
 
@@ -72,9 +79,9 @@ Comprobaremos que el servicio esta funcionando
 
 $ps -ef | grep dhcpd
 
-Aparecer‡ en rojo, ahora comprobaremos con otra m‡quina virtual si est‡ funcionando
+Aparecerâ€¡ en rojo, ahora comprobaremos con otra mâ€¡quina virtual si estâ€¡ funcionando
 
-Si en el cliente hacemos ifconfig veremos que nos ha repartido la direcci—n correctamente
+Si en el cliente hacemos ifconfig veremos que nos ha repartido la direcciâ€”n correctamente
 
 Para ver las maquinas conectadas al servicio haremos
 

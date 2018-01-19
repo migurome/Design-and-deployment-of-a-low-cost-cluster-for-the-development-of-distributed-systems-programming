@@ -1,3 +1,10 @@
+#    _   _       _            
+#   | \ | | ___ | |_ __ _ ___ 
+#   |  \| |/ _ \| __/ _` / __|
+#   | |\  | (_) | || (_| \__ \
+#   |_| \_|\___/ \__\__,_|___/
+#     
+
 La carpeta guay es la RickAndMortys\Memoria\TFG\TeXiS-NightlyBuild
 Ahí encontraremos el pdf
 
