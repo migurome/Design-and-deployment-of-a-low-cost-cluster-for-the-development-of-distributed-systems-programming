@@ -1,32 +1,3 @@
-letters.txt
-DETALLES
-ACTIVIDAD
-letters.txt
-Información de uso compartido
-No compartido
-Información general
-Tipo
-Texto
-Tamaño
-3 KB (3.526 bytes)
-Espacio usado
-3 KB (3.526 bytes)
-Ubicación
-Mi unidad
-Propietario
-yo
-Modificado
-22:22 por mí
-Abierto
-22:42 por mí
-Creado el
-22:22 con Google Drive Web
-Descripción
-Añadir descripción
-Descargar permisos
-Los lectores pueden descargar
-Cerrado 
-
 /***
  *     ___     _______ _______ ______   _______ _______ 
  *    |   |   |       |       |    _ | |   _   |       |
