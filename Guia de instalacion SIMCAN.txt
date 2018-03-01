@@ -16,7 +16,7 @@ Ejecutamos las siguientes ordenes:
 cd omnetpp-4.6
 . setenv
 ./configure
-make
+make (Utiliando la opcion make -j "numero de cores" podemos acelerar el tiempo de compilado)
 
 INSTALACION DE InNET
 
@@ -26,7 +26,7 @@ em el mismo directorio
 
 sudo apt-get install libavcodec-dev libavformat-dev
 make makefiles
-make
+make (Utiliando la opcion make -j "numero de cores" podemos acelerar el tiempo de compilado)
 
 INSALACION DE SIMCAN
 
@@ -40,7 +40,7 @@ export LD_LIBRARY_PATH=$omnetpp_root/lib:$LD_LIBRARY_PATH
 export PATH=omnetpp_root/bin:$PATH
 
 make makefiles
-make
+make (Utiliando la opcion make -j "numero de cores" podemos acelerar el tiempo de compilado)
 
 
 Prueba:
