@@ -1,12 +1,4 @@
 
-module panelLateral()
-{
-    color("DarkKhaki") 
-    translate([0,60,64])
-    rotate([0,90,-2])
-    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\estructuras\\120matrix.stl",convexity = 3);
-}
-
 module carcasaVentilador()
 {
     color("RoyalBlue") 
@@ -53,18 +45,6 @@ module ventilador()
     import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\fan.stl",convexity = 3);
 }
 
-module usb()
-{ 
-    color("Grey") 
-    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\usb3.stl",convexity = 3);
-    color("DarkSlateGray")
-    translate([0,6,0])
-    //Medidas reales
-    cube([40,25,195]);
-    color("Grey") 
-    translate([0,0,66])
-    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\usb3.stl",convexity = 3);
-}
 
 module pared()
 {
@@ -80,16 +60,7 @@ module liston()
 
 module switch()
 {
-  /* 
-    intersection (){
-    translate([70,45,0]) 
-    resize(newsize=[200,160,70]) sphere(r=10);
     cube([140,90,30]);
-        }
-        
-    */
-    cube([140,90,30]);
-
 }
 
 
@@ -101,25 +72,6 @@ module box()
    // translate([155,-115,5])
    // panelLateral();
 
-    //BASE
-    translate([0,-360,0])
-    minkowski()
-    {
-      cube([240,360,1.5]);
-      //cylinder(r=2,h=1);
-      cylinder(2,10,3);
-    }
- /*   
-    //TOP
-    rotate([0,0,0])
-    translate([0,-360,120])
-    minkowski()
-    {
-      cube([240,360,1.5]);
-      //cylinder(r=2,h=1);
-      cylinder(2,10,3);
-    }
-   */ 
     
     color("grey")
     translate([0,-120,3])
@@ -134,10 +86,6 @@ module box()
 
 module box_things()
 {
-    translate([180,-240,35])
-    rotate([270,0,0])
-    usb();
-
     //translate([40,-120,160])
   
     translate([0,-30,3])ventilador();
@@ -153,7 +101,24 @@ module box_things()
     switch();
 }
 
+module caja()
+{
+    translate([280,-300,0])
+    cube([5,300,120]);
+    translate([0,-300,0])
+    cube([5,300,120]);
+    rotate([0,0,90])
+    translate([-300,-280,0])
+    cube([5,280,120]);
+    rotate([0,0,90])
+    translate([-5,-280,0])
+    cube([5,280,120]);
+}
+
+
 box_things();
-box();
+caja();
+
+
 
 

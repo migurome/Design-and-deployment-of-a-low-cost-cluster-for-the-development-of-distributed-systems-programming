@@ -1,3 +1,10 @@
+#    _   _       _            
+#   | \ | | ___ | |_ __ _ ___ 
+#   |  \| |/ _ \| __/ _` / __|
+#   | |\  | (_) | || (_| \__ \
+#   |_| \_|\___/ \__\__,_|___/
+#     
+
 Por defecto ya vienen incluidos los clientes/servidor de SSH, el problema es que hay que 
 activarlo cada vez que iniciamos la maquina, para evitar esto y conseguir que se ejecute
 desde el principio hay que ejecutar el comando " systemctl enable ssh " en las MV.
