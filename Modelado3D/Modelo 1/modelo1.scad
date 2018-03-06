@@ -7,6 +7,12 @@ module carcasaVentilador()
     import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\estructuras\\carcasaventilador.stl",convexity = 3);
 }
 
+
+module ladron()
+{
+    cube([300,50,30]);
+}
+
 module rasp()
 {
     color("Grey") 
@@ -45,80 +51,50 @@ module ventilador()
     import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\fan.stl",convexity = 3);
 }
 
-
-module pared()
-{
-    cube([150,3,150]);
-    cylinder(  150,   3, 3,false); 
-    cylinder(  150,   3, 3,false);   
-}
-
-module liston()
-{
-    cube([25,3,10]);   
-}
-
 module switch()
 {
     cube([140,90,30]);
 }
 
+module box(){
 
-module box()
-{
-  
-   // translate([155,-240,5])
-   // panelLateral();
-   // translate([155,-115,5])
-   // panelLateral();
-
+    translate([-4,-325,0])
+    cube([254,350,5]);
     
-    color("grey")
-    translate([0,-120,3])
-    panelLateral();
-    color("grey")
-    translate([0,-240,3])
-    panelLateral();
-    color("grey")
-    translate([0,-360,3])
-    panelLateral();
-}
+ //   translate([-4,-325,0])
+ //   cube([5,350,120]);
+    
+    translate([247,-325,0])
+    cube([5,350,120]);
+    
+    translate([0,-325,0])
+    cube([250,5,120]);
 
+}
 module box_things()
 {
-    //translate([40,-120,160])
-  
-    translate([0,-30,3])ventilador();
-    translate([120,-30,3])
+    rotate([0,0,90])
+    translate([-320,-240,0])
+    color("black")
+    ladron();
+    
+    color("red")
+    translate([0,3,0])
+    ventilador();
+    color("green")
+    translate([125,3,0])
     ventilador();
 
-   translate([0,-90,30])
+    translate([0,-50,30])
     rotate([90,0,90])
     cluster_rasp();
     
-    translate([20,-340,5])
+    translate([20,-320,5])
     color("RoyalBlue") 
     switch();
 }
 
-module caja()
-{
-    translate([280,-300,0])
-    cube([5,300,120]);
-    translate([0,-300,0])
-    cube([5,300,120]);
-    rotate([0,0,90])
-    translate([-300,-280,0])
-    cube([5,280,120]);
-    rotate([0,0,90])
-    translate([-5,-280,0])
-    cube([5,280,120]);
-}
-
-
+box();
 box_things();
-caja();
-
-
 
 
