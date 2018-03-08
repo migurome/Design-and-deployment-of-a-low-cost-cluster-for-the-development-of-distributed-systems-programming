@@ -1,16 +1,8 @@
 
-module carcasaVentilador()
-{
-    color("RoyalBlue") 
-    translate([75,-240,65])
-    rotate([90,90,0])
-    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\estructuras\\carcasaventilador.stl",convexity = 3);
-}
-
 module rasp()
 {
     color("Grey") 
-    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\rasp.stl",convexity = 3);
+    import("C:\\Users\\null\\Desktop\\RickAndMortys\\modelos\\modulos\\rasp.stl",convexity = 3);
 }
 module cluster_rasp()
 {
@@ -42,7 +34,7 @@ translate([0,0,15])
 module ventilador()
 {
     color("Grey") 
-    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelado3D\\modulos\\fan.stl",convexity = 3);
+    import("C:\\Users\\null\\Desktop\\RickAndMortys\\modelos\\modulos\\fan.stl",convexity = 3);
 }
 
 
