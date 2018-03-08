@@ -100,7 +100,7 @@ module box_things()
 {
     rotate([0,0,90])
     translate([-250,-250,0])
-    color("black")
+    color("IndianRed")
     ladron();
     
     color("LightSlateGray")
@@ -119,10 +119,10 @@ module box_things()
     cluster_rasp();
     
     translate([20,-270,5])
-    color("RoyalBlue") 
+    color("SteelBlue") 
     switch();
     
-    color("green") 
+    color("Lime") 
     translate([30,-65,200])
     flecha();
     
