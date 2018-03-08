@@ -4,6 +4,12 @@ module rasp()
     color("Grey") 
     import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelos\\modulos\\rasp.stl",convexity = 3);
 }
+
+module ladron()
+{
+    cube([300,50,30]);
+}
+
 module cluster_rasp()
 {
  
@@ -38,7 +44,6 @@ module ventilador()
     import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelos\\modulos\\fan.stl",convexity = 3);
 }
 
-
 module pared()
 {
     cube([150,3,150]);
@@ -53,12 +58,15 @@ module switch()
 
 module pared_tarjetas(){
  
-   
+ color("Gainsboro")  
  cube([20,5,120]);   
+    color("Gainsboro")
  cube([150,5,20]);
  translate([0,0,40])
+    color("Gainsboro")
  cube([150,5,80]);
  translate([150,0,0])
+    color("Gainsboro")
  cube([115,5,120]);
 
 }
@@ -77,6 +85,17 @@ module box()
     panelLateral();
 }
 
+module flecha(){
+    
+    
+        rotate([0,45,0])
+
+    polyhedron ( points = [[0, -10, 60], [0, 10, 60], [0, 10, 0], [0, -10, 0], [60, -10, 60], [60, 10, 60]], 
+triangles = [[0,3,2], [0,2,1], [3,0,4], [1,2,5], [0,5,4], [0,1,5],  [5,2,4], [4,2,3], ]);
+    
+    
+
+}
 module box_things()
 {
     rotate([0,0,90])
@@ -84,11 +103,12 @@ module box_things()
     color("black")
     ladron();
     
-    color("red")
+    color("LightSlateGray")
     translate([10,-130,150])
     rotate([90,0,90])
     ventilador();
-    color("green")
+    
+    color("LightSlateGray")
     
     translate([130,-130,150])
     rotate([90,0,90])
@@ -101,28 +121,50 @@ module box_things()
     translate([20,-270,5])
     color("RoyalBlue") 
     switch();
+    
+    color("green") 
+    translate([30,-65,200])
+    flecha();
+    
+    color("green") 
+    translate([150,-65,200])
+    flecha();
 }
 
 module caja()
 {
+    
+    
+    color("Gainsboro")
     translate([260,-280,0])
     cube([5,280,120]);
-    translate([0,-280,0])
-    cube([5,280,120]);
+    
+
+//    color("Gainsboro")
+//    translate([0,-280,0])
+//    cube([5,280,120]);
+    
     rotate([0,0,90])
+    color("Gainsboro")
     translate([-280,-260,0])
     cube([5,260,120]);
     pared_tarjetas();
+    
+    color("Gray")
+    translate([260,-140,60])
+    rotate([0,0,90])
+    cube([5,255,120]);
 }
 
-module ladron()
-{
-    cube([300,50,30]);
-}
-
-
+module box(){
 box_things();
 caja();
+}
+
+translate([-120,--120,0])
+
+box();
+
 
 
 
