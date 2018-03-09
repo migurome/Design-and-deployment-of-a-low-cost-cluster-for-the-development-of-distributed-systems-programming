@@ -1,0 +1,1 @@
+Para modificar el teclado al castellano hay que renombrar el fichero modificarTecladoCastellano.xsessionrc a .xsessionrc y reiniciar el sistema
