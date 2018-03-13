@@ -1,13 +1,24 @@
+module ladron()
+{
+    cube([300,50,30]);
+}
 
 module rasp()
 {
     color("Grey") 
-    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelos\\modulos\\rasp.stl",convexity = 3);
+    import("C:\\hlocal\\RickAndMortys\\modelos\\modulos\\rasp.stl",convexity = 3);
 }
 
-module ladron()
-{
-    cube([300,50,30]);
+module flecha(){
+    
+    
+        rotate([0,45,0])
+
+    polyhedron ( points = [[0, -10, 60], [0, 10, 60], [0, 10, 0], [0, -10, 0], [60, -10, 60], [60, 10, 60]], 
+triangles = [[0,3,2], [0,2,1], [3,0,4], [1,2,5], [0,5,4], [0,1,5],  [5,2,4], [4,2,3], ]);
+    
+    
+
 }
 
 module cluster_rasp()
@@ -40,127 +51,92 @@ translate([0,0,15])
 module ventilador()
 {
     color("Grey") 
-    
-    import("C:\\Users\\null\\Desktop\\RickAndMortys\\Modelos\\modulos\\fan.stl",convexity = 3);
-}
-
-module pared()
-{
-    cube([150,3,150]);
-    cylinder(  150,   3, 3,false); 
-    cylinder(  150,   3, 3,false);   
+    import("C:\\hlocal\\RickAndMortys\\modelos\\modulos\\fan.stl",convexity = 3);
 }
 
 module switch()
 {
     cube([140,90,30]);
+
 }
 
-module pared_tarjetas(){
- 
- color("Gainsboro")  
- cube([20,5,120]);   
+module box(){
+    //Pared lateral
     color("Gainsboro")
- cube([150,5,20]);
- translate([0,0,40])
+    translate([-4,-325,0])
+    cube([5,350,120]);
     color("Gainsboro")
- cube([150,5,80]);
- translate([150,0,0])
+    translate([247,-325,0])
+    cube([5,350,120]);
+    
+    //ParedVentVerdeGrande
     color("Gainsboro")
- cube([115,5,120]);
+    translate([0,-325,0])
+    cube([100,5,120]);
+    //ParedVentVedePequeña
+    color("Gainsboro")
+    translate([220,-325,0])
+    cube([30,5,120]);
+    
+    
+    //ParedVentRedGrande
+    color("Gainsboro")
+    translate([160,20,0])
+    cube([90,5,120]);
+    
+    //ParedVentRedPequeño
+    color("Gainsboro")
+    translate([0,20,0])
+    cube([40,5,120]);
+
 
 }
 
 
-module box()
-{
-    color("grey")
-    translate([0,-120,3])
-    panelLateral();
-    color("grey")
-    translate([0,-240,3])
-    panelLateral();
-    color("grey")
-    translate([0,-360,3])
-    panelLateral();
-}
-
-module flecha(){
-    
-    
-        rotate([0,45,0])
-
-    polyhedron ( points = [[0, -10, 60], [0, 10, 60], [0, 10, 0], [0, -10, 0], [60, -10, 60], [60, 10, 60]], 
-triangles = [[0,3,2], [0,2,1], [3,0,4], [1,2,5], [0,5,4], [0,1,5],  [5,2,4], [4,2,3], ]);
-    
-    
-
-}
 module box_things()
 {
     rotate([0,0,90])
-    translate([-250,-250,0])
+    translate([-300,-230,63])
     color("IndianRed")
     ladron();
     
     color("LightSlateGray")
-    translate([10,-130,150])
-    rotate([90,0,90])
+    translate([40,10,0])
     ventilador();
-    
     color("LightSlateGray")
-    
-    translate([130,-130,150])
-    rotate([90,0,90])
+    translate([100,-338,0])
     ventilador();
 
-    translate([0,-50,30])
+    translate([0,-100,63])
     rotate([90,0,90])
     cluster_rasp();
     
-    translate([20,-270,5])
+    translate([20,-280,63])
     color("SteelBlue") 
     switch();
     
-    color("Lime") 
-    translate([30,-65,200])
+    color("Red")
+    translate([60,90,63])
+    rotate([90,0,0])
     flecha();
     
-    color("red")
-    rotate([0,180,0])
-    translate([-230,-65,-240])
+    color("Lime")
+    translate([120,-370,63])
+    rotate([90,0,0])
     flecha();
-}
-
-module caja()
-{
-    
-    
-    color("Gainsboro")
-    translate([260,-280,0])
-    cube([5,280,120]);
-
-    //color("Gainsboro")
-    //translate([0,-280,0])
-    //cube([5,280,120]);
-
-    rotate([0,0,90])
-    color("Gainsboro")
-    translate([-280,-260,0])
-    cube([5,260,120]);
-    pared_tarjetas();
+        
     
 }
 
-module box(){
+
+module caja(){
 box_things();
-caja();
-}
-
-translate([-120,--120,0])
-
 box();
 
+}
+
+translate([-120,140,0])
+caja();
 
 
 
