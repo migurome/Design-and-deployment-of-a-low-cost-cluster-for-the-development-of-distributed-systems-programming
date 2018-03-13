@@ -25,4 +25,11 @@ set xtic scale 0 font "Verdana, 18"
 
 
 ### Plot
-plot 'datos.txt' using 2:xtic(1) title "a", "" using 3 title "b", "" using 4 title "c", "" using 5 title "d", "" using 6 title "e", "" using 7 title "f", "" using 8 title "g"
+plot 'lineas.dat' using 2:xtic(1) title "a",\
+	"" using 3 title "b",\
+	"" using 4 title "c",\
+	"" using 5 title "d",\
+	"" using 6 title "e",\
+	"" using 7 title "f",\
+	"" using 8 title "g"
+
