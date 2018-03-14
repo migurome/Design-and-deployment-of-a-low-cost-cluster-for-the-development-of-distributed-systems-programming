@@ -33,3 +33,20 @@ plot 'lineas.dat' using 2:xtic(1) title "a",\
 	"" using 7 title "f",\
 	"" using 8 title "g"
 
+//Aporte de Rome, para configurar la consola de Windows
+
+//How to fuck
+
+set key right out
+set title "Modelo 1" font "Consolas, 12"
+set ylabel "Grados" font "Consolas, 10"
+set xlabel "Tiempo total: 3 horas" font "Consolas, 10"
+
+#1R
+plot [10:11000][40:60] 'M1' w l lc rgb 'red'
+
+#3R
+plot [20:11000][40:60] 'Rpi 1' w l lc rgb 'red' ,  'Rpi 2D' w l lc rgb 'blue',  'Rpi 3' w l lc rgb 'green'
+
+#6R
+plot [20:11000][40:70] 'Rpi 1D' w l lc rgb 'red' ,  'Rpi 2' w l lc rgb 'blue',  'Rpi 3' w l lc rgb 'green',  'Rpi 4D' w l lc rgb 'black',  'Rpi 5' w l lc rgb 'brown',  'Rpi 6' w l lc rgb 'purple'
