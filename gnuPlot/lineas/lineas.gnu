@@ -38,7 +38,7 @@ plot 'lineas.dat' using 2:xtic(1) title "a",\
 //How to fuck
 
 set key right out
-set title "Modelo 1" font "Consolas, 12"
+set title "Modelo 3" font "Consolas, 12"
 set ylabel "Grados" font "Consolas, 10"
 set xlabel "Tiempo total: 3 horas" font "Consolas, 10"
 
@@ -50,3 +50,7 @@ plot [20:11000][40:60] 'Rpi 1' w l lc rgb 'red' ,  'Rpi 2D' w l lc rgb 'blue',  
 
 #6R
 plot [20:11000][40:70] 'Rpi 1D' w l lc rgb 'red' ,  'Rpi 2' w l lc rgb 'blue',  'Rpi 3' w l lc rgb 'green',  'Rpi 4D' w l lc rgb 'black',  'Rpi 5' w l lc rgb 'brown',  'Rpi 6' w l lc rgb 'purple'
+
+#Estrés
+set xlabel "Tiempo total: 24 horas" font "Consolas, 10"
+plot [20:11000][40:60] 'Rpi 1D' w l lc rgb 'red' ,  'Rpi 2' w l lc rgb 'blue',  'Rpi 3' w l lc rgb 'green',  'Rpi 4D' w l lc rgb 'black',  'Rpi 5' w l lc rgb 'brown',  'Rpi 6' w l lc rgb 'purple'
