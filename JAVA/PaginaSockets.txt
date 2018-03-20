@@ -1,1 +1,5 @@
+1 - Sockets
 https://www.programarya.com/Cursos-Avanzados/Java/Sockets
+
+2 - TCP / IP Sockets
+https://www.pegaxchange.com/2017/12/07/simple-tcp-ip-server-client-java/

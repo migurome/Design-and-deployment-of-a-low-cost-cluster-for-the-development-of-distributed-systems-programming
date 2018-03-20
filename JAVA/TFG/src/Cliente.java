@@ -11,7 +11,7 @@ public class Cliente extends Conexion
 		{
 			//Flujo de datos hacia el servidor
 			salidaServidor = new DataOutputStream(cs.getOutputStream());
-
+			
 			//Se enviaran dos mensajes
 			for (int i = 0; i < 2; i++)
 			{

@@ -1,4 +1,4 @@
-﻿Descargar los tar.gz de Omnet 4.6, Imnet, simcan.tar del repositorio en Drive
+Descargar los tar.gz de Omnet 4.6, Imnet, simcan.tar del repositorio en Drive
 Esta última (simcan) incluye las bibliotecas que se necesitan para la compilación.
 
 Copiamos los archivos tar de omnet e imnet en /pi y se descomprimen
@@ -53,6 +53,6 @@ Puede que no esté el fichero TCPCommand_m.h con lo que habría ejecutar:
 
 cp /home/pi/omnetpp-4.6/proyects/inet/src/transport/contract/TCPCommand_m.h /home/pi/omnetpp-4.6/proyects/simcan/src/Messages/TCPCommand_m.h
 
-Si se produce un error de no se puede ejectuar run_simcan hay que conceder permiso de ejecucion a projects/simcan/src run_sincam
+Si se produce un error de no se puede ejectuar run_simcan hay que conceder permiso de ejecucion a projects chmod +x /simcan/src/run_sincam
 
 A disfrutar!
