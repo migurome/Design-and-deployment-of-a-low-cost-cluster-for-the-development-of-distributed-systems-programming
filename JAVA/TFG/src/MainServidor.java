@@ -1,7 +1,7 @@
 import java.io.IOException;
 
 
-//Clase principal que hará uso del servidor
+//Clase principal que hara uso del servidor
 public class MainServidor
 {
     public static void main(String[] args) throws IOException

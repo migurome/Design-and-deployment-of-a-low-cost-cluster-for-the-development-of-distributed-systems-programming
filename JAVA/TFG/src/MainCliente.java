@@ -1,7 +1,7 @@
 import java.io.IOException;
 
 
-//Clase principal que hará uso del cliente
+//Clase principal que hara uso del cliente
 public class MainCliente
 {
     public static void main(String[] args) throws IOException
