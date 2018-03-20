@@ -53,4 +53,4 @@ plot [20:11000][40:70] 'Rpi 1D' w l lc rgb 'red' ,  'Rpi 2' w l lc rgb 'blue',  
 
 #Estrés
 set xlabel "Tiempo total: 24 horas" font "Consolas, 10"
-plot [20:11000][40:60] 'Rpi 1D' w l lc rgb 'red' ,  'Rpi 2' w l lc rgb 'blue',  'Rpi 3' w l lc rgb 'green',  'Rpi 4D' w l lc rgb 'black',  'Rpi 5' w l lc rgb 'brown',  'Rpi 6' w l lc rgb 'purple'
+plot [1:1400][39:55] 'Rpi 1D' w l lc rgb 'red' ,  'Rpi 2' w l lc rgb 'blue',  'Rpi 3' w l lc rgb 'green',  'Rpi 4D' w l lc rgb 'black',  'Rpi 5' w l lc rgb 'brown',  'Rpi 6' w l lc rgb 'purple'
