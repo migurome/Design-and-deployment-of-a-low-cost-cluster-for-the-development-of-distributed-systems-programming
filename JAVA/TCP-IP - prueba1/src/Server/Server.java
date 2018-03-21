@@ -9,16 +9,18 @@ import java.net.Socket;
 import java.util.Scanner;
 
 class Server{  
-	public static void main(String args[])throws Exception{   
+	public static void main(String args[])throws Exception{  
+		
+		//Se declara un string y pide un nombre de archivo para leerlo
 		String filename;
 		System.out.println("Enter File Name: ");
 		Scanner sc=new Scanner(System.in);
 		filename=sc.nextLine();
-		sc.close();
 		while(true)
 		{
-			//create server socket on port 5000
+			//Crea un server socket en un puerto fijo, en este caso el 5000
 			ServerSocket ss=new ServerSocket(5000); 
+			//Espera a la 
 			System.out.println ("Waiting for request");
 			Socket s=ss.accept();  
 			System.out.println ("Connected With "+s.getInetAddress().toString());
@@ -40,7 +42,8 @@ class Server{
 					FileInputStream fin=new FileInputStream(f);
 					long sz=(int) f.length();
 
-					byte b[]=new byte [1024];
+					//Cambiado de 1024 a lo que hay
+					byte b[]=new byte [10240];
 
 					int read;
 

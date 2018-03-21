@@ -33,13 +33,12 @@ class Client{
 
 			filename=din.readUTF(); 
 			System.out.println("Receving file: "+filename);
-			filename="client"+filename;
 			System.out.println("Saving as file: "+filename);
 			//
 			long sz=Long.parseLong(din.readUTF());
 			System.out.println ("File Size: "+(sz/(1024*1024))+" MB");
 
-			byte b[]=new byte [1024];
+			byte b[]=new byte [10240];
 			System.out.println("Receving file..");
 			FileOutputStream fos=new FileOutputStream(new File(filename),true);
 			long bytesRead;
@@ -47,7 +46,7 @@ class Client{
 			{
 				bytesRead = din.read(b, 0, b.length);
 				fos.write(b,0,b.length);
-			}while(!(bytesRead<1024));
+			}while(!(bytesRead<10240));
 			System.out.println("Completed");
 			fos.close(); 
 			dout.close();  	
