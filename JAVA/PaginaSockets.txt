@@ -3,3 +3,8 @@ https://www.programarya.com/Cursos-Avanzados/Java/Sockets
 
 2 - TCP / IP Sockets
 https://www.pegaxchange.com/2017/12/07/simple-tcp-ip-server-client-java/
+
+3 - TCP / IP Sockets info
+
+http://nereida.deioc.ull.es/~cleon/doctorado/doc06/doc06/html/node1.html
+
