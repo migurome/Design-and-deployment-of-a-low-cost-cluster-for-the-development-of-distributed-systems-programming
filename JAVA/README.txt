@@ -5,9 +5,29 @@ Para poder ejecutar los .jar correctamente debemos tener nuestra version de java
 	
 	En caso de que no se encuentre:
 	
-	sudo apt-get update
 	sudo apt-get upgrade
+	sudo apt-get update
 	sudo apt-get install default-jre 
 
 Ejecución:
 
+SERVIDOR
+en la consola de comandos, java -jar JarServer.jar
+nos pide nombre del fichero a enviar, que debe estar en la carpeta del proyecto. Tras introducirlo, queda a la espera
+
+CLIENTE
+Java -jar JarClient.jar
+Nos pide dirIp del servidor y tras introducirla escribimos start e intro.
+
+CREACIÓN DE UN .JAR
+
+proyect - export - runnable JAR file
+
+launch configuration elegimos la clase que queremos hacer ejecutable
+
+client.java
+server.java
+
+opiones elegidas: extract required libraries into generated jar (unicamente)
+
+finish
