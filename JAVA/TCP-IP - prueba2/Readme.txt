@@ -1,1 +1,0 @@
-En este caso tenemos un server y un client, el servidor cogede la ruta absoluta c:/hlocal/ el archivo miau.txt y lo manda a la ruta que nosotros elegimos, ejecutando el servidor primero y el cliente después 
