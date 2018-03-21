@@ -1,3 +1,11 @@
-El servidor te pide el nombre del archivo a enviar que debe estar en la carpeta del proyecto, es decir, ..\RickAndMortys\JAVA\TCP-IP - prueba1, y al introducir el nombre se quedará a la espera del cliente. 
+El servidor te pide el nombre del archivo a enviar quees decir, ..\RickAndMortys\JAVA\TCP-IP - prueba1, y al introducir el nombre se quedará a la espera del cliente. 
 
-Éste por su parte al ejecutarle, nos pedirá la dirección IP del servidor y lo enviará a la misma ruta tras escribir "start"
+
+
+Servidor
+en la consola de comandos, java -jar JarServer.jar
+nos pide nombre del fichero a enviar, que debe estar en la carpeta del proyecto. Tras introducirlo, queda a la espera
+
+CLiente
+Java -jar JarClient.jar
+Nos pide dirIp del servidor y tras introducirla escribimos start e intro.
