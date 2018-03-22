@@ -18,6 +18,16 @@ Para poder ejecutar los .jar correctamente debemos tener nuestra version de java
 	sudo apt-get update
 	sudo apt-get install default-jre 
 
+
+/***
+ *                               _       
+ *       _____  _____  ___ _   _| |_ ___ 
+ *      / _ \ \/ / _ \/ __| | | | __/ _ \
+ *     |  __/>  <  __/ (__| |_| | ||  __/
+ *      \___/_/\_\___|\___|\__,_|\__\___|
+ *                                       
+ */
+
 Ejecución:
 
 SERVIDOR
