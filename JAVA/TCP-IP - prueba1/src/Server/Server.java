@@ -38,19 +38,19 @@ class Server{
 					dout.writeUTF(filename);  
 					dout.flush();  
 
-					File f=new File(filename);
-					FileInputStream fin=new FileInputStream(f);
-					long sz=(int) f.length();
+					File f = new File(filename);
+					FileInputStream fin = new FileInputStream(f);
+					long sz = (int) f.length();
 
 					//Cambiado de 1024 a lo que hay
-					byte b[]=new byte [10240];
+					byte b[] = new byte [10240];
 
 					int read;
 
 					dout.writeUTF(Long.toString(sz)); 
 					dout.flush(); 
 
-					System.out.println ("Size: "+sz);
+					System.out.println ("Size: " + sz);
 					System.out.println ("Buf size: "+ss.getReceiveBufferSize());
 
 					while((read = fin.read(b)) != -1){

@@ -18,12 +18,13 @@ class Client{
 		address=sc.nextLine();
 		//create the socket on port 5000
 		Socket s=new Socket(address,5000);  
-		DataInputStream din=new DataInputStream(s.getInputStream());  
-		DataOutputStream dout=new DataOutputStream(s.getOutputStream());  
-		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));  
+		DataInputStream din = new DataInputStream(s.getInputStream());  
+		DataOutputStream dout = new DataOutputStream(s.getOutputStream());  
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));  
 
 		System.out.println("Send Get to start...");
-		String str="",filename="";  
+		String str = "", filename = "";
+
 		try{
 			while(!str.equals("start"))
 				str=br.readLine(); 
@@ -47,6 +48,7 @@ class Client{
 				bytesRead = din.read(b, 0, b.length);
 				fos.write(b,0,b.length);
 			}while(!(bytesRead<10240));
+
 			System.out.println("Completed");
 			fos.close(); 
 			dout.close();  	
