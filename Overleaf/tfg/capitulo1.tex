@@ -1,0 +1,48 @@
+\newpage
+
+\chapter{Introducción}
+
+\label{ch:capitulo1.tex}
+
+\begin{FraseCelebre}
+	\begin{Frase}
+		However difficult life may seem, there is always something you can do, and succeed at. It matters that you don’t just give up.
+	\end{Frase}
+	\begin{Fuente}
+	Stephen William Hawking
+	\end{Fuente}
+\end{FraseCelebre}
+
+\paragraph{}
+El objetivo principal de este trabajo es el desarrollo de un clúster de cómputo de bajo presupuesto. Para ello hemos hecho uso de los denominados computadores de placa reducida, \textbf{Raspberry Pi}, como nodos de procesamiento sobre una distribución de linux \textit{Debian Jessie}. 
+
+Nos planteamos los siguientes objetivos específicos: diseño del contenedor, distribución de cada uno de los elementos dentro de éste, estudio de las temperaturas y comportamiento del Hardware bajo situaciones de estrés, despliegue y desarrollo del software del sistema, estudio de rendimiento del mismo, generación de guías de instalación y aspectos específicos de configuración del sistema, desarrollo de un planificador de tareas para la distribución de trabajos entre los nodos y desarrollo de un  software para realizar el envío y recepción de trabajos al clúster.
+
+A lo largo del documento se irán desarrollando cada uno de los puntos anteriores.
+
+Este trabajo está destinado a complementar las prácticas de laboratorio que se realizan en la asignatura de \textit{Programación de Sistemas Distribuidos} (PSD) en la \textit{Facultad de Informática} de la \textbf{Universidad Complutense de Madrid}, al finalizar el proyecto, el cluster, permitirá a los alumnos la posibilidad de realizar algunas de las tareas de cómputo sobre él, servirá además como ejemplo de un sistema distribuido real, con el que poder afianzar los conocimientos de la asignatura.
+
+\section{Motivación}
+\label{makereference1.2}
+\paragraph{}
+En los últimos años se ha incrementado ese tipo de proyectos por parte de distintas universidades e iniciativas de particulares. Principalmente estos se han centrado en aumentar el número de dispositivos en cada proyecto, pero no existe un estudio de comportamiento real de uno de ellos, así como una guía que establezca los pasos a seguir, nuestro propósito ha sido el de reflejar todos los aspectos del desarrollo de uno de estos clusteres, centrándonos particularmente en la correcta disposición y distribución de los componentes para mejorar aspectos como la accesibilidad, la correcta refrigeración de los nodos y la mejora del rendimiento en ellos.
+
+
+\section{Objetivos}
+\label{makereference1.3}
+\paragraph{}
+Existen multitud de proyectos de este tipo, destacaremos los mas interesantes: 
+
+\begin{itemize}
+
+\item \href{http://web.eece.maine.edu/~vweaver/projects/pi-cluster}{VMW Research Group Raspberry Pi Cluster}, dispone de un clúster de 24 nodos realizado con raspberry Pi 2 con una interfaz de pantalla táctil y dos adaptadores de Ethernet que controlan la fuente de alimentación , sirve DHCP, NFS.  
+    
+\item\href{http://www.southampton.ac.uk/~sjc/raspberrypi}{Universidad de Southampton}, investigadores de esta universidad han construido una supercomputadora de Raspberry Pi unidas con Lego. El profesor Simon Cox y su equipo construyeron la supercomputadora de 64 procesadores y 1 TB de memoria. Tiene un coste aproximado de 3100 euros.
+    
+\item\href{http://likemagicappears.com/projects/raspberry-pi-cluster/}{David Guill}, en su web Like Magic Appears ofrece una guía de construcción de un clúster de 40 nodos y dispone de material audiovisual como guía.
+    
+    
+    
+\end{itemize}
+
+

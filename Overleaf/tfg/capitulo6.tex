@@ -1,0 +1,47 @@
+\newpage
+
+\thispagestyle{empty}
+\mbox{}
+
+\chapter{Cliente Servidor en JAVA}
+
+\label{ch:capitulo6.tex}
+
+\begin{FraseCelebre}
+	\begin{Frase}
+		'long long long' is too long for GCC
+	\end{Frase}
+	\begin{Fuente}
+	Some GCC programer
+	\end{Fuente}
+\end{FraseCelebre}
+
+La introducción que creamos necesaria para este capítulo
+
+\section{Creación de un .jar}
+\label{makereference6.2}
+\paragraph{}
+
+Para poder ejecutar los \textit{.jar} correctamente debemos tener nuestra versión de \textit{Java} en la \textbf{versión 1.8}, esto se configura de la siguiente manera:
+
+\begin{lstlisting}[language=c,frame=single,numbers=none]
+	1 sudo update-alternatives --config java
+	2 Elegiremos la opción /usr/lib/jvm/oracle-java8-jdk-i386/jre/bin/java
+	3 En caso de que no se encuentre:
+		3.1	sudo apt-get upgrade
+		3.2	sudo apt-get update
+		3.3	sudo apt-get install default-jre
+	Dentro de eclipse:
+	4 Seleccionamos: Proyect - export - runnable JAR file
+		4.2	launch configuration elegimos la clase que queremos hacer ejecutable (client.java o server.java)
+		4.3 opiones seleccionadas: 
+        	4.3.1 extract required libraries into generated jar
+		4.4 finish
+    
+\end{lstlisting}
+
+
+	
+	 
+
+
