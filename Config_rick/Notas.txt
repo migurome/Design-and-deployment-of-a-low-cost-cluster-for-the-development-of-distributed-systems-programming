@@ -1,4 +1,4 @@
-#    _   _       _            
+﻿#    _   _       _            
 #   | \ | | ___ | |_ __ _ ___ 
 #   |  \| |/ _ \| __/ _` / __|
 #   | |\  | (_) | || (_| \__ \
@@ -31,5 +31,8 @@ Habilitar EL ARRANQUE AUTOMÁTICO de un usuario por defecto:
 
 sudo leafpad /etc/lightdm/lightdm.conf
 autologin-user = morty
+
+PROBLEMA
+En Raspberry Pi Configuration está habilitado el autoLogin de Pi, debemos desactivarlo
 
 En rick por defecto no hay arranque automático, en los morty por defecto será el propio morty
