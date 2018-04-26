@@ -45,4 +45,4 @@ UUID=7b0cc0fb-8124-4841-abc0-165ec421f724 none            swap    sw            
 /dev/sr0        /media/cdrom0   udf,iso9660 user,noauto     0       0
 # a swapfile is not a swap partition, no line here
 #   use  dphys-swapfile swap[on|off]  for that
-192.168.21.135:/home/morty /home/morty nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
+169.254.12.1:/home/morty /home/morty nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0

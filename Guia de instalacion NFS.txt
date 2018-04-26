@@ -13,8 +13,7 @@ SERVIDOR: Instalar paquetes
 SERVIDOR: Editar fichero de configuración "/etc/exports"
 
  Incluir al final del fichero el directorio a compartir:
- Ruta de carpeta
- Dirección IP de máquina destino / permisos
+ Ruta de carpeta / Dirección IP de máquina destino / permisos
  /home/morty 169.254.12.0/24(rw,no_subtree_check)
 
 CLIENTE: Instalación de paquetes en el cliente 
@@ -29,11 +28,16 @@ SERVIDOR: reiniciar servicios
  sudo /etc/init.d/rpcbind restart
  sudo /etc/init.d/nfs-kernel-server restart
 
-CLIENTE:
- sudo mount 169.254.12.1:/home/morty /home/morty
- 
- Dirección ip de servidor
+CLIENTE: Editar fichero de configuración "/etc/fstab"
 
+Incluir al final del fichero el directorio a montar durante el arranque:
+
+ 169.254.12.1:/home/morty /home/morty nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
+
+ Opcionamente se puede realizar el montaje de forma manual mediante el comando:
+
+ sudo mount 169.254.12.1:/home/morty /home/morty
+  
 PROBLEMAS:
 
 Permisos desde la maquina cliente:
