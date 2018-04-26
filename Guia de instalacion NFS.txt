@@ -70,8 +70,3 @@ por estricto orden:
 sudo exportfs -a
 sudo /etc/init.d/rpcbind restart
 sudo /etc/init.d/nfs-kernel-server restart
-
-
-
-//
-Tanto el usuario morty en el servidor como en la maquina han de ser sudoers
