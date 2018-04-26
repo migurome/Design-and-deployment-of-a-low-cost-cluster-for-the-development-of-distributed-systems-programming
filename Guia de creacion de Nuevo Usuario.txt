@@ -1,0 +1,17 @@
+sudo useradd -m -g Usuarios -G gestion - s /bin/bash usuario
+
+Explicación:
+
+-m: Crear automáticamente la carpeta del usuario el la carpeta /Home/<NombreUsuario>
+-g: grupo principal al que sera agregado
+-G: Grupos secundarios al que pertenecerá.
+-s: Shell que utilizara por defecto el usuario.
+usuario: Nombre del usuario.
+
+
+Despues de este comando queda asignar la contraseña, para ello utilizamos el comando “passwd”.
+
+sudo passwd usuario
+Luego nos pide que tecleemos la contraseña y que la repetimos para confirmar.
+
+Con esto ya tendríamos creado nuestro usuario y asignada su contraseña.
