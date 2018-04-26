@@ -1,4 +1,4 @@
-#     ____       _         _   _ _____ ____  
+﻿#     ____       _         _   _ _____ ____  
 #    / ___|_   _(_) __ _  | \ | |  ___/ ___| 
 #   | |  _| | | | |/ _` | |  \| | |_  \___ \ 
 #   | |_| | |_| | | (_| | | |\  |  _|  ___) |
@@ -7,40 +7,39 @@
 
 SERVIDOR: Instalar paquetes
 
-	sudo apt-get update
-	sudo apt-get install nfs-kernel-server
+ sudo apt-get update
+ sudo apt-get install nfs-kernel-server
 
 SERVIDOR: Editar fichero de configuración "/etc/exports"
 
-	Incluir al final del fichero el directorio a compartir:
-	Ruta de carpeta
-	Dirección IP de máquina destino / permisos
-	/home/morty 192.168.21.0/24(rw,no_subtree_check)
+ Incluir al final del fichero el directorio a compartir:
+ Ruta de carpeta
+ Dirección IP de máquina destino / permisos
+ /home/morty 169.254.12.0/24(rw,no_subtree_check)
 
 CLIENTE: Instalación de paquetes en el cliente 
 
-	Instalados por defecto en raspBian
-	sudo apt-get update
-	sudo apt-get install build-essential gcc g++ bison flex perl  tcl-dev tk-dev libxml2-dev zlib1g-dev default-jre doxygen graphviz libwebkitgtk-1.0-0 openmpi-bin libopenmpi-dev libpcap-dev
-
-SERVIDOR: ejecutar cambios realizados
-
-	sudo exportfs -a
-	sudo mount 192.168.21.131:/home/morty /home/morty
-	
-	Dirección ip de servidor
+ Instalados por defecto en raspBian
+ sudo apt-get update
+ sudo apt-get install build-essential gcc g++ bison flex perl  tcl-dev tk-dev libxml2-dev zlib1g-dev default-jre doxygen graphviz libwebkitgtk-1.0-0 openmpi-bin libopenmpi-dev libpcap-dev
 
 SERVIDOR: reiniciar servicios 
 
-	sudo /etc/init.d/rpcbind restart
-	sudo /etc/init.d/nfs-kernel-server restart
+ sudo exportfs -a
+ sudo /etc/init.d/rpcbind restart
+ sudo /etc/init.d/nfs-kernel-server restart
+
+CLIENTE:
+ sudo mount 169.254.12.1:/home/morty /home/morty
+ 
+ Dirección ip de servidor
 
 PROBLEMAS:
 
 Permisos desde la maquina cliente:
 
-	El usuario de la maquina cliente ha de ser sudoer
-	La carpeta compartida ha de tener todos los permisos chmod -R 0777 scenario
+ El usuario de la maquina cliente ha de ser sudoer
+ La carpeta compartida ha de tener todos los permisos chmod -R 0777 scenario
 
 
 #    _____                 _            
@@ -65,5 +64,10 @@ Para arrancar el servicio en SERVIDOR
 por estricto orden:
 
 sudo exportfs -a
-sudo /etc/rpcbind restart
-sudo /etc/nfs-kernel-server restart
+sudo /etc/init.d/rpcbind restart
+sudo /etc/init.d/nfs-kernel-server restart
+
+
+
+//
+Tanto el usuario morty en el servidor como en la maquina han de ser sudoers
