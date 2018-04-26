@@ -42,4 +42,5 @@
 # /srv/nfs4        gss/krb5i(rw,sync,fsid=0,crossmnt,no_subtree_check)
 # /srv/nfs4/homes  gss/krb5i(rw,sync,no_subtree_check)
 #
-/home/morty 192.168.21.0/24(rw,no_subtree_check)
+
+/home/morty 169.254.12.0/24(rw,no_subtree_check)
