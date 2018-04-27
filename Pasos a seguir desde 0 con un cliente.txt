@@ -13,7 +13,7 @@
 	sudo raspi-config
 
 5)Añadir al final del fichero fstab en /etc/fstab
-	169.254.12.1:/home/morty /home/morty nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
+	169.254.12.1:/home/pi /home/pi nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
 
 6)Instalar paquetes:
 
