@@ -1,41 +1,35 @@
 #include <fstream>
+#include <iostream>
 #include <string>
+#include <stdlib.h>
 
 using namespace std;
 
-
-typedef struct {
-  string name;
-  int temp;
-}tDatos;
-
 int main() {
 
-
- fstream fichero;
- tDatos mydata;
-
- fichero.open("/etc/hostname");
- 
- if(fichero.is_open()){ 
-   
-  fichero >> mydata.name;
-  
-  fichero.close();
-
- }else
-  return -1;
-
- 
- fichero.open("/home/pi/Desktop/sys_log");
- 
- if(fichero.is_open()){
-  fichero.seekg(0,fichero.end);
-  fichero << mydata.name << " " << endl;
- }
-
- system("cat /sys/class/thermal/thermal_zone0/temp >> /home/pi/Desktop/sys_log")
-
-  return 0;
-
+	fstream fichero;
+	string mydata;
+	
+	fichero.open("/etc/hostname");
+	
+	if(fichero.is_open()){ 
+		fichero >> mydata;		
+		fichero.close();
+		
+		fichero.open("/home/pi/Desktop/sys_log_thermal");
+	
+		if(fichero.is_open()){
+			fichero.seekg(0,fichero.end);
+			fichero << mydata << " ";
+			fichero.close();
+		}
+	
+		system("cat /sys/class/thermal/thermal_zone0/temp >> /home/pi/Desktop/sys_log_thermal");
+	}
+	else{
+		cout << "Try again with 'sudo' ..." << endl;
+		return -1;
+	}
+	
+	return 0;
 }
