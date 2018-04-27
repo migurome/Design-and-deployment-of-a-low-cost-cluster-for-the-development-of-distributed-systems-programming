@@ -1,0 +1,37 @@
+Antes que todo
+	sudo apt-get update 
+	sudo apt-get upgrade
+
+1) Cambiar el teclado 
+	setxkbmap es
+
+2) Añadir usuario nuevo	
+	sudo useradd -m morty
+
+3) Ponerle contraseña
+	sudo passwd morty
+
+4)Activar el ssh 
+	sudo raspi-config
+
+5)Desactivar el usuario pi por defecto en raspi configuration
+
+6)Activar a morty por defecto:
+	sudo leafpad /etc/lightdm/lightdm.conf
+	autologin-user = morty al final
+
+7)Hay que crear el fichero 010_morty_nopasswd en /etc/sudoers.d y editar
+	morty ALL=(ALL) NOPASSWD: ALL
+
+8)Añadir al final del fichero fstab en /etc/fstab
+	169.254.12.1:/home/morty /home/morty nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
+
+9)Descomentar hdmi_hotplug=1 en /boot/config.txt
+
+10)Instalar paquetes:
+	sudo apt-get install build-essential gcc g++ bison flex perl  tcl-dev tk-dev libxml2-dev zlib1g-dev default-jre doxygen graphviz libwebkitgtk-1.0-0 openmpi-bin libopenmpi-dev libpcap-dev
+
+11)Instalamos SimCan siguiendo los pasos correspondientes de la guia
+
+12)
+	
