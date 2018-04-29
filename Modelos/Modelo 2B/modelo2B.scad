@@ -1,4 +1,3 @@
-
 module rasp()
 {
     color("Grey") 
@@ -164,7 +163,3 @@ caja();
 translate([-120,--120,0])
 
 box();
-
-
-
-
