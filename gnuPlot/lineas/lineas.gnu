@@ -46,10 +46,10 @@ set xlabel "Tiempo total: 3 horas" font "Consolas, 10"
 plot [10:11000][40:60] 'M1' w l lc rgb 'red'
 
 #3R
-plot [20:11000][40:60] 'Rpi 1' w l lc rgb 'red' ,  'Rpi 2D' w l lc rgb 'blue',  'Rpi 3' w l lc rgb 'green'
+plot [20:11000][40:60] 'morty_1' w l lc rgb 'red' ,  'morty_3' w l lc rgb 'blue',  'morty_5' w l lc rgb 'green'
 
 #6R
-plot [20:11000][40:70] 'Rpi 1D' w l lc rgb 'red' ,  'Rpi 2' w l lc rgb 'blue',  'Rpi 3' w l lc rgb 'green',  'Rpi 4D' w l lc rgb 'black',  'Rpi 5' w l lc rgb 'brown',  'Rpi 6' w l lc rgb 'purple'
+plot [20:11000][40:70] 'morty_1' w l lc rgb 'red' ,  'morty_2' w l lc rgb 'blue',  'morty_3' w l lc rgb 'green',  'morty_4' w l lc rgb 'black',  'morty_5' w l lc rgb 'brown',  'morty_6' w l lc rgb 'purple'
 
 #Estrés
 set xlabel "Tiempo total: 24 horas" font "Consolas, 10"
