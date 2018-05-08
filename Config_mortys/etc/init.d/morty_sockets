@@ -1,0 +1,13 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:		MRomero_sockets
+# Required-start:	$syslog
+# Required-stop:	$syslog
+# Default-Start:	2 3 4 5
+# Default-Stop:		0 1 6
+# Short-Description:	Inicializacion de sockets server
+# Description:
+#
+### END INIT INFO
+
+sudo ~/execute/run_it

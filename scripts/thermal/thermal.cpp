@@ -16,7 +16,7 @@ int main() {
 		fichero >> mydata;		
 		fichero.close();
 		
-		fichero.open("/home/pi/Desktop/sys_log_thermal");
+		fichero.open("/home/pi/sys_log_thermal");
 	
 		if(fichero.is_open()){
 			fichero.seekg(0,fichero.end);
@@ -24,7 +24,7 @@ int main() {
 			fichero.close();
 		}
 	
-		system("cat /sys/class/thermal/thermal_zone0/temp >> /home/pi/Desktop/sys_log_thermal");
+		system("cat /sys/class/thermal/thermal_zone0/temp >> /home/pi/sys_log_thermal");
 	}
 	else{
 		cout << "Try again with 'sudo' ..." << endl;

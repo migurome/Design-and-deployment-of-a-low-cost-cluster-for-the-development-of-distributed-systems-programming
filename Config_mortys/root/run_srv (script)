@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd $1
+pwd
+./run $2 $3 $4 $5 $6 > $7
+
+# Ejemplo de Comando
+# sh ~/execute/script /home/pi/omnetpp-4.6/proyects/simcan/simulations/scenario/ -u Cmdenv omnetpp_100M.ini -c discoA miguelResult
