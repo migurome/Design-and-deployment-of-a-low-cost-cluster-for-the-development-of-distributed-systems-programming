@@ -9,27 +9,26 @@
 
 package Server;
 
+import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.file.Files;
 import java.util.Scanner;
 
 class Server{
-	
+
 	public static void main(String args[])throws Exception{  
-		
+
 		//Se declara un string y pide un nombre de archivo para leerlo
-		String filename;
-		System.out.println("Enter File Name: ");
-		Scanner sc=new Scanner(System.in);
-		
-		filename=sc.nextLine();
-		
-		while(true)
-		{
+		String fileName;
+
+		while(true){
 			//Crea un server socket en un puerto fijo, en este caso el 5000
 			ServerSocket ss=new ServerSocket(5000); 
 			System.out.println ("Waiting for request");
@@ -37,57 +36,43 @@ class Server{
 			System.out.println ("Connected With "+s.getInetAddress().toString());
 			DataInputStream din=new DataInputStream(s.getInputStream());  
 			DataOutputStream dout=new DataOutputStream(s.getOutputStream());
-			
+			FileOutputStream bw = null;
 			try{
-				String str="";  
 
-				str=din.readUTF();
-				System.out.println("SendGet....Ok");
+				fileName = din.readUTF();
+				System.out.println("Receiving File: "+fileName);
+				//Lo manda a la carpeta por defecto files
+				File file = new File(fileName);
+				bw = new FileOutputStream(file);
+				//Aqui ya podemos escribir
 
-				if(!str.equals("stop")){  
+				long size = din.readLong();
 
-					System.out.println("Sending File: "+filename);
-					dout.writeUTF(filename);  
-					dout.flush();  
-
-					File f = new File(filename);
-					FileInputStream fin = new FileInputStream(f);
-					long sz = (int) f.length();
-
-					//Cambiado de 1024 a lo que hay
-					byte b[] = new byte [1024];
-
-					int read;
-
-					dout.writeUTF(Long.toString(sz)); 
-					dout.flush(); 
-
-					System.out.println ("Size: " + sz);
-					System.out.println ("Buf size: "+ss.getReceiveBufferSize());
-
-					while((read = fin.read(b)) != -1){
-						dout.write(b, 0, read); 
-						dout.flush(); 
-					}
-					
-					fin.close();
-
-					System.out.println("..ok"); 
-					dout.flush(); 
-				}
+				String line;
+				int count;
+				byte[] buffer = new byte[8192];
+				char[] buffc = new char[8192];
 				
-				dout.writeUTF("stop");  
-				System.out.println("Send Complete");
-				dout.flush();  
+				while((count = din.read(buffer)) > 0){
+					bw.write(buffer);
+				}
+				bw.close();
+				
 			}
+
+
 			catch(Exception e)
 			{
-				e.printStackTrace();
-				System.out.println("An error occured");
+			
 			}
-			din.close();  
-			s.close();  
-			ss.close();  
+			//Siempre se jeecuta da igual la rama por la que vayas
+			finally{
+				bw.close();
+				din.close();
+				dout.close();
+				ss.close();
+
+			}
 		}
 	}
 }  
