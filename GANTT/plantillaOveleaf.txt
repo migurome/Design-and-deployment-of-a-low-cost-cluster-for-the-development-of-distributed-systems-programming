@@ -1,0 +1,27 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfgantt}
+
+\begin{document}
+
+\begin{ganttchart}[vgrid,hgrid]{38}{97}
+
+\gantttitle{2017}{60} \\
+\gantttitlelist{38,...,49}{5} \\
+\ganttgroup{Montaje y testeo de modelos}{38}{102} \\
+
+\ganttbar[bar height = 0.2]{Modelo 1}{38}{47} \\
+\ganttlinkedbar[bar height = 0.2]{Test Modelo 1}{48}{52}\\
+
+\ganttbar[bar height = 0.2]{Modelo 2}{53}{62} \\
+\ganttlinkedbar[bar height = 0.2]{Test Modelo 2}{63}{67}\\
+
+\ganttlinkedbar[bar height = 0.2]{Modelo 2b}{68}{77} \\
+\ganttlinkedbar[bar height = 0.2]{Test Modelo 2}{78}{82}\\
+
+\ganttbar[bar height = 0.2]{Modelo 3}{83}{92} \\
+\ganttlinkedbar[bar height = 0.2]{Test Modelo 3}{93}{97}
+
+
+
+\end{ganttchart}
+\end{document}
