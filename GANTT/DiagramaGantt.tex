@@ -1,0 +1,63 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfgantt}
+\usepackage[spanish, activeacute]{babel} %Definir idioma español
+\usepackage[utf8]{inputenc} %Codificacion utf-8
+
+\begin{document}
+
+\begin{ganttchart}[vgrid,hgrid]{38}{77}
+
+\gantttitle{2017-2018}{40} \\
+\gantttitlelist{1,...,10}{4} \\
+%/////////////Configuración/////////////////////
+\ganttgroup[progress=100]{Configuración}{38}{49} \\
+
+\ganttbar[bar height = 0.2]{Virtualización}{38}{41} \\
+\ganttbar[bar height = 0.2]{DHCP-NFS}{40}{43}\\
+\ganttbar[bar height = 0.2]{SIMCAN}{43}{47} \\
+\ganttlinkedbar[bar height = 0.2]{Pruebas}{47}{49}\\
+
+%///////////////////DISEÑO///////////////////////
+
+\ganttgroup[progress=100]{Diseño}{50}{58} \\
+
+\ganttbar[bar height = 0.2]{Modelo 1}{50}{51} \\
+\ganttlinkedbar[bar height = 0.2]{Test Modelo 1}{52}{52}\\
+\ganttbar[bar height = 0.2]{Modelo 2}{53}{54} \\
+\ganttlinkedbar[bar height = 0.2]{Test Modelo 2}{55}{55}\\
+\ganttlinkedbar[bar height = 0.2]{Modelo 2b}{56}{57} \\
+\ganttlinkedbar[bar height = 0.2]{Test Modelo 2b}{58}{58}\\
+
+
+%//////////////////MODELO FINAL//////////////////
+\ganttlinkedgroup[progress=100]{Modelo Final}{59}{61} \\
+\ganttbar[bar height = 0.2]{Diseño}{59}{60} \\
+\ganttlinkedbar[bar height = 0.2]{Test}{61}{61}\\
+
+%//////////////////CONFIGURACION DEL CLUSTER/////////
+\ganttgroup[progress=100]{Configuración Clúster}{62}{68} \\
+
+\ganttbar[bar height = 0.2]{Configuración}{62}{63} \\
+\ganttlinkedbar[bar height = 0.2]{DHCP-NFS}{64}{65}\\
+\ganttbar[bar height = 0.2]{SIMCAN}{65}{66} \\
+\ganttlinkedbar[bar height = 0.2]{Pruebas}{66}{68}\\
+
+%////////////////////DESARROLLO DEL SOFTWARE////////////
+\ganttgroup[progress=75]{Desarrollo Software}{68}{69} \\
+
+\ganttbar[bar height = 0.2]{Planificador}{68}{68} \\
+\ganttbar[bar height = 0.2]{Cliente-Servidor}{69}{69}\\
+
+%/////////////////TEST DE RENDIMIENTO////////////////////
+
+\ganttgroup[progress=0]{Test de rendimiento}{70}{73}\\
+\ganttgroup[progress=80]{Documentación}{46}{77}
+
+
+%/////NOTAS%////////////////////////////////////////////////
+%He estado pensando y lo de la documentación es que llevamos con ella desde el primer paso de virtualización, así que o la ponemos durante todo el perioro del TFG o nos lo ahorramos
+
+
+
+\end{ganttchart}
+\end{document}
