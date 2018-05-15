@@ -3,23 +3,23 @@
 
 \begin{document}
 
-\begin{ganttchart}[vgrid,hgrid]{38}{97}
+\begin{ganttchart}[vgrid,hgrid]{38}{73}
 
-\gantttitle{2017}{60} \\
-\gantttitlelist{38,...,49}{5} \\
-\ganttgroup{Montaje y testeo de modelos}{38}{102} \\
+\gantttitle{2017}{36} \\
+\gantttitlelist{38,...,49}{3} \\
+\ganttgroup{Fase 1}{38}{73} \\
 
-\ganttbar[bar height = 0.2]{Modelo 1}{38}{47} \\
-\ganttlinkedbar[bar height = 0.2]{Test Modelo 1}{48}{52}\\
+\ganttbar[bar height = 0.2]{Modelo 1}{38}{43} \\
+\ganttlinkedbar[bar height = 0.2]{Test Modelo 1}{44}{46}\\
 
-\ganttbar[bar height = 0.2]{Modelo 2}{53}{62} \\
-\ganttlinkedbar[bar height = 0.2]{Test Modelo 2}{63}{67}\\
+\ganttbar[bar height = 0.2]{Modelo 2}{47}{52} \\
+\ganttlinkedbar[bar height = 0.2]{Test Modelo 2}{53}{55}\\
 
-\ganttlinkedbar[bar height = 0.2]{Modelo 2b}{68}{77} \\
-\ganttlinkedbar[bar height = 0.2]{Test Modelo 2}{78}{82}\\
+\ganttlinkedbar[bar height = 0.2]{Modelo 2b}{56}{61} \\
+\ganttlinkedbar[bar height = 0.2]{Test Modelo 2}{62}{64}\\
 
-\ganttbar[bar height = 0.2]{Modelo 3}{83}{92} \\
-\ganttlinkedbar[bar height = 0.2]{Test Modelo 3}{93}{97}
+\ganttbar[bar height = 0.2]{Modelo 3}{65}{70} \\
+\ganttlinkedbar[bar height = 0.2]{Test Modelo 3}{71}{73}
 
 
 
