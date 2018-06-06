@@ -1,0 +1,22 @@
+set style line 2 lc rgb 'black' lt 1 lw 1
+set grid y
+set style data histograms
+set style histogram rowstacked
+set boxwidth 0.5
+set style fill pattern border -1
+set ytics 10 nomirror
+set yrange [:200]
+set ylabel "Minutos"
+set ytics 10
+set title "Prueba 4"
+
+plot 'doc.dat' using 2:xtic(1) t "Trabajo 1" ls 2, '' using 3 t "Trabajo 2" ls 2, '' using 4 t "Trabajo 3" ls 2, '' using 5 t "Trabajo 4" ls 2, '' using 6 t "Trabajo 5" ls 2,  '' using 7 t "Trabajo 6" ls 2, '' using 8 t "Trabajo 7" ls 2, '' using 9 t "Trabajo 8" ls 2, '' using 10 t "Trabajo 9" ls 2, '' using 11 t "Trabajo 10" ls 2, '' using 12  t "Trabajo 11" ls 2, '' using 13  t "Trabajo 12" ls 2
+
+
+//DATOS
+
+"Raspberry Pi 1" 25,6 25,6 25,6 0 0 0 0 0 0 0 0 0
+"Raspberry Pi 2" 0 0 0 24,5 24,5 24,5 0 0 0 0 0 0
+"Raspberry Pi 3" 0 0 0 0 0 0 27,5 27,5 27,5 0 0 0
+"Raspberry Pi 4" 0 0 0 0 0 0 0 0 0 26,5 26,5 26,5
+Portátil 16,5 16,5 16,5 16,5 16,5 16,5 16,5 16,5 16,5 16,5 16,5 16,5

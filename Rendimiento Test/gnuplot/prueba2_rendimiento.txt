@@ -1,0 +1,17 @@
+set style line 2 lc rgb 'black' lt 1 lw 1
+set grid y
+set style data histograms
+set style histogram rowstacked
+set boxwidth 0.5
+set style fill pattern border -1
+set ytics 10 nomirror
+set yrange [0:100]
+set ylabel "Minutos" font "Consolas, 15"
+set title "Prueba 2"
+
+plot 'doc.dat' using 2 t "Trabajo 1" ls 2, '' using 3 t "Trabajo 2" ls 2, '' using 4:xtic(1) t "Trabajo 3" ls 2, '' using 5 t "Trabajo 4" ls 2
+
+//DATOS
+
+"Raspberry Pi" 22,5	22,5	22,5	22,5 
+Portátil 12,25	12,25	12,25	12,25

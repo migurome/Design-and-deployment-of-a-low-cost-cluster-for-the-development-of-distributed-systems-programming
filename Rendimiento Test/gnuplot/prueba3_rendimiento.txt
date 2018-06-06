@@ -1,0 +1,22 @@
+set autoscale x
+set yrange [0:50]
+
+set style line 2 lc rgb 'black' lt 1 lw 1
+set style data histogram
+set style histogram cluster gap 1
+set style fill pattern border -1
+set boxwidth 0.9
+set xtics format ""
+set grid ytics
+set ylabel "Minutos" font "Consolas, 15"
+
+set title "Prueba 3"
+plot "doc.dat" using 2:xtic(1) title "Trabajo 1 sobre Raspberry Pi 1" ls 2, \
+            '' using 3 title "Trabajo 2 sobre Raspberry Pi 2" ls 2, \
+            '' using 4 title "Trabajo 3 sobre Raspberry Pi 3" ls 2, \
+            '' using 5 title "Trabajo 4 sobre Raspberry Pi 4" ls 2, \
+            '' using 6 title "Trabajos 1, 2, 3 y 4 sobre Portátil" ls 2
+
+//DATOS
+
+Trabajos 39,68 38,68 37,58 38,68 48,6 
