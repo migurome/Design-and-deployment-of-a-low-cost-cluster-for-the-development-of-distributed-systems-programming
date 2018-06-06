@@ -1,0 +1,25 @@
+set style line 2 lc rgb 'black' lt 1 lw 1
+set grid y
+set style data histograms
+set style histogram rowstacked
+set boxwidth 0.5
+set style fill pattern border -1
+set ytics 10 nomirror
+set yrange [:400]
+set ylabel "Minutos"
+set ytics 50
+set ylabel "Minutos" font "Consolas, 15"
+set title "Prueba 5"
+
+
+plot 'doc.dat' using 2:xtic(1) t "Tr 1" ls 2, '' using 3 t "Tr 2" ls 2, '' using 4 t "Tr 3" ls 2, '' using 5 t "Tr 4" ls 2, '' using 6 t "Tr 5" ls 2,  '' using 7 t "Tr 6" ls 2, '' using 8 t "Tr 7" ls 2, '' using 9 t "Tr 8" ls 2, '' using 10 t "Tr 9" ls 2, '' using 11 t "Tr 10" ls 2, '' using 12  t "Tr 11" ls 2, '' using 13  t "Tr 12" ls 2, '' using 14 t "Tr 13" ls 2, '' using 15 t "Tr 14" ls 2, '' using 16 t "Tr 15" ls 2, '' using 17 t "Tr 16" ls 2,  '' using 18 t "Tr 17" ls 2, '' using 19 t "Tr 18" ls 2, '' using 20 t "Tr 19" ls 2, '' using 21 t "Tr 20" ls 2, '' using 22 t "Tr 21" ls 2, '' using 23  t "Tr 22" ls 2, '' using 24  t "Tr 23" ls 2, '' using 25  t "Tr 24" ls 2
+
+//DATOS
+
+"Raspberry Pi 1" 22,6 22,6 22,6 22,6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+"Raspberry Pi 2" 0 0 0 0 24,5 24,5 24,5 24,5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+"Raspberry Pi 3" 0 0 0 0 0 0 0 0 25,6 25,6 25,6 25,6 0 0 0 0 0 0 0 0 0 0 0 0
+"Raspberry Pi 4" 0 0 0 0 0 0 0 0 0 0 0 0 25,6 25,6 25,6 25,6 0 0 0 0 0 0 0 0
+"Raspberry Pi 5" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 26,6 26,6 26,6 26,6 0 0 0 0
+"Raspberry Pi 6" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23,6 23,6 23,6 23,6  
+Portátil 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1 16,1
