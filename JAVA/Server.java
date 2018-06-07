@@ -34,7 +34,6 @@ class Server{
 		String myKey = "qwertyuiopasdfgh";
 		Key secretKey = new SecretKeySpec(myKey.getBytes(), "AES");
 		cipher.init(Cipher.DECRYPT_MODE, secretKey);
-		
 		String fileName;
 		//Crea un server socket en un puerto fijo, en este caso el 5000
 		ServerSocket ss=new ServerSocket(5000); 
@@ -56,10 +55,8 @@ class Server{
 				//Lo manda a la carpeta por defecto files
 				File file = new File(fileName);
 				bw = new FileOutputStream(file);
-				//Aqui ya podemos escribir
-
+				//Aqui ya se puede escribir
 				long size = din.readLong();
-
 				String line;
 				int count;
 				byte[] buffer = new byte[8192];
@@ -78,7 +75,7 @@ class Server{
 			{
 			
 			}
-			//Siempre se ejecuta da igual la rama por la que vayas
+			//Siempre se ejecuta
 			finally{
 				if(bw != null)
 					bw.close();

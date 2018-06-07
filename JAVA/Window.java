@@ -62,7 +62,7 @@ public class Window extends JFrame {
 		initCrypto();
 		initGui();
 		updateButtons();
-		//Agrupa la interfaz en el minimo tamaño posible y ademas refresca
+		//Agrupa la interfaz en el minimo tamaño posible y además refresca
 		this.pack();
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
@@ -70,7 +70,7 @@ public class Window extends JFrame {
 	private void initCrypto() {
 		try {
 			cipher=Cipher.getInstance("AES");
-			String myKey = "qwertyuiopasdfgh";
+			String myKey = "ProgramacionDeSistemasDistribuidos";
 			SecretKey key = new SecretKeySpec(myKey.getBytes(), "AES");
 			cipher.init(Cipher.ENCRYPT_MODE, key);
 
@@ -169,7 +169,7 @@ public class Window extends JFrame {
 		panelStatus.add(statusLabel);
 		panelStatus.add(progressBar);
 		panelActions.add(sendButton);
-		//Este botón es para testear la desconexión del servidor, descomentar en caso de guerra nuclear
+		//Este botón es para testear la desconexión del servidor
 		//panelActions.add(stopButton);
 		panelSouth.add(panelStatus);
 		panelSouth.add(panelActions);
