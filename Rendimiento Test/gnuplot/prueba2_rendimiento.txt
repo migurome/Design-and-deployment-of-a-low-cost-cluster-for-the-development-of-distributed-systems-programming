@@ -1,17 +1,22 @@
-set style line 2 lc rgb 'black' lt 1 lw 1
-set grid y
-set style data histograms
-set style histogram rowstacked
-set boxwidth 0.5
-set style fill pattern border -1
-set ytics 10 nomirror
 set yrange [0:100]
-set ylabel "Minutos" font "Consolas, 15"
-set title "Prueba 2"
+set style line 2 lc rgb 'black' lt 1 lw 1
+set style data histogram
+set style histogram cluster gap 1
+set style fill pattern border -1
+set boxwidth 0.9
+set xtics format ""
+set grid ytics
+set ylabel "Tiempo (minutos)" font "Consolas, 15"
 
-plot 'doc.dat' using 2 t "Trabajo 1" ls 2, '' using 3 t "Trabajo 2" ls 2, '' using 4:xtic(1) t "Trabajo 3" ls 2, '' using 5 t "Trabajo 4" ls 2
+
+set title "Prueba 2"
+plot "doc.dat" using 2:xtic(1) title "Simulación 1" ls 2, \
+            '' using 3 title "Simulación 2" ls 2, \
+            '' using 4 title "Simulación 3" ls 2, \
+            '' using 5 title "Simulación 4" ls 2
+
 
 //DATOS
 
-"Raspberry Pi" 22,5	22,5	22,5	22,5 
-Portátil 12,25	12,25	12,25	12,25
+Raspberry   87,68        88,68        86,58        87,68
+Portátil  48,13       49,12       47,53        48,80

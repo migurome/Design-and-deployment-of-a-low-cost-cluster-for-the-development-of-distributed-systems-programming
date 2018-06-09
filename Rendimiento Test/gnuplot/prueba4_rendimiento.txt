@@ -1,3 +1,4 @@
+set key left
 set style line 2 lc rgb 'black' lt 1 lw 1
 set grid y
 set style data histograms
@@ -6,17 +7,37 @@ set boxwidth 0.5
 set style fill pattern border -1
 set ytics 10 nomirror
 set yrange [:200]
-set ylabel "Minutos"
-set ytics 10
+set ylabel "Tiempo (minutos)" font "Consolas, 15"
+set ytics 25
 set title "Prueba 4"
 
-plot 'doc.dat' using 2:xtic(1) t "Trabajo 1" ls 2, '' using 3 t "Trabajo 2" ls 2, '' using 4 t "Trabajo 3" ls 2, '' using 5 t "Trabajo 4" ls 2, '' using 6 t "Trabajo 5" ls 2,  '' using 7 t "Trabajo 6" ls 2, '' using 8 t "Trabajo 7" ls 2, '' using 9 t "Trabajo 8" ls 2, '' using 10 t "Trabajo 9" ls 2, '' using 11 t "Trabajo 10" ls 2, '' using 12  t "Trabajo 11" ls 2, '' using 13  t "Trabajo 12" ls 2
+plot 'doc.dat' using 2:xtic(1) t "Portátil (x)" ls 2, '' using 3  t "Raspberry Pi 12" ls 2
 
 
 //DATOS
 
-"Raspberry Pi 1" 25,6 25,6 25,6 0 0 0 0 0 0 0 0 0
-"Raspberry Pi 2" 0 0 0 24,5 24,5 24,5 0 0 0 0 0 0
-"Raspberry Pi 3" 0 0 0 0 0 0 27,5 27,5 27,5 0 0 0
-"Raspberry Pi 4" 0 0 0 0 0 0 0 0 0 26,5 26,5 26,5
-Portátil 16,5 16,5 16,5 16,5 16,5 16,5 16,5 16,5 16,5 16,5 16,5 16,5
+"Simulación 1" 25,6 25,6
+"Simulación 2" 25,6 25,6
+"Simulacion 3" 25,6 25,6
+"Simulacion 4" 25,6 25,6
+"Simulacion 5" 49,2 50,6
+"Simulacion 6" 47,6 50,6
+"Simulacion 7" 48,6 50,6
+"Simulacion 8" 46,6 50,6
+"Simulacion 9" 75,6 100,6
+"Simulacion 10" 75,6 100,6
+"Simulacion 11" 75,6 100,6
+"Simulacion 12" 75,6 100,6
+
+
+
+
+"Simulacion 5" 51,9 48,6
+"Simulacion 6" 52,4 50,7
+"Simulacion 7" 56,3 54,5
+"Simulacion 8" 54,9 51,1
+
+"Simulacion 9" 76,4 97,6
+"Simulacion 10" 75,6 98,3
+"Simulacion 11" 77,1 104,8
+"Simulacion 12" 75,6 103,1

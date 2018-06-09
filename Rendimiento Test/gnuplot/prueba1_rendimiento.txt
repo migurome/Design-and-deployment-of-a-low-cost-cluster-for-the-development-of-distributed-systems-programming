@@ -1,4 +1,4 @@
-set yrange [0:100]
+set yrange [0:50]
 set style line 2 lc rgb 'black' lt 1 lw 1
 set style data histogram
 set style histogram cluster gap 1
@@ -6,7 +6,7 @@ set style fill pattern border -1
 set boxwidth 0.9
 set xtics format ""
 set grid ytics
-set ylabel "Minutos" font "Consolas, 15"
+set ylabel "Tiempo (minutos)" font "Consolas, 15"
 
 set title "Prueba 1"
 plot "doc.dat" using 2:xtic(1) title "Raspberry Pi" ls 2, \
