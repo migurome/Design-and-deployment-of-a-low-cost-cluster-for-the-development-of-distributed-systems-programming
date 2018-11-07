@@ -1,5 +1,0 @@
-Características del switch
-https://www.webantics.com/d-link-dgs-1008d-8-port-gigabit-unmanaged-desktop-switch
-Características USB ethernet
-http://nanocable.es/es/producto/conversor-usb-30-a-ethernet-gigabit-10-100-1000-mbps-15cm
-https://github.com/Wei1234c/Broccoli

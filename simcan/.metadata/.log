@@ -1,9 +1,0 @@
-!SESSION 2011-05-18 04:24:24.303 -----------------------------------------------
-eclipse.buildId=unknown
-java.version=1.6.0_25
-java.vendor=Sun Microsystems Inc.
-BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
-Command-line arguments:  -os linux -ws gtk -arch x86
-
-!ENTRY org.omnetpp.main 1 0 2011-05-18 04:24:33.432
-!MESSAGE OMNeT++ IDE 4.1.0.100611-4b63c38 started.
